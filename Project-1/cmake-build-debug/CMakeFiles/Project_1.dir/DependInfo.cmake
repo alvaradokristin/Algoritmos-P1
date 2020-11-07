@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/controllers/Timer.cpp" "D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/cmake-build-debug/CMakeFiles/Project_1.dir/controllers/Timer.cpp.obj"
   "D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp" "D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/cmake-build-debug/CMakeFiles/Project_1.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

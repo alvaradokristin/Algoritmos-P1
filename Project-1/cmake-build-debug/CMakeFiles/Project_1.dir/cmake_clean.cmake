@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Project_1.dir/controllers/Timer.cpp.obj"
   "CMakeFiles/Project_1.dir/main.cpp.obj"
   "Project_1.exe"
   "Project_1.exe.manifest"

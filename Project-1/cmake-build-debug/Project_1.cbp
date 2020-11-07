@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/controllers/Timer.cpp">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h">
+			<Option target="Project_1"/>
+		</Unit>
 		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp">
 			<Option target="Project_1"/>
 		</Unit>
