@@ -1,0 +1,3 @@
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/cmake-build-debug/CMakeFiles/Project_1.dir
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
