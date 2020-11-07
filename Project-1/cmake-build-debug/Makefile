@@ -142,6 +142,33 @@ Project_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/build
 .PHONY : Project_1/fast
 
+controllers/Timer.obj: controllers/Timer.cpp.obj
+
+.PHONY : controllers/Timer.obj
+
+# target to build an object file
+controllers/Timer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/controllers/Timer.cpp.obj
+.PHONY : controllers/Timer.cpp.obj
+
+controllers/Timer.i: controllers/Timer.cpp.i
+
+.PHONY : controllers/Timer.i
+
+# target to preprocess a source file
+controllers/Timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/controllers/Timer.cpp.i
+.PHONY : controllers/Timer.cpp.i
+
+controllers/Timer.s: controllers/Timer.cpp.s
+
+.PHONY : controllers/Timer.s
+
+# target to generate assembly for a file
+controllers/Timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/controllers/Timer.cpp.s
+.PHONY : controllers/Timer.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -178,6 +205,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Project_1
+	@echo ... controllers/Timer.obj
+	@echo ... controllers/Timer.i
+	@echo ... controllers/Timer.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

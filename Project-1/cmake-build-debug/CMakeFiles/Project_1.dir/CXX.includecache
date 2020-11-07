@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/controllers/Timer.cpp
+iostream
+-
+time.h
+-
+chrono
+-
+../headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp
 iostream
 -
+time.h
+-
+chrono
+-
+headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 
