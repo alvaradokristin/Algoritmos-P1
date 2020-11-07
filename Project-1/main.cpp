@@ -1,5 +1,4 @@
 #include <iostream>
-#include <time.h>
 #include <chrono>
 
 #include "headers/Timer.h"
@@ -9,16 +8,14 @@ using namespace std;
 using namespace std::chrono;
 
 int main() {
-    //std::cout << "Hello, World!" << std::endl;
+    //cout << "Hello, World!" << endl;
 
     // This is an example of the timer:
-    Timer myTimer;
+    /*Timer myTimer;
     myTimer.startTimer();
-    for (int i = 0; i < 100; i++){
-        cout << "Hello, World! " << i << endl;
-    }
+    // Operation that need to be measured
     myTimer.stopTimer();
-    myTimer.printTime();
+    myTimer.printTime();*/
 
     return 0;
 }

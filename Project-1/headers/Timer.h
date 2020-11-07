@@ -17,7 +17,6 @@ namespace tmr {
     class Timer {
     public:
         Timer();
-        //~Timer();
         void startTimer();
         void stopTimer();
         void printTime();

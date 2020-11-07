@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <time.h>
 #include <chrono>
 
 #include "../headers/Timer.h"
@@ -13,7 +12,7 @@ using namespace std;
 using namespace std::chrono;
 
 Timer::Timer() {
-    cout << "New Timer created!" << endl;
+    //This will create the new object
 }
 
 void Timer::startTimer(){
