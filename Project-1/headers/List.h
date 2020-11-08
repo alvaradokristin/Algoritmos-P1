@@ -12,7 +12,12 @@ using namespace cntry;
 typedef Country *pointerCntry;
 
 namespace lst {
+    /*
+     * This is the class List, is to make the list of countries and the adjacents
+     * */
     class List {
+
+        friend class Country;
 
     public:
         List();
@@ -36,3 +41,21 @@ namespace lst {
 }
 
 #endif //PROJECT_1_LIST_H
+
+// This is an example to see if list is working
+/*List myList;
+
+myList.addBeginning("Ana", "Gonzalez", "Aguilera");
+myList.addBeginning("Leda", "Gonzalez", "Aguilera");
+myList.addEnd("Kristin", "Alvarado", "Gonzalez");
+myList.addEnd("Rodrigo", "Alvarado", "Gonzalez");
+myList.addEnd("Jose", "Gonzalez", "Aguilera");
+myList.printList();
+
+cout << "Now lets remove some people!" << endl;
+cout << endl;
+
+myList.removePos(4);
+myList.removeLast();
+myList.removeLast();
+myList.printList();*/

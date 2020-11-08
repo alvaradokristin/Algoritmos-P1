@@ -23,7 +23,8 @@ namespace cntry {
         Country *nextCntry;
         Country *adjList;
 
-    private:
+
+    //private:
         string id;
         string name;
         string dimensions;
