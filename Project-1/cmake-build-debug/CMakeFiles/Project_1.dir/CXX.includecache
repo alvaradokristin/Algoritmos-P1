@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/controllers/Timer.cpp
-iostream
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+string
 -
-chrono
--
-../headers/Timer.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
+../headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 
@@ -23,4 +23,6 @@ chrono
 -
 headers/Timer.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 

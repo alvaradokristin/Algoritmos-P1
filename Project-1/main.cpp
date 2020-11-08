@@ -2,20 +2,16 @@
 #include <chrono>
 
 #include "headers/Timer.h"
+#include "headers/List.h"
 
 using namespace tmr;
 using namespace std;
 using namespace std::chrono;
+using namespace lst;
 
 int main() {
-    //cout << "Hello, World!" << endl;
 
-    // This is an example of the timer:
-    /*Timer myTimer;
-    myTimer.startTimer();
-    // Operation that need to be measured
-    myTimer.stopTimer();
-    myTimer.printTime();*/
+    //cout << "Hello, World!" << endl;
 
     return 0;
 }
