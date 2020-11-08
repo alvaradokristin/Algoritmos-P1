@@ -7,7 +7,7 @@
 
 #include "../headers/Timer.h"
 
-using namespace tmr;
+using namespace headers;
 using namespace std;
 using namespace std::chrono;
 

@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-namespace cntry {
+namespace headers {
     /*
      * This is the class Country, this will have all the necesary information of a country and a pointer to create lists of countries
      * */

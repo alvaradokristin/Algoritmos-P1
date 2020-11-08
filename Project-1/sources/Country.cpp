@@ -5,7 +5,7 @@
 #include <iostream>
 #include "../headers/Country.h"
 
-using namespace cntry;
+using namespace headers;
 using namespace std;
 
 typedef Country *pointerCntry;

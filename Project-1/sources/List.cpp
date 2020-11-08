@@ -6,8 +6,7 @@
 #include "../headers/Country.h"
 #include "../headers/List.h"
 
-using namespace cntry;
-using namespace lst;
+using namespace headers;
 using namespace std;
 
 typedef Country *pointerCntry;

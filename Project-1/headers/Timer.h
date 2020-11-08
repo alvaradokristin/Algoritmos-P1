@@ -8,7 +8,7 @@
 using namespace std;
 using namespace std::chrono;
 
-namespace tmr {
+namespace headers {
     /*
      * This is the class Timer, to measure the execution time of the different algorithms
      * */

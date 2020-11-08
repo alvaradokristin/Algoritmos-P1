@@ -4,10 +4,8 @@
 #include "headers/Timer.h"
 #include "headers/List.h"
 
-using namespace tmr;
+using namespace headers;
 using namespace std;
-using namespace std::chrono;
-using namespace lst;
 
 int main() {
 
