@@ -7,11 +7,11 @@
 
 #include "../headers/Country.h"
 
-using namespace cntry;
+using namespace headers;
 
 typedef Country *pointerCntry;
 
-namespace lst {
+namespace headers {
     /*
      * This is the class List, is to make the list of countries and the adjacents
      * */
