@@ -8,14 +8,8 @@ using namespace std;
 using namespace std::chrono;
 
 int main() {
-    //cout << "Hello, World!" << endl;
 
-    // This is an example of the timer:
-    /*Timer myTimer;
-    myTimer.startTimer();
-    // Operation that need to be measured
-    myTimer.stopTimer();
-    myTimer.printTime();*/
+    //cout << "Hello, World!" << endl;
 
     return 0;
 }

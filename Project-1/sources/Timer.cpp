@@ -27,3 +27,10 @@ void Timer::printTime() {
     elapsed = finish - start;
     cout << "Execution time with " << ": " << elapsed.count() << " msseconds" << endl;
 }
+
+// This is an example of the timer:
+/*Timer myTimer;
+myTimer.startTimer();
+// Operation that need to be measured
+myTimer.stopTimer();
+myTimer.printTime();*/
