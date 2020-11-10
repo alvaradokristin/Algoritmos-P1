@@ -20,11 +20,10 @@ namespace headers {
         Country(string pId, string pName, string pDimensions);
         Country(string pId, string pName, string pDimensions, Country *pNextCountry);
         Country(string pId, string pName, string pDimensions, Country *pNextCountry, Country *pAdjacentList);
+
+    private:
         Country *nextCntry;
         Country *adjList;
-
-
-    //private:
         string id;
         string name;
         string dimensions;

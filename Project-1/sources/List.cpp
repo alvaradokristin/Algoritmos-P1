@@ -58,6 +58,30 @@ void List::addEnd(string pId, string pName, string pDimensions) {
     }
 }
 
+// This method will add the list of adjacent to a country
+void List::addAdjacent(string pId, Country *pAdjList) {
+    if (!isListEmpty()) {
+        pointerCntry auxPointer = first;
+        bool isFound = false;
+        while (auxPointer) { // -> nextCntry != NULL
+            if (auxPointer -> id == pId) {
+                isFound = true;
+                break;
+            }
+            auxPointer = auxPointer -> nextCntry;
+        }
+        if (isFound) {
+            auxPointer -> adjList = pAdjList;
+        }
+        else {
+            cout << "ID: " << pId << " not found" << endl;
+        }
+    }
+    else {
+        cout << "The list is empty" << endl;
+    }
+}
+
 // This method will remove the first country on the list
 void List::removeFirst() {
     if (!isListEmpty()){
@@ -146,7 +170,7 @@ void List::moveToEnd() {
 }
 
 // This method will print the list
-void List::printList() {
+/*void List::printList() {
     pointerCntry auxPointer;
     auxPointer = first;
 
@@ -159,6 +183,41 @@ void List::printList() {
             cout << "Dimensions: " << auxPointer -> dimensions << endl;
             cout << "#==============================#" << endl;
             cout << endl;
+            auxPointer = auxPointer -> nextCntry;
+        }
+    }
+    else
+    {
+        cout << "The list is empty." << endl;
+    }
+}*/
+
+void List::printList() {
+    pointerCntry auxPointer = first;
+
+    if (!isListEmpty())
+    {
+        while (auxPointer) {
+            cout << "ID: " << auxPointer -> id << endl;
+            cout << "Name: " << auxPointer -> name << endl;
+            cout << "Dimensions: " << auxPointer -> dimensions << endl;
+            cout << "#==============================#" << endl;
+            cout << endl;
+
+            if (auxPointer -> adjList) { // != NULL
+                pointerCntry auxAdjPntr = auxPointer -> adjList;
+                cout << "List of adjacents:" << endl;
+                while (auxAdjPntr) {
+                    cout << "ID: " << auxAdjPntr -> id << endl;
+                    cout << "Name: " << auxAdjPntr -> name << endl;
+                    cout << "Dimensions: " << auxAdjPntr -> dimensions << endl;
+                    cout << "#==============================#" << endl;
+                    cout << endl;
+                    auxAdjPntr = auxAdjPntr -> nextCntry;
+                }
+                cout << "The adjacents ends here!" << endl;
+                cout << endl;
+            }
             auxPointer = auxPointer -> nextCntry;
         }
     }

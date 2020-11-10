@@ -23,7 +23,7 @@ namespace headers {
         List();
         void addBeginning(string pId, string pName, string pDimensions);
         void addEnd(string pId, string pName, string pDimensions);
-        //void insertPos(string pId, string pName, string pDimensions, int pPosition);
+        void addAdjacent(string Id, Country *pAdjList);
         void removeFirst();
         void removeLast();
         void removePos(int pPosition);
@@ -34,7 +34,7 @@ namespace headers {
         void moveToEnd();
         int listLength();
 
-    private:
+    //private:
         pointerCntry first;
         pointerCntry current;
     };
@@ -44,18 +44,24 @@ namespace headers {
 
 // This is an example to see if list is working
 /*List myList;
+List anaAdjacents;
+List ledaAdjacents;
 
 myList.addBeginning("Ana", "Gonzalez", "Aguilera");
 myList.addBeginning("Leda", "Gonzalez", "Aguilera");
-myList.addEnd("Kristin", "Alvarado", "Gonzalez");
-myList.addEnd("Rodrigo", "Alvarado", "Gonzalez");
-myList.addEnd("Jose", "Gonzalez", "Aguilera");
+
+anaAdjacents.addEnd("Kristin", "Alvarado", "Gonzalez");
+anaAdjacents.addEnd("Rodrigo", "Alvarado", "Gonzalez");
+
+ledaAdjacents.addEnd("Jose", "Gonzalez", "Aguilera");
+
+myList.addAdjacent("Ana", anaAdjacents.first);
+myList.addAdjacent("Leda", ledaAdjacents.first);
 myList.printList();
 
 cout << "Now lets remove some people!" << endl;
 cout << endl;
 
-myList.removePos(4);
 myList.removeLast();
 myList.removeLast();
 myList.printList();*/
