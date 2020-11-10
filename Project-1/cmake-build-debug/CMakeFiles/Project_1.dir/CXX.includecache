@@ -6,31 +6,23 @@
 
 #IncludeRegexTransform: 
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/main.cpp
 iostream
 -
 chrono
 -
 headers/Timer.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 headers/List.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
-
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
-iostream
--
-../headers/Country.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
-../headers/List.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 

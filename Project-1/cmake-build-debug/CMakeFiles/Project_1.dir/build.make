@@ -53,19 +53,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1
+CMAKE_SOURCE_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project_1.dir/depend.make
@@ -78,55 +78,55 @@ include CMakeFiles/Project_1.dir/flags.make
 
 CMakeFiles/Project_1.dir/main.cpp.obj: CMakeFiles/Project_1.dir/flags.make
 CMakeFiles/Project_1.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project_1.dir/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\main.cpp.obj -c D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project_1.dir/main.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\main.cpp.obj -c C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\main.cpp
 
 CMakeFiles/Project_1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project_1.dir/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\main.cpp > CMakeFiles\Project_1.dir\main.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\main.cpp > CMakeFiles\Project_1.dir\main.cpp.i
 
 CMakeFiles/Project_1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project_1.dir/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\main.cpp -o CMakeFiles\Project_1.dir\main.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\main.cpp -o CMakeFiles\Project_1.dir\main.cpp.s
 
 CMakeFiles/Project_1.dir/sources/Timer.cpp.obj: CMakeFiles/Project_1.dir/flags.make
 CMakeFiles/Project_1.dir/sources/Timer.cpp.obj: ../sources/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project_1.dir/sources/Timer.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\sources\Timer.cpp.obj -c D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project_1.dir/sources/Timer.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\sources\Timer.cpp.obj -c C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\Timer.cpp
 
 CMakeFiles/Project_1.dir/sources/Timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project_1.dir/sources/Timer.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\Timer.cpp > CMakeFiles\Project_1.dir\sources\Timer.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\Timer.cpp > CMakeFiles\Project_1.dir\sources\Timer.cpp.i
 
 CMakeFiles/Project_1.dir/sources/Timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project_1.dir/sources/Timer.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\Timer.cpp -o CMakeFiles\Project_1.dir\sources\Timer.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\Timer.cpp -o CMakeFiles\Project_1.dir\sources\Timer.cpp.s
 
 CMakeFiles/Project_1.dir/sources/Country.cpp.obj: CMakeFiles/Project_1.dir/flags.make
 CMakeFiles/Project_1.dir/sources/Country.cpp.obj: ../sources/Country.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project_1.dir/sources/Country.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\sources\Country.cpp.obj -c D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\Country.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project_1.dir/sources/Country.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\sources\Country.cpp.obj -c C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\Country.cpp
 
 CMakeFiles/Project_1.dir/sources/Country.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project_1.dir/sources/Country.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\Country.cpp > CMakeFiles\Project_1.dir\sources\Country.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\Country.cpp > CMakeFiles\Project_1.dir\sources\Country.cpp.i
 
 CMakeFiles/Project_1.dir/sources/Country.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project_1.dir/sources/Country.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\Country.cpp -o CMakeFiles\Project_1.dir\sources\Country.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\Country.cpp -o CMakeFiles\Project_1.dir\sources\Country.cpp.s
 
 CMakeFiles/Project_1.dir/sources/List.cpp.obj: CMakeFiles/Project_1.dir/flags.make
 CMakeFiles/Project_1.dir/sources/List.cpp.obj: ../sources/List.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project_1.dir/sources/List.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\sources\List.cpp.obj -c D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\List.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project_1.dir/sources/List.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project_1.dir\sources\List.cpp.obj -c C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\List.cpp
 
 CMakeFiles/Project_1.dir/sources/List.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project_1.dir/sources/List.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\List.cpp > CMakeFiles\Project_1.dir\sources\List.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\List.cpp > CMakeFiles\Project_1.dir\sources\List.cpp.i
 
 CMakeFiles/Project_1.dir/sources/List.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project_1.dir/sources/List.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\sources\List.cpp -o CMakeFiles\Project_1.dir\sources\List.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\sources\List.cpp -o CMakeFiles\Project_1.dir\sources\List.cpp.s
 
 # Object files for target Project_1
 Project_1_OBJECTS = \
@@ -146,7 +146,7 @@ Project_1.exe: CMakeFiles/Project_1.dir/build.make
 Project_1.exe: CMakeFiles/Project_1.dir/linklibs.rsp
 Project_1.exe: CMakeFiles/Project_1.dir/objects1.rsp
 Project_1.exe: CMakeFiles/Project_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Project_1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Project_1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project_1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -159,6 +159,6 @@ CMakeFiles/Project_1.dir/clean:
 .PHONY : CMakeFiles/Project_1.dir/clean
 
 CMakeFiles/Project_1.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\KAG\kag\GitHub\Algoritmos-P1\Project-1 D:\KAG\kag\GitHub\Algoritmos-P1\Project-1 D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles\Project_1.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1 C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1 C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles\Project_1.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Project_1.dir/depend
 
