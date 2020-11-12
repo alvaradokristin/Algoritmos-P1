@@ -9,22 +9,14 @@
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
+bits/stdc++.h
+-
+vector
+-
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
-
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
-
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp
-iostream
--
-chrono
--
-headers/Timer.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
-headers/List.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
 iostream
