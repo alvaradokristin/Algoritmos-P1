@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-#include "headers/Timer.h"
+//#include "headers/Timer.h"
 #include "headers/List.h"
 
 using namespace headers;
