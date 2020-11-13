@@ -1,29 +1,10 @@
 #include "../headers/Read_XML.h"
-
-
-/*
-int main()
-{
-    string filename = "C:\\Users\\famil\\Downloads\\archivo.xml";
-    string tag = "id";
-// string tag = "object";
-    bool stripOtherTags = true;
-
-    string text = getFile( filename );
-    cout<<text<<endl;
-    vector<string> all = getData( text, tag );
-    for ( string &s : all )
-    {
-        if ( stripOtherTags ) stripTags( s );
-        cout << s << '\n';
-    }
+readfile::readfile (string pFilename){
+    filename= pFilename;
+    stripOtherTags = true;
 }
-*/
-
 //======================================================================
-
-
-string getFile( string filename )
+string readfile::getFile()
 {
     string buffer;
     char c;
@@ -34,12 +15,8 @@ string getFile( string filename )
 
     return buffer;
 }
-
-
 //======================================================================
-
-
-vector<string> getData( const string &text, string tag )
+vector<string> readfile::getData( const string &text, string tag )
 {
     vector<string> collection;
     unsigned int pos = 0, start;
@@ -54,12 +31,8 @@ vector<string> getData( const string &text, string tag )
         collection.push_back( text.substr( start, pos - start ) );
     }
 }
-
-
 //======================================================================
-
-
-void stripTags( string &text )
+void readfile::stripTags( string &text )
 {
     unsigned int start = 0, pos;
 

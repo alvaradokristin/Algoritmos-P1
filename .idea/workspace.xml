@@ -47,11 +47,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,7 +57,9 @@
       <option name="presentableId" value="Default" />
       <updated>1604990966726</updated>
       <workItem from="1604990968055" duration="7685000" />
-      <workItem from="1605098197675" duration="3215000" />
+      <workItem from="1605098197675" duration="3897000" />
+      <workItem from="1605201303943" duration="13274000" />
+      <workItem from="1605244850394" duration="1745000" />
     </task>
     <servers />
   </component>
@@ -78,29 +75,33 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1604991977736" />
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1605103248718">
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1605105078375">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605103248718" />
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605105078375" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060877" />
-    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1605103248716">
+    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1605105078375">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605103248716" />
+    <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605105078374" />
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060876" />
-    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1605103248715">
+    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1605105078374">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605103248715" />
+    <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605105078374" />
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060874" />
-    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1605103248717">
+    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1605105078375">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605103248717" />
+    <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605105078375" />
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060876" />
     <state x="-1219" y="74" key="SettingsEditor" timestamp="1605101041933">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
     <state x="-1219" y="74" key="SettingsEditor/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605101041933" />
+    <state x="-1057" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1605224969377">
+      <screen x="-1440" y="0" width="1440" height="860" />
+    </state>
+    <state x="-1057" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605224969377" />
   </component>
 </project>
