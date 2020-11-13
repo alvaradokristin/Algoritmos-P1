@@ -9,6 +9,10 @@
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
+bits/stdc++.h
+-
+vector
+-
 
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
@@ -39,4 +43,5 @@ headers/List.h
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 headers/Read_XML.h
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+
 

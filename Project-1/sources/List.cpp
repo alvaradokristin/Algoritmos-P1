@@ -35,26 +35,26 @@ int List::listLength()
 }
 
 // This method will add a new Country at the beginning of the list
-void List::addBeginning(string pId, string pName, string pDimensions) {
+void List::addBeginning(string pId, string pName, string pDimensions, string pStyle) {
     if (!isListEmpty()) {
-        first = new Country(pId, pName, pDimensions, first);
+        first = new Country(pId, pName, pDimensions, pStyle, first);
     }
     else {
-        first = new Country(pId, pName, pDimensions);
+        first = new Country(pId, pName, pDimensions, pStyle);
     }
 }
 
 // This method will add a new Country at the end fo the list
-void List::addEnd(string pId, string pName, string pDimensions) {
+void List::addEnd(string pId, string pName, string pDimensions, string pStyle) {
     if (!isListEmpty()) {
         pointerCntry auxPointer = first;
         while (auxPointer -> nextCntry != NULL) {
             auxPointer = auxPointer -> nextCntry;
         }
-        auxPointer -> nextCntry = new Country(pId, pName, pDimensions);
+        auxPointer -> nextCntry = new Country(pId, pName, pDimensions, pStyle);
     }
     else {
-        first = new Country(pId, pName, pDimensions);
+        first = new Country(pId, pName, pDimensions, pStyle);
     }
 }
 
@@ -200,7 +200,11 @@ void List::printList() {
         while (auxPointer) {
             cout << "ID: " << auxPointer -> id << endl;
             cout << "Name: " << auxPointer -> name << endl;
-            cout << "Dimensions: " << auxPointer -> dimensions << endl;
+            cout << "Max X: " << auxPointer -> maxX << endl;
+            cout << "Max Y: " << auxPointer -> maxY << endl;
+            cout << "Min X: " << auxPointer -> minX << endl;
+            cout << "Min X: " << auxPointer -> minY << endl;
+            cout << "Color: " << auxPointer -> color << endl;
             cout << "#==============================#" << endl;
             cout << endl;
 
@@ -210,7 +214,11 @@ void List::printList() {
                 while (auxAdjPntr) {
                     cout << "ID: " << auxAdjPntr -> id << endl;
                     cout << "Name: " << auxAdjPntr -> name << endl;
-                    cout << "Dimensions: " << auxAdjPntr -> dimensions << endl;
+                    cout << "Max X: " << auxAdjPntr -> maxX << endl;
+                    cout << "Max Y: " << auxAdjPntr -> maxY << endl;
+                    cout << "Min X: " << auxAdjPntr -> minX << endl;
+                    cout << "Min X: " << auxAdjPntr -> minY << endl;
+                    cout << "Color: " << auxAdjPntr -> color << endl;
                     cout << "#==============================#" << endl;
                     cout << endl;
                     auxAdjPntr = auxAdjPntr -> nextCntry;

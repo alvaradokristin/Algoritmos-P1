@@ -6,6 +6,9 @@
 #define PROJECT_1_COUNTRY_H
 
 #include <string>
+#include <bits/stdc++.h>
+#include <vector>
+
 using namespace std;
 
 namespace headers {
@@ -17,16 +20,30 @@ namespace headers {
         friend class List;
 
     public:
-        Country(string pId, string pName, string pDimensions);
-        Country(string pId, string pName, string pDimensions, Country *pNextCountry);
-        Country(string pId, string pName, string pDimensions, Country *pNextCountry, Country *pAdjacentList);
+        Country(string pId, string pName, string pDimensions, string pStyle);
+        Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry);
+        Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry, Country *pAdjacentList);
+        void createCoordenates(string pData);
+        void addNewCoord(short pOption, short pElmtsAdded, string pCordenates);
+        string separateByChar(char pChar, string pText, short pPosition);
+        float findMin(vector<float> pVector);
+        float findMax(vector<float> pVector);
 
-    private:
+    //private:
         Country *nextCntry;
         Country *adjList;
         string id;
         string name;
         string dimensions;
+        string style;
+        string color;
+        bool isColored;
+        vector<float> xCoordenates;
+        vector<float> yCoordenates;
+        float maxX;
+        float maxY;
+        float minX;
+        float minY;
     };
 }
 
