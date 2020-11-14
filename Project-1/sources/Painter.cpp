@@ -9,4 +9,7 @@ Painter::Painter(int pNumber_Colors, string pRute_name){
 
 void Painter::to_update(){
 
+
+
+
 }

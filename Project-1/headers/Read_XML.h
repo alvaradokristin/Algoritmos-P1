@@ -18,7 +18,7 @@ struct readfile {
 // Function prototypes
 
     string getFile();                                        // Reads whole file into a string buffer
-    vector<string> getData(const string &text, string tag);  // Gets collection of items between given tags
+    vector<string> getData(const string &pText);  // Gets collection of items between given tags
 
 };
 #endif //ALGORITMOS_P1_READ_XML_H

@@ -17,17 +17,17 @@ string readfile::getFile()
     return buffer;
 }
 //======================================================================
-vector<string> getData( const string &text, string tag )
+vector<string> getData( const string &pText )
 {
     vector<string> collection;
     string buffer;
     bool pass = false;
 
-    for (int index = 0; index < text.length(); index++)
+    for (int index = 0; index < pText.length(); index++)
     {
-        if (text[index] == '<' and text[index+1] == 'p' and text[index+2] == 'a'){
+        if (pText[index] == '<' and pText[index+1] == 'p' and pText[index+2] == 'a'){
             pass = true;
-        }else if (text[index-2] == ' ' and text[index-1] == '/' and text[index] == '>'){
+        }else if (pText[index-2] == ' ' and pText[index-1] == '/' and pText[index] == '>'){
             pass = false;
             buffer += ">";
             if (buffer != " "){
@@ -36,7 +36,7 @@ vector<string> getData( const string &text, string tag )
             buffer = " ";
         }
         if (pass == true){
-            buffer += text[index];
+            buffer += pText[index];
         }
     }
     return collection;

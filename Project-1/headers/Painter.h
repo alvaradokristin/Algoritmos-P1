@@ -11,7 +11,6 @@ using namespace std;
 class Painter{
 
     Painter(int pNumber_Colors,string Rute_name);
-    vector<string> contries;
     int number_colors;
 
     void to_update();
