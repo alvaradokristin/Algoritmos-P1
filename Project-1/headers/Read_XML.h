@@ -12,13 +12,13 @@ using namespace std;
 struct readfile {
     string filename;
     bool stripOtherTags;
+    string tag;
     readfile(string pfilename);
 
 // Function prototypes
 
     string getFile();                                        // Reads whole file into a string buffer
     vector<string> getData(const string &text, string tag);  // Gets collection of items between given tags
-    void stripTags(string &text);                            // Strips any tags
 
 };
 #endif //ALGORITMOS_P1_READ_XML_H

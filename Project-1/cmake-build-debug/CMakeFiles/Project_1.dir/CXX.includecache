@@ -37,11 +37,30 @@ iostream
 -
 chrono
 -
-headers/Timer.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 headers/List.h
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 headers/Read_XML.h
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
 
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
+iostream
+-
+../headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
+iostream
+-
+../headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+../headers/List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Timer.cpp
+iostream
+-
+chrono
+-
+../headers/Timer.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 

@@ -10,12 +10,12 @@ using namespace std;
 
 class Painter{
 
-    Painter(int pNumber_Colors);
-
+    Painter(int pNumber_Colors,string Rute_name);
+    vector<string> contries;
     int number_colors;
 
-    
-
+    void to_update();
+    void paint_contries(vector<string> countries_and_colors);
 
 };
 

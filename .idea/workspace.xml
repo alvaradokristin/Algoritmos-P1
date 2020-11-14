@@ -42,9 +42,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -61,6 +61,7 @@
       <workItem from="1605201303943" duration="13274000" />
       <workItem from="1605244850394" duration="1745000" />
       <workItem from="1605247090286" duration="243000" />
+      <workItem from="1605247458520" duration="8753000" />
     </task>
     <servers />
   </component>
@@ -100,6 +101,10 @@
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
     <state x="-1219" y="74" key="SettingsEditor/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605101041933" />
+    <state x="0" y="0" width="587" height="728" key="find.popup" timestamp="1605285480565">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="587" height="728" key="find.popup/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605285480565" />
     <state x="-1057" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1605224969377">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
