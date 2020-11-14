@@ -12,8 +12,11 @@ class Painter{
 
     Painter(int pNumber_Colors,string Rute_name);
     int number_colors;
+    string SVG_text;
+    vector<string>countries;
+    vector<string>colors;
 
-    void to_update();
+    void to_update(string,string,vector<string>);
     void paint_contries(vector<string> countries_and_colors);
 
 };

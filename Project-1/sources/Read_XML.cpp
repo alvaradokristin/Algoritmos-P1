@@ -2,7 +2,6 @@
 readfile::readfile (string pFilename){
     filename= pFilename;
     stripOtherTags = true;
-    tag = "id";
 }
 //======================================================================
 string readfile::getFile()

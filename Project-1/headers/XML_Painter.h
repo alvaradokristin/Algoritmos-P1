@@ -10,13 +10,14 @@ using namespace std;
 
 class XML_Painter{
 
-    XML_Painter(int pColortouse);
+    XML_Painter(int pNumberColor);
 
     vector<string> totalcolors;
     vector<string> color_to_use;
-    vector<string> countries;
+    int numberofcolors;
 
-    void paint_contry ();
+    string paint_contry (string colors,int color);
+    void SingColors ();
 
 
 };

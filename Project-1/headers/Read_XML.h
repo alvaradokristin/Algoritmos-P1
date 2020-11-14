@@ -12,7 +12,6 @@ using namespace std;
 struct readfile {
     string filename;
     bool stripOtherTags;
-    string tag;
     readfile(string pfilename);
 
 // Function prototypes
@@ -21,7 +20,8 @@ struct readfile {
     vector<string> getData(const string &pText);  // Gets collection of items between given tags
 
 };
-#endif //ALGORITMOS_P1_READ_XML_H
+#endif
+//ALGORITMOS_P1_READ_XML_H
 /*
  * how to use the funtion in main
 int main()
