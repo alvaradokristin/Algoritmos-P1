@@ -59,7 +59,7 @@ void List::addEnd(string pId, string pName, string pDimensions, string pStyle) {
 }
 
 // This method will add the list of adjacent to a country
-void List::addAdjacent(string pId, Country *pAdjList) {
+/*void List::addAdjacent(Country *pcurrentCountry, Country *pAdjList) {
     if (!isListEmpty()) {
         pointerCntry auxPointer = first;
         bool isFound = false;
@@ -80,7 +80,17 @@ void List::addAdjacent(string pId, Country *pAdjList) {
     else {
         cout << "The list is empty" << endl;
     }
-}
+}*/
+
+// This method will add the list of adjacent to a country
+/*void List::addAdjacent(Country *pCurrentCntry, Country *pAdjList) {
+    if (pCurrentCntry) {
+        pCurrentCntry->adjList = pAdjList;
+    }
+    else {
+        cout << "The pointer is NULL" << endl;
+    }
+}*/
 
 // This method will remove the first country on the list
 void List::removeFirst() {
@@ -169,29 +179,31 @@ void List::moveToEnd() {
         while(current -> nextCntry) moveToNext();
 }
 
-// This method will print the list
-/*void List::printList() {
-    pointerCntry auxPointer;
-    auxPointer = first;
+// This method will review all countries to find the adjacents, create a list of them and link them to the current country
+void List::searchAdjacents() {
+    pointerCntry cntry = first;
 
-    if (!isListEmpty())
-    {
-        while (auxPointer)
-        {
-            cout << "ID: " << auxPointer -> id << endl;
-            cout << "Name: " << auxPointer -> name << endl;
-            cout << "Dimensions: " << auxPointer -> dimensions << endl;
-            cout << "#==============================#" << endl;
-            cout << endl;
-            auxPointer = auxPointer -> nextCntry;
+    for (int elementsLts = 0; elementsLts < listLength(); elementsLts++) {
+
+        pointerCntry cntryList = first;
+
+        for (int secElementLts = 0; secElementLts < listLength(); secElementLts++) {
+            if (elementsLts != secElementLts) {
+
+                if ((((cntryList -> maxY <= cntry -> maxY) && (cntryList -> maxY >= cntry -> minY)) || ((cntryList -> minY <= cntry -> maxY) && (cntryList -> minY >= cntry -> minY))) &&
+                        (((cntryList -> maxX <= cntry -> maxX) && (cntryList -> maxX >= cntry -> minX)) || ((cntryList -> minX <= cntry -> maxX) && (cntryList -> minX >= cntry -> minX)))) {
+                    cntry -> adjVector -> push_back(cntryList);
+                }
+            }
+
+            cntryList = cntryList -> nextCntry;
         }
-    }
-    else
-    {
-        cout << "The list is empty." << endl;
-    }
-}*/
 
+        cntry = cntry->nextCntry;
+    }
+}
+
+// This method will print the list
 void List::printList() {
     pointerCntry auxPointer = first;
 
@@ -208,21 +220,22 @@ void List::printList() {
             cout << "#==============================#" << endl;
             cout << endl;
 
-            if (auxPointer -> adjList) { // != NULL
-                pointerCntry auxAdjPntr = auxPointer -> adjList;
+            if (auxPointer -> adjVector -> size() > 0) { // != NULL
                 cout << "List of adjacents:" << endl;
-                while (auxAdjPntr) {
-                    cout << "ID: " << auxAdjPntr -> id << endl;
-                    cout << "Name: " << auxAdjPntr -> name << endl;
-                    cout << "Max X: " << auxAdjPntr -> maxX << endl;
-                    cout << "Max Y: " << auxAdjPntr -> maxY << endl;
-                    cout << "Min X: " << auxAdjPntr -> minX << endl;
-                    cout << "Min X: " << auxAdjPntr -> minY << endl;
-                    cout << "Color: " << auxAdjPntr -> color << endl;
+
+                for(auto elements : *auxPointer -> adjVector) {
+                    //elements -> updateColor(elements,"#4287f5");
+                    cout << "ID: " << elements -> id << endl;
+                    cout << "Name: " << elements -> name << endl;
+                    cout << "Max X: " << elements -> maxX << endl;
+                    cout << "Max Y: " << elements -> maxY << endl;
+                    cout << "Min X: " << elements -> minX << endl;
+                    cout << "Min X: " << elements -> minY << endl;
+                    cout << "Color: " << elements -> color << endl;
                     cout << "#==============================#" << endl;
                     cout << endl;
-                    auxAdjPntr = auxAdjPntr -> nextCntry;
                 }
+
                 cout << "The adjacents ends here!" << endl;
                 cout << endl;
             }

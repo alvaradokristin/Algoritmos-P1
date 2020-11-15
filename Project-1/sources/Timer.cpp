@@ -19,11 +19,11 @@ void Timer::startTimer(){
     start = high_resolution_clock::now();
 }
 
-void Timer::stopTimer() {
-    finish = high_resolution_clock::now();
+void Timer::timeStamp() {
+    point = high_resolution_clock::now();
 }
 
 void Timer::printTime() {
-    elapsed = finish - start;
+    elapsed = point - start;
     cout << "Execution time with " << ": " << elapsed.count() << " msseconds" << endl;
 }
