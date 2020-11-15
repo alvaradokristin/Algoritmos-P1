@@ -58,6 +58,11 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     adjList = pAdjacentList;
 }
 
+void Country::updateColor(Country *pCurrentCntry, string pNewColor) {
+    pCurrentCntry->color = pNewColor;
+    pCurrentCntry->style = "fill:" + pNewColor + ";fill-rule:evenodd";
+}
+
 string Country::separateByChar(char pChar, string pText, short pPosition) {
     string xCoor = "";
     string yCoor = "";

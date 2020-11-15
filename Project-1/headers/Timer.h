@@ -5,6 +5,9 @@
 #ifndef PROJECT_1_TIMER_H
 #define PROJECT_1_TIMER_H
 
+#include <iostream>
+#include <chrono>
+
 using namespace std;
 using namespace std::chrono;
 
@@ -16,12 +19,12 @@ namespace headers {
     public:
         Timer();
         void startTimer();
-        void stopTimer();
+        void timeStamp();
         void printTime();
 
     private:
         high_resolution_clock::time_point start;
-        high_resolution_clock::time_point  finish;
+        high_resolution_clock::time_point  point;
         duration<double, milli> elapsed;
     };
 }
@@ -32,5 +35,5 @@ namespace headers {
 /*Timer myTimer;
 myTimer.startTimer();
 // Operation that need to be measured
-myTimer.stopTimer();
+myTimer.timeStamp();
 myTimer.printTime();*/

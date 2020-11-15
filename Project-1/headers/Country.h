@@ -23,6 +23,7 @@ namespace headers {
         Country(string pId, string pName, string pDimensions, string pStyle);
         Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry);
         Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry, Country *pAdjacentList);
+        void updateColor(Country *pCurrentCntry, string pNewColor);
         void createCoordenates(string pData);
         void addNewCoord(short pOption, short pElmtsAdded, string pCordenates);
         string separateByChar(char pChar, string pText, short pPosition);

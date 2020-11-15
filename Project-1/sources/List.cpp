@@ -59,7 +59,7 @@ void List::addEnd(string pId, string pName, string pDimensions, string pStyle) {
 }
 
 // This method will add the list of adjacent to a country
-void List::addAdjacent(string pId, Country *pAdjList) {
+/*void List::addAdjacent(Country *pcurrentCountry, Country *pAdjList) {
     if (!isListEmpty()) {
         pointerCntry auxPointer = first;
         bool isFound = false;
@@ -79,6 +79,16 @@ void List::addAdjacent(string pId, Country *pAdjList) {
     }
     else {
         cout << "The list is empty" << endl;
+    }
+}*/
+
+// This method will add the list of adjacent to a country
+void List::addAdjacent(Country *pCurrentCntry, Country *pAdjList) {
+    if (pCurrentCntry) {
+        pCurrentCntry->adjList = pAdjList;
+    }
+    else {
+        cout << "The pointer is NULL" << endl;
     }
 }
 
@@ -169,6 +179,31 @@ void List::moveToEnd() {
         while(current -> nextCntry) moveToNext();
 }
 
+// This method will review all countries to find the adjacents, create a list of them and link them to the current country
+void List::searchAdjacents() {
+    pointerCntry elements = first;
+
+    for (int elementsLts = 0; elementsLts < listLength(); elementsLts++) {
+        List adjList;
+        pointerCntry secElements = first;
+        for (int secElementLts = 0; secElementLts < listLength(); secElementLts++) {
+
+            if (elementsLts != secElementLts) {
+
+                if ((((secElements->maxY <= elements->maxY) && (secElements->maxY >= elements->minY)) || ((secElements->minY <= elements->maxY) && (secElements->minY >= elements->minY))) &&
+                        (((secElements->maxX <= elements->maxX) && (secElements->maxX >= elements->minX)) || ((secElements->minX <= elements->maxX) && (secElements->minX >= elements->minX)))) {
+                    adjList.addEnd(secElements->id, secElements->name, secElements->dimensions, secElements->style);
+                }
+            }
+
+            secElements = secElements->nextCntry;
+        }
+
+        addAdjacent(elements, adjList.first);
+        elements = elements->nextCntry;
+    }
+}
+
 // This method will print the list
 /*void List::printList() {
     pointerCntry auxPointer;
@@ -192,6 +227,7 @@ void List::moveToEnd() {
     }
 }*/
 
+// This method will print the list
 void List::printList() {
     pointerCntry auxPointer = first;
 
