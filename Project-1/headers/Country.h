@@ -32,7 +32,7 @@ namespace headers {
 
     //private:
         Country *nextCntry;
-        Country *adjList;
+        vector<Country*> *adjVector;
         string id;
         string name;
         string dimensions;

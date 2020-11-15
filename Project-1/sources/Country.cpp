@@ -23,7 +23,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = NULL;
-    adjList = NULL;
+    adjVector = new vector<Country*>();
 }
 
 Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry) {
@@ -39,7 +39,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
-    adjList = NULL;
+    adjVector = new vector<Country*>();
 }
 
 Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry, Country *pAdjacentList) {
@@ -55,7 +55,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
-    adjList = pAdjacentList;
+    adjVector = new vector<Country*>();
 }
 
 void Country::updateColor(Country *pCurrentCntry, string pNewColor) {
