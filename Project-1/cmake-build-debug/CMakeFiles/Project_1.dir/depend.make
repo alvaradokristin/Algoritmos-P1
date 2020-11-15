@@ -3,7 +3,6 @@
 
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/Country.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/List.h
-CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/Read_XML.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/Project_1.dir/sources/Country.cpp.obj: ../headers/Country.h

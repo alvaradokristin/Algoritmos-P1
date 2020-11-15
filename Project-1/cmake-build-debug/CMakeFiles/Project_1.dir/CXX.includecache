@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
 bits/stdc++.h
@@ -14,53 +14,43 @@ bits/stdc++.h
 vector
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
-iostream
--
-fstream
--
-string
--
-vector
--
-cstdlib
--
-
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
-
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/main.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 iostream
 -
 chrono
 -
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp
+iostream
+-
+vector
+-
 headers/List.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
-headers/Read_XML.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
 iostream
 -
 ../headers/Country.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
 iostream
 -
 ../headers/Country.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 ../headers/List.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Timer.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Timer.cpp
 iostream
 -
 chrono
 -
 ../headers/Timer.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 

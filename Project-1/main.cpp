@@ -8,8 +8,6 @@
 using namespace headers;
 using namespace std;
 
-typedef Country *pointerCntry;
-
 int main() {
 
     //cout << "Hello, World!" << endl;
