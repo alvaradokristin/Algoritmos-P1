@@ -23,7 +23,7 @@ namespace headers {
         List();
         void addBeginning(string pId, string pName, string pDimensions, string pStyle);
         void addEnd(string pId, string pName, string pDimensions, string pStyle);
-        void addAdjacent(string Id, Country *pAdjList);
+        void addAdjacent(Country *pCurrentCntry, Country *pAdjList);
         void removeFirst();
         void removeLast();
         void removePos(int pPosition);
@@ -33,6 +33,7 @@ namespace headers {
         void moveToBeginning();
         void moveToEnd();
         int listLength();
+        void searchAdjacents();
 
     //private:
         pointerCntry first;
