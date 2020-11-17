@@ -18,12 +18,6 @@ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
-iostream
--
-chrono
--
-
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp
 iostream
 -
@@ -32,12 +26,6 @@ vector
 headers/List.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
-iostream
--
-../headers/Country.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
-
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
 iostream
 -
@@ -45,12 +33,4 @@ iostream
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 ../headers/List.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
-
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Timer.cpp
-iostream
--
-chrono
--
-../headers/Timer.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 

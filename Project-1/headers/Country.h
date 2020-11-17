@@ -22,7 +22,7 @@ namespace headers {
     public:
         Country(string pId, string pName, string pDimensions, string pStyle);
         Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry);
-        Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry, Country *pAdjacentList);
+        Country(string pId, string pName, string pDimensions, string pStyle, Country *pPrevCountry, Country *pNextCountry);
         void updateColor(Country *pCurrentCntry, string pNewColor);
         void createCoordenates(string pData);
         void addNewCoord(short pOption, short pElmtsAdded, string pCordenates);
@@ -32,6 +32,7 @@ namespace headers {
 
     //private:
         Country *nextCntry;
+        Country *prevCntry;
         vector<Country*> *adjVector;
         string id;
         string name;

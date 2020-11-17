@@ -11,7 +11,7 @@ using namespace std;
 
 typedef Country *pointerCntry;
 
-List::List() {first = current = NULL; }
+List::List() {first = NULL; }
 
 bool List::isListEmpty() { return first == NULL ;}
 
@@ -38,6 +38,7 @@ int List::listLength()
 void List::addBeginning(string pId, string pName, string pDimensions, string pStyle) {
     if (!isListEmpty()) {
         first = new Country(pId, pName, pDimensions, pStyle, first);
+        first -> nextCntry -> prevCntry = first;
     }
     else {
         first = new Country(pId, pName, pDimensions, pStyle);
@@ -52,54 +53,25 @@ void List::addEnd(string pId, string pName, string pDimensions, string pStyle) {
             auxPointer = auxPointer -> nextCntry;
         }
         auxPointer -> nextCntry = new Country(pId, pName, pDimensions, pStyle);
+        auxPointer -> nextCntry -> prevCntry = auxPointer;
     }
     else {
         first = new Country(pId, pName, pDimensions, pStyle);
     }
 }
 
-// This method will add the list of adjacent to a country
-/*void List::addAdjacent(Country *pcurrentCountry, Country *pAdjList) {
-    if (!isListEmpty()) {
-        pointerCntry auxPointer = first;
-        bool isFound = false;
-        while (auxPointer) { // -> nextCntry != NULL
-            if (auxPointer -> id == pId) {
-                isFound = true;
-                break;
-            }
-            auxPointer = auxPointer -> nextCntry;
-        }
-        if (isFound) {
-            auxPointer -> adjList = pAdjList;
-        }
-        else {
-            cout << "ID: " << pId << " not found" << endl;
-        }
-    }
-    else {
-        cout << "The list is empty" << endl;
-    }
-}*/
-
-// This method will add the list of adjacent to a country
-/*void List::addAdjacent(Country *pCurrentCntry, Country *pAdjList) {
-    if (pCurrentCntry) {
-        pCurrentCntry->adjList = pAdjList;
-    }
-    else {
-        cout << "The pointer is NULL" << endl;
-    }
-}*/
-
 // This method will remove the first country on the list
 void List::removeFirst() {
     if (!isListEmpty()){
+        pointerCntry auxPointer = first;
         if (first -> nextCntry != NULL) {
-            pointerCntry auxPointer = first;
             first = first -> nextCntry;
-            delete auxPointer;
+            first -> prevCntry = NULL;
         }
+        else {
+            first = NULL;
+        }
+        delete auxPointer;
     }
     else {
         cout << "The list is empty." << endl;
@@ -119,12 +91,12 @@ void List::removeLast() {
             }
             temporalPointer = auxPointer -> nextCntry;
             auxPointer -> nextCntry = NULL;
-            delete temporalPointer;
+            temporalPointer -> prevCntry = NULL;
         }
         else {
             first = NULL;
-            delete temporalPointer;
         }
+        delete temporalPointer;
     }
     else {
         cout << "The list is empty." << endl;
@@ -146,15 +118,59 @@ void List::removePos(int pPosition) {
             }
 
             temporalPointer = auxPointer -> nextCntry;
-            auxPointer -> nextCntry = auxPointer -> nextCntry -> nextCntry;
-            delete temporalPointer;
+            if (auxPointer -> nextCntry -> nextCntry) {
+                auxPointer -> nextCntry = auxPointer -> nextCntry -> nextCntry;
+                auxPointer -> nextCntry -> prevCntry = auxPointer;
+            }
+            else {
+                auxPointer -> nextCntry = NULL;
+            }
         }
         else if (pPosition == 1) {
             first = first -> nextCntry;
-            delete temporalPointer;
+            first -> prevCntry = NULL;
         }
         else {
             cout << "The position provided is not valid." << endl;
+        }
+        delete temporalPointer;
+    }
+    else {
+        cout << "The list is empty." << endl;
+    }
+}
+
+//This method will make the country that you want, the first country of the list
+void List::moveToBeginning(Country *pCurrentCntry) {
+    pointerCntry tempPointer = pCurrentCntry -> nextCntry;
+
+    if (!isListEmpty()) {
+        if ((listLength() > 2) && (pCurrentCntry != first)) {
+            if (tempPointer != NULL) {
+                tempPointer -> prevCntry = pCurrentCntry -> prevCntry;
+                pCurrentCntry -> prevCntry -> nextCntry = tempPointer;
+                pCurrentCntry -> nextCntry = first;
+                pCurrentCntry -> nextCntry -> prevCntry = pCurrentCntry;
+                pCurrentCntry -> prevCntry = NULL;
+                first = pCurrentCntry;
+            }
+            else if (tempPointer == NULL) {
+                pCurrentCntry -> prevCntry -> nextCntry = NULL;
+                pCurrentCntry -> nextCntry = first;
+                first -> prevCntry = pCurrentCntry;
+                first = pCurrentCntry;
+                first -> prevCntry = NULL;
+            }
+        }
+        else if ((pCurrentCntry == first) || (listLength() == 1)){
+            cout << "This country is already at the beginning" << endl;
+        }
+        else { // The list length is 2 and the second country will become first
+            pCurrentCntry -> nextCntry = first;
+            first -> prevCntry = pCurrentCntry;
+            first -> nextCntry = NULL;
+            pCurrentCntry -> prevCntry = NULL;
+            first = pCurrentCntry;
         }
     }
     else {
@@ -162,22 +178,51 @@ void List::removePos(int pPosition) {
     }
 }
 
-//This method will move actual to the first node
-void List::moveToBeginning() {
-    current = first;
+// This method will move the country you want besides the country you need (before that country)
+void List::moveBefore(Country *pCurrentCntry, Country *pBeforeThis) {
+
+    if (!isListEmpty()) {
+        if ((pCurrentCntry != pBeforeThis) && (pCurrentCntry -> nextCntry != pBeforeThis)) {
+            if ((pCurrentCntry -> nextCntry != NULL) && (pBeforeThis != first) && (pCurrentCntry != first)) {
+                pCurrentCntry -> prevCntry -> nextCntry = pCurrentCntry -> nextCntry;
+                pCurrentCntry -> nextCntry -> prevCntry = pCurrentCntry -> prevCntry;
+                pCurrentCntry -> prevCntry = pBeforeThis -> prevCntry;
+                pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
+                pBeforeThis -> prevCntry = pCurrentCntry;
+                pCurrentCntry -> nextCntry = pBeforeThis;
+            }
+            else if ((pBeforeThis == first) || (listLength() == 2) && (pCurrentCntry != first)) {
+                moveToBeginning(pCurrentCntry);
+            }
+            else if ((pCurrentCntry -> nextCntry == NULL) && ((pCurrentCntry != first))) {
+                pCurrentCntry -> prevCntry -> nextCntry = NULL;
+                pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
+                pCurrentCntry -> nextCntry = pBeforeThis;
+                pCurrentCntry -> prevCntry = pBeforeThis -> prevCntry;
+                pBeforeThis -> prevCntry = pCurrentCntry;
+            }
+            else if (pCurrentCntry == first) {
+                first = pCurrentCntry -> nextCntry;
+                first -> prevCntry = NULL;
+                pCurrentCntry -> nextCntry = pBeforeThis;
+                pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
+                pCurrentCntry -> prevCntry = pBeforeThis -> prevCntry;
+                pBeforeThis -> prevCntry = pCurrentCntry;
+            }
+        }
+        else {
+            cout << "The country is already at the correct position" << endl;
+        }
+    }
+    else {
+        cout << "The list is empty." << endl;
+    }
 }
 
-// This method will move actual pointer to the next node
-void List::moveToNext() {
-    if (current) current = current -> nextCntry;
-}
+// This method will move the country to the end of the list
+/*void List::moveToEnd(Country *pCurrentCntry) {
 
-// This method will move actual to the final node
-void List::moveToEnd() {
-    current = first;
-    if(!isListEmpty())
-        while(current -> nextCntry) moveToNext();
-}
+}*/
 
 // This method will review all countries to find the adjacents, create a list of them and link them to the current country
 void List::searchAdjacents() {
