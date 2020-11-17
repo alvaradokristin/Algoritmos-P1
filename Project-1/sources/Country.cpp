@@ -16,8 +16,9 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     id = pId;
     name = pName;
     dimensions = pDimensions;
-    style = pStyle;
     createCoordenates(pDimensions); // This will populate the vectors
+    style = pStyle;
+    isColored = false;
     maxX = findMax(xCoordenates);
     maxY = findMax(yCoordenates);
     minX = findMin(xCoordenates);
@@ -35,6 +36,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     name = pName;
     dimensions = pDimensions;
     style = pStyle;
+    isColored = false;
     createCoordenates(pDimensions); // This will populate the vectors
     maxX = findMax(xCoordenates);
     maxY = findMax(yCoordenates);
@@ -53,6 +55,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     name = pName;
     dimensions = pDimensions;
     style = pStyle;
+    isColored = false;
     createCoordenates(pDimensions); // This will populate the vectors
     maxX = findMax(xCoordenates);
     maxY = findMax(yCoordenates);
@@ -64,9 +67,10 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     adjVector = new vector<Country*>();
 }
 
-void Country::updateColor(Country *pCurrentCntry, string pNewColor) {
-    pCurrentCntry->color = pNewColor;
-    pCurrentCntry->style = "fill:" + pNewColor + ";fill-rule:evenodd";
+void Country::updateColor(string pNewColor) { // Country *pCurrentCntry,
+    color = pNewColor;
+    style = "fill:" + pNewColor + ";fill-rule:evenodd";
+    isColored = true;
 }
 
 string Country::separateByChar(char pChar, string pText, short pPosition) {
