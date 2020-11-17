@@ -67,6 +67,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
 void Country::updateColor(Country *pCurrentCntry, string pNewColor) {
     pCurrentCntry->color = pNewColor;
     pCurrentCntry->style = "fill:" + pNewColor + ";fill-rule:evenodd";
+    pCurrentCntry->isColored = true;
 }
 
 string Country::separateByChar(char pChar, string pText, short pPosition) {
