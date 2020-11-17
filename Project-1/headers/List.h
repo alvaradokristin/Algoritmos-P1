@@ -29,15 +29,15 @@ namespace headers {
         void removePos(int pPosition);
         bool isListEmpty();
         void printList();
-        void moveToNext();
-        void moveToBeginning();
-        void moveToEnd();
+        //void moveToNext();
+        void moveToBeginning(Country *pCurrentCntry);
+        void moveBefore(Country *pCurrentCntry, Country *pBeforeThis);
+        //void moveToEnd(Country *pCurrentCntry);
         int listLength();
         void searchAdjacents();
 
     //private:
         pointerCntry first;
-        pointerCntry current;
     };
 }
 
@@ -58,5 +58,32 @@ namespace headers {
     myList.searchAdjacents();
 
      myList.first->adjVector->at(2)->updateColor(myList.first->adjVector->at(2), "#252525");
+
+    myList.printList();*/
+
+// Another test:
+    /*myList.addBeginning("YT", "Mayotte", d1, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("SB", "Solomon Is.", d2, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT2", "Mayotte2", d1, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT3", "Mayotte3", d1, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT4", "Mayotte4", d1, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT5", "Mayotte5", d1, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT6", "Mayotte6", d2, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT7", "Mayotte7", d2, "fill:#f2f2f2;fill-rule:evenodd");
+    myList.addEnd("YT8", "Mayotte8", d2, "fill:#f2f2f2;fill-rule:evenodd");
+
+    myList.printList();
+
+    cout << "Let's move some countries" << endl;
+    pointerCntry  temp = myList.first -> nextCntry -> nextCntry -> nextCntry -> nextCntry -> nextCntry; // YT5
+    pointerCntry  temp2 = myList.first -> nextCntry -> nextCntry -> nextCntry -> nextCntry; // YT4
+    pointerCntry  tempBefore = myList.first -> nextCntry;
+
+    myList.moveBefore(temp, tempBefore);
+    myList.moveBefore(temp2, tempBefore);
+    //myList.moveBefore(temp2, myList.first);
+    myList.moveBefore(myList.first, temp2);
+
+    //myList.searchAdjacents();
 
     myList.printList();*/

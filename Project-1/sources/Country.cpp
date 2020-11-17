@@ -10,6 +10,7 @@ using namespace std;
 
 typedef Country *pointerCntry;
 
+// This is the basic constructor
 Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     string text = separateByChar(';', pStyle, 1);
     id = pId;
@@ -23,9 +24,11 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = NULL;
+    prevCntry = NULL;
     adjVector = new vector<Country*>();
 }
 
+// This constructor is used when the new contry will be added at the beginning of the list, pNextCountry is the previous first country of the list
 Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry) {
     string text = separateByChar(';', pStyle, 1);
     id = pId;
@@ -39,10 +42,12 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
+    prevCntry = NULL;
     adjVector = new vector<Country*>();
 }
 
-Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry, Country *pAdjacentList) {
+// This constructor is used when the country is created and it has a previous country, as an example, if the new country is added at the end of the list
+Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pPrevCountry, Country *pNextCountry) {
     string text = separateByChar(';', pStyle, 1);
     id = pId;
     name = pName;
@@ -55,6 +60,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
+    prevCntry = pPrevCountry;
     adjVector = new vector<Country*>();
 }
 
