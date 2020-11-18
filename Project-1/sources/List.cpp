@@ -11,7 +11,7 @@ using namespace std;
 
 typedef Country *pointerCntry;
 
-List::List() {first = current = NULL; }
+List::List() {first = NULL; }
 
 bool List::isListEmpty() { return first == NULL ;}
 
@@ -38,6 +38,7 @@ int List::listLength()
 void List::addBeginning(string pId, string pName, string pDimensions, string pStyle) {
     if (!isListEmpty()) {
         first = new Country(pId, pName, pDimensions, pStyle, first);
+        first -> nextCntry -> prevCntry = first;
     }
     else {
         first = new Country(pId, pName, pDimensions, pStyle);
@@ -52,54 +53,25 @@ void List::addEnd(string pId, string pName, string pDimensions, string pStyle) {
             auxPointer = auxPointer -> nextCntry;
         }
         auxPointer -> nextCntry = new Country(pId, pName, pDimensions, pStyle);
+        auxPointer -> nextCntry -> prevCntry = auxPointer;
     }
     else {
         first = new Country(pId, pName, pDimensions, pStyle);
     }
 }
 
-// This method will add the list of adjacent to a country
-/*void List::addAdjacent(Country *pcurrentCountry, Country *pAdjList) {
-    if (!isListEmpty()) {
-        pointerCntry auxPointer = first;
-        bool isFound = false;
-        while (auxPointer) { // -> nextCntry != NULL
-            if (auxPointer -> id == pId) {
-                isFound = true;
-                break;
-            }
-            auxPointer = auxPointer -> nextCntry;
-        }
-        if (isFound) {
-            auxPointer -> adjList = pAdjList;
-        }
-        else {
-            cout << "ID: " << pId << " not found" << endl;
-        }
-    }
-    else {
-        cout << "The list is empty" << endl;
-    }
-}*/
-
-// This method will add the list of adjacent to a country
-void List::addAdjacent(Country *pCurrentCntry, Country *pAdjList) {
-    if (pCurrentCntry) {
-        pCurrentCntry->adjList = pAdjList;
-    }
-    else {
-        cout << "The pointer is NULL" << endl;
-    }
-}
-
 // This method will remove the first country on the list
 void List::removeFirst() {
     if (!isListEmpty()){
+        pointerCntry auxPointer = first;
         if (first -> nextCntry != NULL) {
-            pointerCntry auxPointer = first;
             first = first -> nextCntry;
-            delete auxPointer;
+            first -> prevCntry = NULL;
         }
+        else {
+            first = NULL;
+        }
+        delete auxPointer;
     }
     else {
         cout << "The list is empty." << endl;
@@ -119,12 +91,12 @@ void List::removeLast() {
             }
             temporalPointer = auxPointer -> nextCntry;
             auxPointer -> nextCntry = NULL;
-            delete temporalPointer;
+            temporalPointer -> prevCntry = NULL;
         }
         else {
             first = NULL;
-            delete temporalPointer;
         }
+        delete temporalPointer;
     }
     else {
         cout << "The list is empty." << endl;
@@ -146,15 +118,59 @@ void List::removePos(int pPosition) {
             }
 
             temporalPointer = auxPointer -> nextCntry;
-            auxPointer -> nextCntry = auxPointer -> nextCntry -> nextCntry;
-            delete temporalPointer;
+            if (auxPointer -> nextCntry -> nextCntry) {
+                auxPointer -> nextCntry = auxPointer -> nextCntry -> nextCntry;
+                auxPointer -> nextCntry -> prevCntry = auxPointer;
+            }
+            else {
+                auxPointer -> nextCntry = NULL;
+            }
         }
         else if (pPosition == 1) {
             first = first -> nextCntry;
-            delete temporalPointer;
+            first -> prevCntry = NULL;
         }
         else {
             cout << "The position provided is not valid." << endl;
+        }
+        delete temporalPointer;
+    }
+    else {
+        cout << "The list is empty." << endl;
+    }
+}
+
+//This method will make the country that you want, the first country of the list
+void List::moveToBeginning(Country *pCurrentCntry) {
+    pointerCntry tempPointer = pCurrentCntry -> nextCntry;
+
+    if (!isListEmpty()) {
+        if ((listLength() > 2) && (pCurrentCntry != first)) {
+            if (tempPointer != NULL) {
+                tempPointer -> prevCntry = pCurrentCntry -> prevCntry;
+                pCurrentCntry -> prevCntry -> nextCntry = tempPointer;
+                pCurrentCntry -> nextCntry = first;
+                pCurrentCntry -> nextCntry -> prevCntry = pCurrentCntry;
+                pCurrentCntry -> prevCntry = NULL;
+                first = pCurrentCntry;
+            }
+            else if (tempPointer == NULL) {
+                pCurrentCntry -> prevCntry -> nextCntry = NULL;
+                pCurrentCntry -> nextCntry = first;
+                first -> prevCntry = pCurrentCntry;
+                first = pCurrentCntry;
+                first -> prevCntry = NULL;
+            }
+        }
+        else if ((pCurrentCntry == first) || (listLength() == 1)){
+            cout << "This country is already at the beginning" << endl;
+        }
+        else { // The list length is 2 and the second country will become first
+            pCurrentCntry -> nextCntry = first;
+            first -> prevCntry = pCurrentCntry;
+            first -> nextCntry = NULL;
+            pCurrentCntry -> prevCntry = NULL;
+            first = pCurrentCntry;
         }
     }
     else {
@@ -162,70 +178,75 @@ void List::removePos(int pPosition) {
     }
 }
 
-//This method will move actual to the first node
-void List::moveToBeginning() {
-    current = first;
+// This method will move the country you want besides the country you need (before that country)
+void List::moveBefore(Country *pCurrentCntry, Country *pBeforeThis) {
+
+    if (!isListEmpty()) {
+        if ((pCurrentCntry != pBeforeThis) && (pCurrentCntry -> nextCntry != pBeforeThis)) {
+            if ((pCurrentCntry -> nextCntry != NULL) && (pBeforeThis != first) && (pCurrentCntry != first)) {
+                pCurrentCntry -> prevCntry -> nextCntry = pCurrentCntry -> nextCntry;
+                pCurrentCntry -> nextCntry -> prevCntry = pCurrentCntry -> prevCntry;
+                pCurrentCntry -> prevCntry = pBeforeThis -> prevCntry;
+                pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
+                pBeforeThis -> prevCntry = pCurrentCntry;
+                pCurrentCntry -> nextCntry = pBeforeThis;
+            }
+            else if ((pBeforeThis == first) || (listLength() == 2) && (pCurrentCntry != first)) {
+                moveToBeginning(pCurrentCntry);
+            }
+            else if ((pCurrentCntry -> nextCntry == NULL) && ((pCurrentCntry != first))) {
+                pCurrentCntry -> prevCntry -> nextCntry = NULL;
+                pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
+                pCurrentCntry -> nextCntry = pBeforeThis;
+                pCurrentCntry -> prevCntry = pBeforeThis -> prevCntry;
+                pBeforeThis -> prevCntry = pCurrentCntry;
+            }
+            else if (pCurrentCntry == first) {
+                first = pCurrentCntry -> nextCntry;
+                first -> prevCntry = NULL;
+                pCurrentCntry -> nextCntry = pBeforeThis;
+                pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
+                pCurrentCntry -> prevCntry = pBeforeThis -> prevCntry;
+                pBeforeThis -> prevCntry = pCurrentCntry;
+            }
+        }
+        else {
+            cout << "The country is already at the correct position" << endl;
+        }
+    }
+    else {
+        cout << "The list is empty." << endl;
+    }
 }
 
-// This method will move actual pointer to the next node
-void List::moveToNext() {
-    if (current) current = current -> nextCntry;
-}
+// This method will move the country to the end of the list
+/*void List::moveToEnd(Country *pCurrentCntry) {
 
-// This method will move actual to the final node
-void List::moveToEnd() {
-    current = first;
-    if(!isListEmpty())
-        while(current -> nextCntry) moveToNext();
-}
+}*/
 
 // This method will review all countries to find the adjacents, create a list of them and link them to the current country
 void List::searchAdjacents() {
-    pointerCntry elements = first;
+    pointerCntry cntry = first;
 
     for (int elementsLts = 0; elementsLts < listLength(); elementsLts++) {
-        List adjList;
-        pointerCntry secElements = first;
-        for (int secElementLts = 0; secElementLts < listLength(); secElementLts++) {
 
+        pointerCntry cntryList = first;
+
+        for (int secElementLts = 0; secElementLts < listLength(); secElementLts++) {
             if (elementsLts != secElementLts) {
 
-                if ((((secElements->maxY <= elements->maxY) && (secElements->maxY >= elements->minY)) || ((secElements->minY <= elements->maxY) && (secElements->minY >= elements->minY))) &&
-                        (((secElements->maxX <= elements->maxX) && (secElements->maxX >= elements->minX)) || ((secElements->minX <= elements->maxX) && (secElements->minX >= elements->minX)))) {
-                    adjList.addEnd(secElements->id, secElements->name, secElements->dimensions, secElements->style);
+                if ((((cntryList -> maxY <= cntry -> maxY) && (cntryList -> maxY >= cntry -> minY)) || ((cntryList -> minY <= cntry -> maxY) && (cntryList -> minY >= cntry -> minY))) &&
+                        (((cntryList -> maxX <= cntry -> maxX) && (cntryList -> maxX >= cntry -> minX)) || ((cntryList -> minX <= cntry -> maxX) && (cntryList -> minX >= cntry -> minX)))) {
+                    cntry -> adjVector -> push_back(cntryList);
                 }
             }
 
-            secElements = secElements->nextCntry;
+            cntryList = cntryList -> nextCntry;
         }
 
-        addAdjacent(elements, adjList.first);
-        elements = elements->nextCntry;
+        cntry = cntry->nextCntry;
     }
 }
-
-// This method will print the list
-/*void List::printList() {
-    pointerCntry auxPointer;
-    auxPointer = first;
-
-    if (!isListEmpty())
-    {
-        while (auxPointer)
-        {
-            cout << "ID: " << auxPointer -> id << endl;
-            cout << "Name: " << auxPointer -> name << endl;
-            cout << "Dimensions: " << auxPointer -> dimensions << endl;
-            cout << "#==============================#" << endl;
-            cout << endl;
-            auxPointer = auxPointer -> nextCntry;
-        }
-    }
-    else
-    {
-        cout << "The list is empty." << endl;
-    }
-}*/
 
 // This method will print the list
 void List::printList() {
@@ -244,21 +265,22 @@ void List::printList() {
             cout << "#==============================#" << endl;
             cout << endl;
 
-            if (auxPointer -> adjList) { // != NULL
-                pointerCntry auxAdjPntr = auxPointer -> adjList;
+            if (auxPointer -> adjVector -> size() > 0) { // != NULL
                 cout << "List of adjacents:" << endl;
-                while (auxAdjPntr) {
-                    cout << "ID: " << auxAdjPntr -> id << endl;
-                    cout << "Name: " << auxAdjPntr -> name << endl;
-                    cout << "Max X: " << auxAdjPntr -> maxX << endl;
-                    cout << "Max Y: " << auxAdjPntr -> maxY << endl;
-                    cout << "Min X: " << auxAdjPntr -> minX << endl;
-                    cout << "Min X: " << auxAdjPntr -> minY << endl;
-                    cout << "Color: " << auxAdjPntr -> color << endl;
+
+                for(auto elements : *auxPointer -> adjVector) {
+                    //elements -> updateColor(elements,"#4287f5");
+                    cout << "ID: " << elements -> id << endl;
+                    cout << "Name: " << elements -> name << endl;
+                    cout << "Max X: " << elements -> maxX << endl;
+                    cout << "Max Y: " << elements -> maxY << endl;
+                    cout << "Min X: " << elements -> minX << endl;
+                    cout << "Min X: " << elements -> minY << endl;
+                    cout << "Color: " << elements -> color << endl;
                     cout << "#==============================#" << endl;
                     cout << endl;
-                    auxAdjPntr = auxAdjPntr -> nextCntry;
                 }
+
                 cout << "The adjacents ends here!" << endl;
                 cout << endl;
             }

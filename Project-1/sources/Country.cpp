@@ -10,28 +10,33 @@ using namespace std;
 
 typedef Country *pointerCntry;
 
+// This is the basic constructor
 Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     string text = separateByChar(';', pStyle, 1);
     id = pId;
     name = pName;
     dimensions = pDimensions;
-    style = pStyle;
     createCoordenates(pDimensions); // This will populate the vectors
+    style = pStyle;
+    isColored = false;
     maxX = findMax(xCoordenates);
     maxY = findMax(yCoordenates);
     minX = findMin(xCoordenates);
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = NULL;
-    adjList = NULL;
+    prevCntry = NULL;
+    adjVector = new vector<Country*>();
 }
 
+// This constructor is used when the new contry will be added at the beginning of the list, pNextCountry is the previous first country of the list
 Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry) {
     string text = separateByChar(';', pStyle, 1);
     id = pId;
     name = pName;
     dimensions = pDimensions;
     style = pStyle;
+    isColored = false;
     createCoordenates(pDimensions); // This will populate the vectors
     maxX = findMax(xCoordenates);
     maxY = findMax(yCoordenates);
@@ -39,15 +44,18 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
-    adjList = NULL;
+    prevCntry = NULL;
+    adjVector = new vector<Country*>();
 }
 
-Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry, Country *pAdjacentList) {
+// This constructor is used when the country is created and it has a previous country, as an example, if the new country is added at the end of the list
+Country::Country(string pId, string pName, string pDimensions, string pStyle, Country *pPrevCountry, Country *pNextCountry) {
     string text = separateByChar(';', pStyle, 1);
     id = pId;
     name = pName;
     dimensions = pDimensions;
     style = pStyle;
+    isColored = false;
     createCoordenates(pDimensions); // This will populate the vectors
     maxX = findMax(xCoordenates);
     maxY = findMax(yCoordenates);
@@ -55,12 +63,14 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = findMin(yCoordenates);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
-    adjList = pAdjacentList;
+    prevCntry = pPrevCountry;
+    adjVector = new vector<Country*>();
 }
 
-void Country::updateColor(Country *pCurrentCntry, string pNewColor) {
-    pCurrentCntry->color = pNewColor;
-    pCurrentCntry->style = "fill:" + pNewColor + ";fill-rule:evenodd";
+void Country::updateColor(string pNewColor) { // Country *pCurrentCntry,
+    color = pNewColor;
+    style = "fill:" + pNewColor + ";fill-rule:evenodd";
+    isColored = true;
 }
 
 string Country::separateByChar(char pChar, string pText, short pPosition) {
