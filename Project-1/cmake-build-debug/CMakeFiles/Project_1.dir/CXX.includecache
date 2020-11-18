@@ -26,3 +26,17 @@ vector
 headers/List.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
+iostream
+-
+../headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
+iostream
+-
+../headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+../headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
+

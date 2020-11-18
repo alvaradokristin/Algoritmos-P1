@@ -276,11 +276,10 @@ void List::printList() {
             cout << "#==============================#" << endl;
             cout << endl;
 
-            if (auxPointer -> adjVector -> size() > 0) { // != NULL
+            if (auxPointer -> adjVector != NULL) { //-> size() > 0
                 cout << "List of adjacents:" << endl;
 
                 for(auto elements : *auxPointer -> adjVector) {
-                    //elements -> updateColor(elements,"#4287f5");
                     cout << "ID: " << elements -> id << endl;
                     cout << "Name: " << elements -> name << endl;
                     cout << "Max X: " << elements -> maxX << endl;
@@ -298,8 +297,7 @@ void List::printList() {
             auxPointer = auxPointer -> nextCntry;
         }
     }
-    else
-    {
+    else {
         cout << "The list is empty." << endl;
     }
 }

@@ -24,11 +24,9 @@ namespace headers {
         Country(string pId, string pName, string pDimensions, string pStyle, Country *pNextCountry);
         Country(string pId, string pName, string pDimensions, string pStyle, Country *pPrevCountry, Country *pNextCountry);
         void updateColor(string pNewColor);
-        void createCoordenates(string pData);
-        void addNewCoord(short pOption, short pElmtsAdded, string pCordenates);
         string separateByChar(char pChar, string pText, short pPosition);
-        float findMin(vector<float> pVector);
-        float findMax(vector<float> pVector);
+        float setMax(string pData, int pOption);
+        float setMin(string pData, int pOption);
 
     //private:
         Country *nextCntry;
@@ -40,8 +38,6 @@ namespace headers {
         string style;
         string color;
         bool isColored;
-        vector<float> xCoordenates;
-        vector<float> yCoordenates;
         float maxX;
         float maxY;
         float minX;

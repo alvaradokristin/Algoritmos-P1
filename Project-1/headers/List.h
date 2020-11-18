@@ -58,7 +58,7 @@ namespace headers {
 
     myList.searchAdjacents();
 
-     myList.first->adjVector->at(2)->updateColor(myList.first->adjVector->at(2), "#252525");
+     myList.first->adjVector->at(2)->updateColor("#252525");
 
     myList.printList();*/
 
