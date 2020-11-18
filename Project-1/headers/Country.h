@@ -4,7 +4,6 @@
 
 #ifndef PROJECT_1_COUNTRY_H
 #define PROJECT_1_COUNTRY_H
-
 #include <string>
 #include <bits/stdc++.h>
 #include <vector>

@@ -21,22 +21,3 @@ struct readfile {
 
 };
 #endif
-//ALGORITMOS_P1_READ_XML_H
-/*
- * how to use the funtion in main
-int main()
-{string filename = "C:\\Users\\famil\\Downloads\\archivo.xml";
-    string tag = "id";
-    bool stripOtherTags = true;
-
-    string text = getFile( filename );
-    cout<<text<<endl;
-    vector<string> all = getData( text, tag );
-    for ( string &s : all )
-    {
-        if ( stripOtherTags ) stripTags( s );
-        cout << s << '\n';
-
-    }
-}
-*/
