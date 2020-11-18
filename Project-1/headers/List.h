@@ -38,6 +38,7 @@ namespace headers {
 
     //private:
         pointerCntry first;
+        pointerCntry last;
     };
 }
 
