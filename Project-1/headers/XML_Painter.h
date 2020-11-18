@@ -8,17 +8,16 @@
 #include <cstdlib>
 using namespace std;
 
-class XML_Painter{
+class XMLPainter{
 
-    XML_Painter(int pNumberColor);
+public:
+    XMLPainter();
 
     vector<string> totalcolors;
     vector<string> color_to_use;
     int numberofcolors;
 
-    string paint_contry (string colors,int color);
+    string paint_contry (string pCountry,int color);
     void SingColors ();
-
-
 };
 #endif //PROJECT_1_XML_PAINTER_H

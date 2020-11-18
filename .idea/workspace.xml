@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="Project_1" targetName="Project_1" />
@@ -34,7 +37,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager">
     <configuration name="Project_1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_1" TARGET_NAME="Project_1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project_1" RUN_TARGET_NAME="Project_1">
@@ -59,6 +63,10 @@
       <workItem from="1605247458520" duration="10034000" />
       <workItem from="1605369840426" duration="8745000" />
       <workItem from="1605454310706" duration="870000" />
+      <workItem from="1605488739857" duration="1948000" />
+      <workItem from="1605573284418" duration="5487000" />
+      <workItem from="1605623721550" duration="6161000" />
+      <workItem from="1605670984938" duration="1008000" />
     </task>
     <servers />
   </component>
@@ -66,38 +74,44 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="123" y="13" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604991951782">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="130" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605629293991">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="123" y="13" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1604991951782" />
+    <state x="130" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605629293991" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1604991977736">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1604991977736" />
-    <state width="1397" height="178" key="GridCell.Tab.0.bottom" timestamp="1605367721522">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state width="1397" height="178" key="GridCell.Tab.0.bottom" timestamp="1605670952555">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721522" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060877" />
-    <state width="1397" height="178" key="GridCell.Tab.0.center" timestamp="1605367721521">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state width="1397" height="178" key="GridCell.Tab.0.bottom/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952555" />
+    <state width="1397" height="178" key="GridCell.Tab.0.center" timestamp="1605670952551">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721521" />
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060876" />
-    <state width="1397" height="178" key="GridCell.Tab.0.left" timestamp="1605367721521">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state width="1397" height="178" key="GridCell.Tab.0.center/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952551" />
+    <state width="1397" height="178" key="GridCell.Tab.0.left" timestamp="1605670952547">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721521" />
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060874" />
-    <state width="1397" height="178" key="GridCell.Tab.0.right" timestamp="1605367721521">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state width="1397" height="178" key="GridCell.Tab.0.left/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952547" />
+    <state width="1397" height="178" key="GridCell.Tab.0.right" timestamp="1605670952552">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721521" />
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060876" />
-    <state x="-1219" y="74" key="SettingsEditor" timestamp="1605101041933">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state width="1397" height="178" key="GridCell.Tab.0.right/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952552" />
+    <state x="208" y="57" key="SettingsEditor" timestamp="1605629353070">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="-1219" y="74" key="SettingsEditor/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605101041933" />
+    <state x="208" y="57" key="SettingsEditor/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605629353070" />
     <state x="0" y="0" width="587" height="728" key="find.popup" timestamp="1605285480565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

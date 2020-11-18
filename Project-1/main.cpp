@@ -26,10 +26,10 @@ int main() {
 
     myList3.addBeginning("YT4", "Mayotte4", d1, "fill:#f25252;fill-rule:evenodd");
 
-    myList.addAdjacent("YT", myList2.first);
-    myList.addAdjacent("SB", myList3.first);
+    //myList.addAdjacent("YT", myList2.first);
+    //myList.addAdjacent("SB", myList3.first);
 
-    myList.printList();
+    //myList.printList();
 
     return 0;
 }
