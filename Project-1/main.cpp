@@ -5,6 +5,7 @@
 //#include "headers/Timer.h"
 #include "headers/List.h"
 #include "sources/Read_XML.cpp"
+#include "sources/XML_Painter.cpp"
 
 using namespace headers;
 using namespace std;
@@ -21,5 +22,11 @@ int main() {
     {
         cout << s << '\n';
     }
+
+    
+
+
     return 0;
+
+
 }
