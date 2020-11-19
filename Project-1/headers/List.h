@@ -18,6 +18,7 @@ namespace headers {
     class List {
 
         friend class Country;
+        friend class Dynamic;
 
     public:
         List();
