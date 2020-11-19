@@ -9,34 +9,16 @@
 
 using namespace std;
 
+struct readfile;
+
 struct readfile {
+    
     string filename;
-    bool stripOtherTags;
-    string tag;
-    readfile(string pfilename);
 
 // Function prototypes
-
-    string getFile(); // Reads whole file into a string buffer
-    vector<string> getData(const string &pText);  // Gets collection of items between given tags
+    readfile(string pFilename);
+    string getFile();                      // Reads whole file into a string buffer
+    vector<string> getData(string pText);  // Gets collection of items between given tags
 
 };
-#endif //ALGORITMOS_P1_READ_XML_H
-/*
- * how to use the funtion in main
-int main()
-{string filename = "C:\\Users\\famil\\Downloads\\archivo.xml";
-    string tag = "id";
-    bool stripOtherTags = true;
-
-    string text = getFile( filename );
-    cout<<text<<endl;
-    vector<string> all = getData( text, tag );
-    for ( string &s : all )
-    {
-        if ( stripOtherTags ) stripTags( s );
-        cout << s << '\n';
-
-    }
-}
-*/
+#endif
