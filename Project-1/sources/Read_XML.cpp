@@ -1,7 +1,6 @@
 #include "../headers/Read_XML.h"
-readfile::readfile (string pFilename){
-    filename= pFilename;
-    stripOtherTags = true;
+readfile::readfile (string pFilename) {
+    filename = pFilename;
 }
 //======================================================================
 string readfile::getFile()
@@ -13,10 +12,12 @@ string readfile::getFile()
     while ( in.get( c ) ) buffer += c;
     in.close();
 
+    cout<<buffer<<endl;
+
     return buffer;
 }
 //======================================================================
-vector<string> getData( const string &pText )
+vector<string> readfile::getData(string pText )
 {
     vector<string> collection;
     string buffer;

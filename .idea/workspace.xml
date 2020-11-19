@@ -46,11 +46,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,6 +68,8 @@
       <workItem from="1605623721550" duration="6161000" />
       <workItem from="1605670984938" duration="1008000" />
       <workItem from="1605689687388" duration="2605000" />
+      <workItem from="1605714670953" duration="8928000" />
+      <workItem from="1605759354843" duration="1456000" />
     </task>
     <servers />
   </component>
@@ -85,34 +82,35 @@
     </state>
     <state x="123" y="13" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1604991951782" />
     <state x="130" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605629293991" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1604991977736">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="488" y="139" key="FileChooserDialogImpl" timestamp="1605754946850">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1604991977736" />
-    <state width="1397" height="178" key="GridCell.Tab.0.bottom" timestamp="1605670952555">
+    <state x="488" y="139" key="FileChooserDialogImpl/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605754946850" />
+    <state width="1397" height="178" key="GridCell.Tab.0.bottom" timestamp="1605760833686">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721522" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060877" />
-    <state width="1397" height="178" key="GridCell.Tab.0.bottom/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952555" />
-    <state width="1397" height="178" key="GridCell.Tab.0.center" timestamp="1605670952551">
+    <state width="1397" height="178" key="GridCell.Tab.0.bottom/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605760833686" />
+    <state width="1397" height="178" key="GridCell.Tab.0.center" timestamp="1605760833686">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721521" />
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060876" />
-    <state width="1397" height="178" key="GridCell.Tab.0.center/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952551" />
-    <state width="1397" height="178" key="GridCell.Tab.0.left" timestamp="1605670952547">
+    <state width="1397" height="178" key="GridCell.Tab.0.center/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605760833686" />
+    <state width="1397" height="178" key="GridCell.Tab.0.left" timestamp="1605760833686">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721521" />
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060874" />
-    <state width="1397" height="178" key="GridCell.Tab.0.left/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952547" />
-    <state width="1397" height="178" key="GridCell.Tab.0.right" timestamp="1605670952552">
+    <state width="1397" height="178" key="GridCell.Tab.0.left/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605760833686" />
+    <state width="1397" height="178" key="GridCell.Tab.0.right" timestamp="1605760833686">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="178" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@-1440.0.1440.860" timestamp="1605367721521" />
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/-1440.0.1440.860@0.0.1366.728" timestamp="1605001060876" />
-    <state width="1397" height="178" key="GridCell.Tab.0.right/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605670952552" />
+    <state width="1397" height="178" key="GridCell.Tab.0.right/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1605760833686" />
     <state x="208" y="57" key="SettingsEditor" timestamp="1605629353070">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
