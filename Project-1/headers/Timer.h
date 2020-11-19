@@ -22,7 +22,7 @@ namespace headers {
         void timeStamp();
         void printTime();
 
-    private:
+    //private:
         high_resolution_clock::time_point start;
         high_resolution_clock::time_point  point;
         duration<double, milli> elapsed;
@@ -32,8 +32,8 @@ namespace headers {
 #endif //PROJECT_1_TIMER_H
 
 // This is an example of the timer:
-/*Timer myTimer;
-myTimer.startTimer();
-// Operation that need to be measured
-myTimer.timeStamp();
-myTimer.printTime();*/
+    /*Timer myTimer;
+    myTimer.startTimer();
+    // Operation that need to be measured
+    myTimer.timeStamp();
+    myTimer.printTime();*/
