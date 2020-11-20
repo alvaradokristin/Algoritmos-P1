@@ -9,11 +9,12 @@
 
 using namespace std;
 
-struct readfile;
+struct Readfile;
 
-struct readfile {
+struct Readfile {
     
     string filename;
+    string encabezado;
 
 // Function prototypes
     readfile(string pFilename);
