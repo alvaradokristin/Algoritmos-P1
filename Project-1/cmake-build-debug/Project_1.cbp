@@ -83,6 +83,9 @@
 		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h">
 			<Option target="Project_1"/>
 		</Unit>
+		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h">
+			<Option target="Project_1"/>
+		</Unit>
 		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h">
 			<Option target="Project_1"/>
 		</Unit>
@@ -93,6 +96,9 @@
 			<Option target="Project_1"/>
 		</Unit>
 		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp">
 			<Option target="Project_1"/>
 		</Unit>
 		<Unit filename="D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/List.cpp">

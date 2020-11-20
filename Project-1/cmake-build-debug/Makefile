@@ -196,6 +196,33 @@ sources/Country.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/Country.cpp.s
 .PHONY : sources/Country.cpp.s
 
+sources/DivideConquer.obj: sources/DivideConquer.cpp.obj
+
+.PHONY : sources/DivideConquer.obj
+
+# target to build an object file
+sources/DivideConquer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.obj
+.PHONY : sources/DivideConquer.cpp.obj
+
+sources/DivideConquer.i: sources/DivideConquer.cpp.i
+
+.PHONY : sources/DivideConquer.i
+
+# target to preprocess a source file
+sources/DivideConquer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.i
+.PHONY : sources/DivideConquer.cpp.i
+
+sources/DivideConquer.s: sources/DivideConquer.cpp.s
+
+.PHONY : sources/DivideConquer.s
+
+# target to generate assembly for a file
+sources/DivideConquer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.s
+.PHONY : sources/DivideConquer.cpp.s
+
 sources/List.obj: sources/List.cpp.obj
 
 .PHONY : sources/List.obj
@@ -265,6 +292,9 @@ help:
 	@echo ... sources/Country.obj
 	@echo ... sources/Country.i
 	@echo ... sources/Country.s
+	@echo ... sources/DivideConquer.obj
+	@echo ... sources/DivideConquer.i
+	@echo ... sources/DivideConquer.s
 	@echo ... sources/List.obj
 	@echo ... sources/List.i
 	@echo ... sources/List.s
