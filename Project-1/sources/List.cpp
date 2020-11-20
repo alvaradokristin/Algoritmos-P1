@@ -34,6 +34,89 @@ int List::listLength()
     }
 }
 
+void List::create(vector<string> pCountriesList){
+
+    string id,name,dimensions,style;
+
+    for (int indexParser = 0; indexParser < pCountriesList.size();indexParser++){
+        id = get_id(pCountriesList.at(indexParser));
+        name = get_name(pCountriesList.at(indexParser));
+        dimensions = get_dimentions(pCountriesList.at(indexParser));
+        style = get_color(pCountriesList.at(indexParser));
+        addEnd(id,name,dimensions,style);
+    }
+
+}
+
+string List::get_color(string pCountry) {
+    string buffer;
+    bool pass = false;
+    int counter = 0;
+    for (int index = 0; index < pCountry.length(); index++) {
+        if (pCountry[index - 3] == 'l' and pCountry[index - 2] == ':' and pCountry[index - 1] == '#') {
+            pass = true;
+        } else if (pass == true and pCountry[index] == ';') {
+            pass = false;
+        }
+        if (pass == true) {
+            buffer += pCountry[index];
+        }
+    }
+    return buffer;
+}
+
+string List::get_id(string pCountry){
+    string buffer;
+    bool pass = false;
+    bool counter = true;
+    for (int indexParser = 0; indexParser < pCountry.length(); indexParser++){
+        if ( pCountry[indexParser-4] == 'i' and pCountry[indexParser-3] == 'd' and pCountry[indexParser-2] == '=' and pCountry[indexParser-1] == '"'){
+            pass = true;
+        }else if (pass == true and pCountry[indexParser] == '"'){
+            counter = false;
+            pass = false;
+        }
+        if (pass == true and counter == true){
+            buffer += pCountry[indexParser];
+        }
+    }
+    return buffer;
+}
+
+string List::get_name(string pCountry){
+    string buffer;
+    bool pass = false;
+    int counter = 0;
+    for (int index = 0; index < pCountry.length(); index++) {
+        if (pCountry[index - 4] == 'm'  and pCountry[index - 3] == 'e' and pCountry[index - 2] == '=' and pCountry[index - 1] == '"') {
+            pass = true;
+        } else if (pass == true and pCountry[index] == '"') {
+            pass = false;
+        }
+        if (pass == true) {
+            buffer += pCountry[index];
+        }
+    }
+    return buffer;
+}
+
+string List::get_dimentions(string pCountry){
+    string buffer;
+    bool pass = false;
+    int counter = 0;
+    for (int index = 0; index < pCountry.length(); index++) {
+        if (pCountry[index - 3] == 'd'  and pCountry[index - 2] == '=' and pCountry[index - 1] == '"' and pCountry[index] == 'm') {
+            pass = true;
+        } else if (pass == true and pCountry[index] == '"') {
+            pass = false;
+        }
+        if (pass == true) {
+            buffer += pCountry[index];
+        }
+    }
+    return buffer;
+}
+
 // This method will add a new Country at the beginning of the list
 void List::addBeginning(string pId, string pName, string pDimensions, string pStyle) {
     if (!isListEmpty()) {

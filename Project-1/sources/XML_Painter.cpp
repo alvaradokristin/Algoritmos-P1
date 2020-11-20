@@ -14,7 +14,6 @@ string XMLPainter::paint_contry(string pCountry, int pcolor) {
     string buffer;
     bool pass = false;
     int counter = 0;
-    cout<<color_to_use[pcolor];
     for (int index = 0; index < pCountry.length(); index++)
     {
         if (pCountry[index-3] == 'l' and pCountry[index-2] == ':' and pCountry[index-1] == '#'){

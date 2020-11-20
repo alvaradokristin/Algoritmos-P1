@@ -17,15 +17,10 @@ int main() {
     Readfile *read = new Readfile(filename);
     string text =read->getFile();
     vector<string> all = read->getData(text);
-    vector<string> alll;
-    /*for ( string s : all )
-    {
-        cout << s << '\n';
-    }*/
     Painter *paint = new Painter(3);
     paint->SVG_text = all;
-    alll = paint->paint_contries(all,"AR",2);
-    paint->to_update(filename,"Dymanic",alll,read->encabezado);
+    all = paint->paint_contries(all,"AR",0);
+    paint->to_update(filename,"Dymanic",all,read->encabezado);
 
     return 0;
 
