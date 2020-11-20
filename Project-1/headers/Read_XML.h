@@ -17,7 +17,7 @@ struct readfile {
 
 // Function prototypes
     readfile(string pFilename);
-    string getFile();                      // Reads whole file into a string buffer
+    string getFile(); // Reads whole file into a string buffer
     vector<string> getData(string pText);  // Gets collection of items between given tags
 
 };
