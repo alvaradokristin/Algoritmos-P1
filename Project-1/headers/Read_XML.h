@@ -9,14 +9,15 @@
 
 using namespace std;
 
-struct readfile;
+struct Readfile;
 
-struct readfile {
+struct Readfile {
     
     string filename;
+    string encabezado;
 
 // Function prototypes
-    readfile(string pFilename);
+    Readfile(string pFilename);
     string getFile();                      // Reads whole file into a string buffer
     vector<string> getData(string pText);  // Gets collection of items between given tags
 

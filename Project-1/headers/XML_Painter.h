@@ -17,7 +17,7 @@ public:
     vector<string> color_to_use;
     int numberofcolors;
 
-    string paint_contry (string pCountry,int color);
+    string paint_contry (string pCountry,int pcolor);
     void SingColors ();
 };
 #endif //PROJECT_1_XML_PAINTER_H
