@@ -16,13 +16,13 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     id = pId;
     name = pName;
     dimensions = pDimensions;
-    createCoordenates(pDimensions); // This will populate the vectors
+    //createCoordenates(pDimensions); // This will populate the vectors
     style = pStyle;
     isColored = false;
-    maxX = findMax(xCoordenates);
-    maxY = findMax(yCoordenates);
-    minX = findMin(xCoordenates);
-    minY = findMin(yCoordenates);
+    maxX = setMax(pDimensions, 1);
+    maxY = setMax(pDimensions, 2);
+    minX = setMin(pDimensions, 1);
+    minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
     nextCntry = NULL;
     prevCntry = NULL;
@@ -37,11 +37,10 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     dimensions = pDimensions;
     style = pStyle;
     isColored = false;
-    createCoordenates(pDimensions); // This will populate the vectors
-    maxX = findMax(xCoordenates);
-    maxY = findMax(yCoordenates);
-    minX = findMin(xCoordenates);
-    minY = findMin(yCoordenates);
+    maxX = setMax(pDimensions, 1);
+    maxY = setMax(pDimensions, 2);
+    minX = setMin(pDimensions, 1);
+    minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
     prevCntry = NULL;
@@ -56,11 +55,10 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     dimensions = pDimensions;
     style = pStyle;
     isColored = false;
-    createCoordenates(pDimensions); // This will populate the vectors
-    maxX = findMax(xCoordenates);
-    maxY = findMax(yCoordenates);
-    minX = findMin(xCoordenates);
-    minY = findMin(yCoordenates);
+    maxX = setMax(pDimensions, 1);
+    maxY = setMax(pDimensions, 2);
+    minX = setMin(pDimensions, 1);
+    minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
     prevCntry = pPrevCountry;
@@ -95,32 +93,12 @@ string Country::separateByChar(char pChar, string pText, short pPosition) {
         return yCoor;
 }
 
-void Country::addNewCoord(short pOption, short pElmtsAdded, string pCordenates) {
-    float num_float;
-
-    string value = separateByChar(',', pCordenates, pOption);
-    num_float = stof(value);
-
-    if (pOption == 1) {
-        if (pElmtsAdded-1 >= 0)
-            num_float = xCoordenates.at(pElmtsAdded-1) + num_float;
-
-        xCoordenates.push_back(num_float);
-    }
-    else {
-        if (pElmtsAdded-1 >= 0)
-            num_float = yCoordenates.at(pElmtsAdded-1) + num_float;
-
-        yCoordenates.push_back(num_float);
-    }
-}
-
-void Country::createCoordenates(string pData) {
+float Country::setMax(string pData, int pOption){
     string coordenates = "";
-    float num_float;
-    short vecElements = 1;
+    float prevNumber = 0;
+    float newPoint = 0;
+    float max = -1;
     string value;
-    short elmtsAdded = 0;
 
     for (auto txtChar : pData) {
         if (txtChar != ' ') {
@@ -128,36 +106,41 @@ void Country::createCoordenates(string pData) {
         }
         else {
             if (coordenates != "m" && coordenates != "z") {
-                addNewCoord(1, elmtsAdded, coordenates);
-                addNewCoord(2, elmtsAdded, coordenates);
-
-                elmtsAdded++;
+                value = separateByChar(',', coordenates, pOption);
+                newPoint = stof(value);
+                prevNumber = prevNumber + newPoint;
+                if (max <= prevNumber) {
+                    max = prevNumber;
+                }
             }
             coordenates = "";
         }
     }
-}
-
-float Country::findMax(vector<float> pVector){
-
-    float max = -1;
-
-    for (auto element = pVector.begin(); element != pVector.end(); element++) {
-        if (*element >= max) {
-            max = *element;
-        }
-    }
     return max;
 }
 
-float Country::findMin(vector<float> pVector){
+float Country::setMin(string pData, int pOption){
+    string coordenates = "";
+    float prevNumber = 0;
+    float newPoint = 0;
+    float min = 3.402823466e+38F;
+    string value;
 
-    float max = 3.402823466e+38F;
-
-    for (auto element = pVector.begin(); element != pVector.end(); element++) {
-        if (*element <= max) {
-            max = *element;
+    for (auto txtChar : pData) {
+        if (txtChar != ' ') {
+            coordenates = coordenates + txtChar;
+        }
+        else {
+            if (coordenates != "m" && coordenates != "z") {
+                value = separateByChar(',', coordenates, pOption);
+                newPoint = stof(value);
+                prevNumber = prevNumber + newPoint;
+                if (min >= prevNumber) {
+                    min = prevNumber;
+                }
+            }
+            coordenates = "";
         }
     }
-    return max;
+    return min;
 }

@@ -11,7 +11,7 @@ using namespace std;
 
 typedef Country *pointerCntry;
 
-List::List() {first = NULL; }
+List::List() {first = NULL; last = NULL; }
 
 bool List::isListEmpty() { return first == NULL ;}
 
@@ -125,6 +125,7 @@ void List::addBeginning(string pId, string pName, string pDimensions, string pSt
     }
     else {
         first = new Country(pId, pName, pDimensions, pStyle);
+        last = first;
     }
 }
 
@@ -137,9 +138,11 @@ void List::addEnd(string pId, string pName, string pDimensions, string pStyle) {
         }
         auxPointer -> nextCntry = new Country(pId, pName, pDimensions, pStyle);
         auxPointer -> nextCntry -> prevCntry = auxPointer;
+        last = auxPointer -> nextCntry;
     }
     else {
         first = new Country(pId, pName, pDimensions, pStyle);
+        last = first;
     }
 }
 
@@ -153,6 +156,7 @@ void List::removeFirst() {
         }
         else {
             first = NULL;
+            last = NULL;
         }
         delete auxPointer;
     }
@@ -173,11 +177,13 @@ void List::removeLast() {
                 auxPointer = auxPointer -> nextCntry;
             }
             temporalPointer = auxPointer -> nextCntry;
+            last = auxPointer;
             auxPointer -> nextCntry = NULL;
             temporalPointer -> prevCntry = NULL;
         }
         else {
             first = NULL;
+            last = NULL;
         }
         delete temporalPointer;
     }
@@ -191,7 +197,7 @@ void List::removePos(int pPosition) {
     pointerCntry temporalPointer = first;
 
     if (!isListEmpty()) {
-        if ((pPosition <= listLength()) && (pPosition > 0)) {
+        if ((pPosition <= listLength()) && (pPosition > 1)) {
             int counter = 2;
             pointerCntry auxPointer = first;
 
@@ -206,7 +212,9 @@ void List::removePos(int pPosition) {
                 auxPointer -> nextCntry -> prevCntry = auxPointer;
             }
             else {
+                last = auxPointer;
                 auxPointer -> nextCntry = NULL;
+                temporalPointer -> prevCntry = NULL;
             }
         }
         else if (pPosition == 1) {
@@ -238,6 +246,7 @@ void List::moveToBeginning(Country *pCurrentCntry) {
                 first = pCurrentCntry;
             }
             else if (tempPointer == NULL) {
+                last = pCurrentCntry -> prevCntry;
                 pCurrentCntry -> prevCntry -> nextCntry = NULL;
                 pCurrentCntry -> nextCntry = first;
                 first -> prevCntry = pCurrentCntry;
@@ -253,6 +262,7 @@ void List::moveToBeginning(Country *pCurrentCntry) {
             first -> prevCntry = pCurrentCntry;
             first -> nextCntry = NULL;
             pCurrentCntry -> prevCntry = NULL;
+            last - first;
             first = pCurrentCntry;
         }
     }
@@ -274,10 +284,11 @@ void List::moveBefore(Country *pCurrentCntry, Country *pBeforeThis) {
                 pBeforeThis -> prevCntry = pCurrentCntry;
                 pCurrentCntry -> nextCntry = pBeforeThis;
             }
-            else if ((pBeforeThis == first) || (listLength() == 2) && (pCurrentCntry != first)) {
+            else if (((pBeforeThis == first) || (listLength() == 2)) && (pCurrentCntry != first)) {
                 moveToBeginning(pCurrentCntry);
             }
             else if ((pCurrentCntry -> nextCntry == NULL) && ((pCurrentCntry != first))) {
+                last = pCurrentCntry -> prevCntry;
                 pCurrentCntry -> prevCntry -> nextCntry = NULL;
                 pBeforeThis -> prevCntry -> nextCntry = pCurrentCntry;
                 pCurrentCntry -> nextCntry = pBeforeThis;
@@ -348,11 +359,10 @@ void List::printList() {
             cout << "#==============================#" << endl;
             cout << endl;
 
-            if (auxPointer -> adjVector -> size() > 0) { // != NULL
+            if (auxPointer -> adjVector != NULL) { //-> size() > 0
                 cout << "List of adjacents:" << endl;
 
                 for(auto elements : *auxPointer -> adjVector) {
-                    //elements -> updateColor(elements,"#4287f5");
                     cout << "ID: " << elements -> id << endl;
                     cout << "Name: " << elements -> name << endl;
                     cout << "Max X: " << elements -> maxX << endl;
@@ -370,8 +380,7 @@ void List::printList() {
             auxPointer = auxPointer -> nextCntry;
         }
     }
-    else
-    {
+    else {
         cout << "The list is empty." << endl;
     }
 }
