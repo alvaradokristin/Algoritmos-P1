@@ -8,18 +8,12 @@
 using namespace headers;
 using namespace std;
 
+// This is the constructor
 DivideConquer::DivideConquer(int pNumberColors) : Painter(pNumberColors) {
     colorsToUse = pNumberColors;
     countriesToColor = 211;
     whiteCountries = 0;
 }
-
-/*void DivideConquer::Create(int num) {
-    write = new XMLPainter();
-    write->numberofcolors = num;
-    write ->SingColors();
-    colors = &write->color_to_use;
-}*/
 
 // This will divide the list of countries in groups of 10
 void DivideConquer::divideList(List pDivList) {
@@ -105,18 +99,21 @@ void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
                         vectorDC = paint_contries(vectorDC, cntry->id, contriesClrd);
                         cntry->updateColor(colors->at(contriesClrd));
                         contriesClrd++;
+                        countriesToColor--;
                     }
                     else {
                         vectorDC = paint_contries(vectorDC, cntry->id, 12);
                         cntry->updateColor("#ffffff");
                         contriesClrd++;
                         whiteCountries++;
+                        countriesToColor--;
                     }
                 }
                 else {
                     vectorDC = paint_contries(vectorDC, cntry->id, 0);
                     cntry->updateColor(colors->at(0));
                     contriesClrd++;
+                    countriesToColor--;
                 }
             }
             cntry = cntry -> nextCntry;
@@ -125,6 +122,7 @@ void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
     else {
         vectorDC = paint_contries(vectorDC, cntry->id, 0);
         cntry->updateColor(colors->at(0));
+        countriesToColor--;
     }
 }
 
