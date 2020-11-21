@@ -1,7 +1,7 @@
 #ifndef PROJECT_1_DYNAMICALGORITHM_H
 #define PROJECT_1_DYNAMICALGORITHM_H
 #include <vector>
-//#include "../headers/Country.h"
+#include "../headers/Country.h"
 
 
 using namespace std;

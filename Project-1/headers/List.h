@@ -19,7 +19,7 @@ namespace headers {
 
         friend class Country;
         friend class Dynamic;
-        friend class DivideConquer;
+        //friend class DivideConquer;
 
     public:
         List();

@@ -3,6 +3,9 @@
 //
 
 #include <iostream>
+
+//#include "../headers/Painter.h" // undefined reference to `headers::Painter::Painter(int)'
+#include "../sources/Painter.cpp"
 #include "../headers/DivideConquer.h"
 
 using namespace headers;
@@ -25,7 +28,7 @@ void DivideConquer::divideList(List pDivList) {
             border = border -> nextCntry;
         }
         else {
-            conquerSubG(init, pivot, border->prevCntry, pDivList);
+            conquerSubG(init, pivot, border->prevCntry, pDivList); // The error is here
             init = border;
             pivot = border;
         }

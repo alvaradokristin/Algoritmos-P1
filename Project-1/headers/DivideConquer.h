@@ -5,8 +5,9 @@
 #ifndef PROJECT_1_DIVIDECONQUER_H
 #define PROJECT_1_DIVIDECONQUER_H
 
-#include "../sources/Painter.cpp"
+//#include "../sources/Painter.cpp" // multiple definition of `XMLPainter::XMLPainter()'
 #include "List.h"
+#include "Painter.h"
 
 namespace headers {
     class DivideConquer : public Painter {
