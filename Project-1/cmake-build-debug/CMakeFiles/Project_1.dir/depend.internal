@@ -3,10 +3,14 @@
 
 CMakeFiles/Project_1.dir/main.cpp.obj
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
- D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/main.cpp
- D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 CMakeFiles/Project_1.dir/sources/Country.cpp.obj
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
@@ -17,6 +21,7 @@ CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.obj
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 CMakeFiles/Project_1.dir/sources/List.cpp.obj
  D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
