@@ -23,6 +23,11 @@ namespace headers {
 
     public:
         List();
+        void create(vector<string> pCountriesList);
+        string get_color(string pCountry);
+        string get_id(string pCountry);
+        string get_name(string pCountry);
+        string get_dimentions(string pCountry);
         void addBeginning(string pId, string pName, string pDimensions, string pStyle);
         void addEnd(string pId, string pName, string pDimensions, string pStyle);
         //void addAdjacent(Country *pCurrentCntry, Country *pAdjList);
