@@ -4,12 +4,13 @@
 // Total countries: 211
 
 //#include "headers/Timer.h"
-#include "headers/List.h"
-//#include "sources/DivideConquer.cpp"
-//#include "sources/Read_XML.cpp"
+//#include "headers/List.h"
+#include "headers/DivideConquer.h"
+#include "sources/Read_XML.cpp"
+//#include "headers/Painter.h"
 //#include "sources/Painter.cpp"
 
-using namespace headers;
+//using namespace headers;
 using namespace std;
 
 int main() {
@@ -35,10 +36,12 @@ int main() {
 
     //myList.first->adjVector->at(2)->updateColor("#252525");
 
-    /*DivideConquer DC(3);
-    DC.divideList(myList);*/
+    //cout << "Hello" << endl;
 
-    myList.printList();
+    DivideConquer DC(3);
+    DC.divideList(myList);
+
+    //myList.printList();
 
     return 0;
 }

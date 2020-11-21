@@ -4,6 +4,7 @@
 
 #ifndef PROJECT_1_COUNTRY_H
 #define PROJECT_1_COUNTRY_H
+
 #include <string>
 #include <bits/stdc++.h>
 #include <vector>
@@ -17,6 +18,7 @@ namespace headers {
     class Country {
 
         friend class List;
+        friend class DivideConquer;
 
     public:
         Country(string pId, string pName, string pDimensions, string pStyle);

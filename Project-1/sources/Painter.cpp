@@ -1,4 +1,8 @@
+//#include "../headers/XML_Painter.h"
+#include "XML_Painter.cpp"
 #include "../headers/Painter.h"
+
+using namespace headers;
 
 Painter::Painter(int pNumber_Colors){
     write = new XMLPainter();
