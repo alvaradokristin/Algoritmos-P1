@@ -19,6 +19,8 @@ List.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 Painter.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 headers/DivideConquer.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/headers/DivideConquer.h
 sources/Read_XML.cpp
@@ -58,6 +60,12 @@ string
 vector
 -
 cstdlib
+-
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+iostream
+-
+chrono
 -
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h

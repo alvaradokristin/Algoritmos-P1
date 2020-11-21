@@ -10,10 +10,10 @@ Painter::Painter(int pNumber_Colors){
 
 void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdatedData,string pData){
 
-    std::ofstream newFile("C:\\Users\\famil\\Downloads\\world"+pAlgorim+".svg", std::ios::trunc);
+    std::ofstream newFile("D:\\OneDrive\\Escritorio\\world"+pAlgorim+".svg", std::ios::trunc);
     newFile<<pData;
             for (int index=0; index < pUpdatedData.size();index++){
-                cout<<pUpdatedData[index]<<endl;
+                //cout<<pUpdatedData[index]<<endl;
                 newFile<<pUpdatedData[index]<<endl;
             }
             newFile<<"</svg>";
