@@ -41,9 +41,11 @@ int main() {
 
     myList.printList();
 
-    //cout << (temp1 == temp2) << endl;
+    myList.printList();
 
-    //myList.first->adjVector->at(2)->updateColor("#252525");
+    DivideConquer DC(3);
+    DC.listDC.first = myList.first;
+    DC.divideList();
 
     //myList.printList();
     Dynamic *dy = new Dynamic();

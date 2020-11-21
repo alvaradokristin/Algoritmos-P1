@@ -7,7 +7,7 @@ XMLPainter::XMLPainter() {
 void XMLPainter::SingColors (){
     for (int colors = 0; colors < numberofcolors;colors++){
         color_to_use.push_back(totalcolors[colors]);
-        cout<<color_to_use[colors]<<endl;
+        //cout<<color_to_use[colors]<<endl;
     }
 }
 string XMLPainter::paint_contry(string pCountry, int pcolor) {
