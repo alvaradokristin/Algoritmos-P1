@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
 bits/stdc++.h
@@ -26,9 +26,9 @@ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/sources/Read_XML.cpp
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 iostream
 -
 fstream
@@ -46,7 +46,7 @@ stdlib.h
 fstream
 -
 ../sources/XML_Painter.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
 iostream
@@ -79,8 +79,12 @@ vector
 -
 headers/DivideConquer.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+sources/DivideConquer.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
 sources/Read_XML.cpp
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
 iostream
@@ -91,8 +95,6 @@ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
-XML_Painter.cpp
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 ../headers/Painter.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 
