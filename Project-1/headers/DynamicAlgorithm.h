@@ -1,7 +1,7 @@
 #ifndef PROJECT_1_DYNAMICALGORITHM_H
 #define PROJECT_1_DYNAMICALGORITHM_H
 #include <vector>
-//#include "../headers/Country.h"
+#include "../sources/List.cpp"
 
 
 using namespace std;
@@ -16,8 +16,8 @@ namespace headers {
 
         Dynamic();
 
-        vector<int>CreatePriority (Country *pContriesEvalue);
-        void DynamicAlgoritm (Country *pListCountries);
+        vector<int>AlterPriority (vector<int> pPriorities);
+        void DynamicAlgoritm (List pListCountries,int PCounter);
 
     private:
 

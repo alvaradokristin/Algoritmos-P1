@@ -14,6 +14,12 @@ string XMLPainter::paint_contry(string pCountry, int pcolor) {
     string buffer;
     bool pass = false;
     int counter = 0;
+    string color;
+    if (pcolor == 12){
+        color = "ffffff";
+    }else{
+         color = color_to_use[pcolor];
+    }
     for (int index = 0; index < pCountry.length(); index++)
     {
         if (pCountry[index-3] == 'l' and pCountry[index-2] == ':' and pCountry[index-1] == '#'){
@@ -22,7 +28,8 @@ string XMLPainter::paint_contry(string pCountry, int pcolor) {
             pass = false;
         }
         if (pass == true){
-            pCountry[index] = color_to_use[pcolor][counter++];
+            if (pcolor == 12)
+            pCountry[index] = color[counter++];
         }
     }
     return pCountry;
