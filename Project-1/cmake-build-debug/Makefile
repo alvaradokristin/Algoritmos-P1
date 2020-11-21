@@ -58,19 +58,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1
+CMAKE_SOURCE_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -196,33 +196,6 @@ sources/Country.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/Country.cpp.s
 .PHONY : sources/Country.cpp.s
 
-sources/DivideConquer.obj: sources/DivideConquer.cpp.obj
-
-.PHONY : sources/DivideConquer.obj
-
-# target to build an object file
-sources/DivideConquer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.obj
-.PHONY : sources/DivideConquer.cpp.obj
-
-sources/DivideConquer.i: sources/DivideConquer.cpp.i
-
-.PHONY : sources/DivideConquer.i
-
-# target to preprocess a source file
-sources/DivideConquer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.i
-.PHONY : sources/DivideConquer.cpp.i
-
-sources/DivideConquer.s: sources/DivideConquer.cpp.s
-
-.PHONY : sources/DivideConquer.s
-
-# target to generate assembly for a file
-sources/DivideConquer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.s
-.PHONY : sources/DivideConquer.cpp.s
-
 sources/List.obj: sources/List.cpp.obj
 
 .PHONY : sources/List.obj
@@ -292,9 +265,6 @@ help:
 	@echo ... sources/Country.obj
 	@echo ... sources/Country.i
 	@echo ... sources/Country.s
-	@echo ... sources/DivideConquer.obj
-	@echo ... sources/DivideConquer.i
-	@echo ... sources/DivideConquer.s
 	@echo ... sources/List.obj
 	@echo ... sources/List.i
 	@echo ... sources/List.s

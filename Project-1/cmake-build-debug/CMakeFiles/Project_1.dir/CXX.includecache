@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
 bits/stdc++.h
@@ -14,17 +14,11 @@ bits/stdc++.h
 vector
 -
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
-List.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
-Painter.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
-
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 iostream
 -
 fstream
@@ -41,10 +35,10 @@ stdlib.h
 -
 fstream
 -
-XML_Painter.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
+../sources/XML_Painter.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
 iostream
 -
 fstream
@@ -56,21 +50,47 @@ vector
 cstdlib
 -
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
 iostream
 -
-../sources/Painter.cpp
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
-../headers/DivideConquer.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+fstream
+-
+string
+-
+vector
+-
+cstdlib
+-
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
-XML_Painter.cpp
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/main.cpp
+iostream
+-
+vector
+-
+headers/List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+sources/Read_XML.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+sources/Painter.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
+
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/List.cpp
+iostream
+-
+../headers/Country.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+../headers/List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 ../headers/Painter.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+../headers/Read_XML.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+
+
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 ../headers/XML_Painter.h
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
-
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h

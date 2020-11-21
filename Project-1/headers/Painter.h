@@ -9,29 +9,24 @@
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
-
-#include "XML_Painter.h"
-//#include "../sources/XML_Painter.cpp"
+//#include "../headers/XML_Painter.h"
+#include "../sources/XML_Painter.cpp"
 
 using namespace std;
 
-namespace headers {
-    class Painter {
-    public:
+class Painter{
+public:
 
-        Painter(int pNumber_Colors);
+    Painter(int pNumber_Colors);
+    int number_colors;
+    vector<string> SVG_text;
+    vector<string> *colors;
+    XMLPainter *write;
 
-        int number_colors;
-        vector<string> SVG_text;
-        vector<string> *colors;
-        XMLPainter *write;
+    void to_update(string,string,vector<string>,string);
+    vector<string> paint_contries(vector<string> countries,string country,int color);
 
-        void to_update(string, string, vector<string>, string);
-
-        vector<string> paint_contries(vector<string> countries, string country, int color);
-
-    };
-}
+};
 
 
 

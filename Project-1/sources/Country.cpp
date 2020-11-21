@@ -16,6 +16,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     id = pId;
     name = pName;
     dimensions = pDimensions;
+    //createCoordenates(pDimensions); // This will populate the vectors
     style = pStyle;
     isColored = false;
     maxX = setMax(pDimensions, 1);

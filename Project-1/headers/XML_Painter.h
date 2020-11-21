@@ -6,7 +6,6 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-
 using namespace std;
 
 class XMLPainter{
