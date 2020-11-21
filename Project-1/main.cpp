@@ -5,7 +5,7 @@
 
 //#include "headers/Timer.h"
 #include "headers/List.h"
-#include "sources/DivideConquer.cpp"
+//#include "sources/DivideConquer.cpp"
 //#include "sources/Read_XML.cpp"
 //#include "sources/Painter.cpp"
 
@@ -35,8 +35,8 @@ int main() {
 
     //myList.first->adjVector->at(2)->updateColor("#252525");
 
-    DivideConquer DC(3);
-    DC.divideList(myList);
+    /*DivideConquer DC(3);
+    DC.divideList(myList);*/
 
     myList.printList();
 

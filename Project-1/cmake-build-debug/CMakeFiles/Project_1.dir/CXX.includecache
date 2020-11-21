@@ -44,6 +44,12 @@ fstream
 ../sources/XML_Painter.cpp
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+iostream
+-
+chrono
+-
+
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
 iostream
 -
@@ -63,8 +69,12 @@ vector
 -
 headers/List.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
-sources/DivideConquer.cpp
-D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Country.cpp
+iostream
+-
+../headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
 iostream
@@ -83,6 +93,14 @@ C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 ../headers/Painter.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Timer.cpp
+iostream
+-
+chrono
+-
+../headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 ../headers/XML_Painter.h
