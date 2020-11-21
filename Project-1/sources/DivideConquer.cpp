@@ -61,7 +61,7 @@ void DivideConquer::divideList() {
 }
 
 // This will conquer every subgroup of 10 countries
-void DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) { // The error is here
+void DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) {
     //cout << "\nInside conquerSubG1:\nInit: " << pInit->id << "\nPivot: " << pPivot->id << "\nBorder: " << pBorder->id << endl;
     if (pPivot != pBorder) {
         //cout << "=============================================" << endl;

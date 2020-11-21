@@ -82,7 +82,25 @@ D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
 sources/Read_XML.cpp
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
 
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+iostream
+-
+../sources/Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
+../headers/DivideConquer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
+XML_Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+../headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
 ../headers/Read_XML.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+../headers/XML_Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
 
