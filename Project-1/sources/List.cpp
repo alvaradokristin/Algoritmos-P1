@@ -117,6 +117,19 @@ string List::get_dimentions(string pCountry){
     return buffer;
 }
 
+Country *List::getposition(int pPos){
+    Country *temp = first;
+    int counter = 0;
+    while (temp != NULL){
+        if (counter == pPos){
+            return temp;
+        }
+        temp = temp->nextCntry;
+        counter++;
+    }
+    return NULL;
+}
+
 // This method will add a new Country at the beginning of the list
 void List::addBeginning(string pId, string pName, string pDimensions, string pStyle) {
     if (!isListEmpty()) {

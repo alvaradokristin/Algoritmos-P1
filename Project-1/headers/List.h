@@ -30,6 +30,7 @@ namespace headers {
         void addBeginning(string pId, string pName, string pDimensions, string pStyle);
         void addEnd(string pId, string pName, string pDimensions, string pStyle);
         //void addAdjacent(Country *pCurrentCntry, Country *pAdjList);
+        Country *getposition(int pPos);
         void removeFirst();
         void removeLast();
         void removePos(int pPosition);

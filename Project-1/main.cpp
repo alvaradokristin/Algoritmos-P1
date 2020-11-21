@@ -6,6 +6,7 @@
 #include "headers/List.h"
 #include "sources/Read_XML.cpp"
 #include "sources/Painter.cpp"
+#include "sources/DynamicAlgorithm.cpp"
 
 using namespace headers;
 using namespace std;
@@ -45,6 +46,8 @@ int main() {
     //myList.first->adjVector->at(2)->updateColor("#252525");
 
     //myList.printList();
+    Dynamic *dy = new Dynamic();
+    dy->DynamicAlgoritm(myList,0);
 
     return 0;
 

@@ -17,10 +17,18 @@ vector<int> Dynamic::AlterPriority (vector<int> pPrioritiesValue){
 
 void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
 
-    vector<Country> ListToPaint;
-    vector<int> counterforcountries;
-    for (int pass = pCounter; pass < pCounter+10;pass++){
-        
+    int limit;
+    if ( pListCountries.listLength()-pCounter != 1){
+        limit = 10;
+    }else{
+        limit = 11;
     }
+    vector<Country*> ListToPaint;
+    vector<int> counterforcountries;
+
+    for (int pass = pCounter; pass < pCounter+limit;pass++){
+        ListToPaint.push_back(pListCountries.getposition(pass));
+    }
+    
 
 }
