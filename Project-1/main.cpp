@@ -7,7 +7,8 @@
 #include "headers/DivideConquer.h"
 //#include "sources/DivideConquer.cpp"
 #include "sources/Read_XML.cpp"
-#include "sources/Painter.cpp"
+//#include "headers/Painter.h"
+//#include "sources/Painter.cpp" -- Error
 
 using namespace headers;
 using namespace std;
