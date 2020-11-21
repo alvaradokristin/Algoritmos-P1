@@ -38,23 +38,16 @@
     <list default="true" id="f8a054f9-26e5-443b-a660-35a7f961b692" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/sources/Country.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/sources/Country.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/sources/DivideConquer.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/sources/List.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project_1.dir/sources/List.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project_1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Project_1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/Country.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/Country.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/headers/DivideConquer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/DivideConquer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/DynamicAlgorithm.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/DynamicAlgorithm.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/Painter.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/Painter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/DivideConquer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/DivideConquer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/List.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/Painter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/Painter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/XML_Painter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/XML_Painter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +128,7 @@
       <workItem from="1605826702574" duration="690000" />
       <workItem from="1605889866695" duration="1893000" />
       <workItem from="1605898762946" duration="22562000" />
-      <workItem from="1605922440321" duration="5814000" />
+      <workItem from="1605922440321" duration="12211000" />
     </task>
     <servers />
   </component>
@@ -182,28 +175,28 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605586174648" />
-    <state width="1877" height="437" key="GridCell.Tab.0.bottom" timestamp="1605928120500">
+    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1605934845361">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="437" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605928120500" />
+    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605934845361" />
     <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1604854661522" />
     <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605891782257" />
-    <state width="1877" height="437" key="GridCell.Tab.0.center" timestamp="1605928120500">
+    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1605934845361">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="437" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605928120500" />
+    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605934845361" />
     <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1604854661522" />
     <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605891782256" />
-    <state width="1877" height="437" key="GridCell.Tab.0.left" timestamp="1605928120499">
+    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1605934845361">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="437" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605928120499" />
+    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605934845361" />
     <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1604854661522" />
     <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605891782255" />
-    <state width="1877" height="437" key="GridCell.Tab.0.right" timestamp="1605928120500">
+    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1605934845361">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="437" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605928120500" />
+    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605934845361" />
     <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1604854661522" />
     <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605891782256" />
     <state x="277" y="77" key="SettingsEditor" timestamp="1605627345887">
@@ -220,10 +213,10 @@
     <state x="-39" y="-18" width="1540" height="882" maximized="true" key="dock-window-1/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1604799229347" />
     <state x="25" y="437" width="1540" height="882" key="dock-window-1/0.0.1536.864/-1920.0.1920.1080@0.0.1536.864" timestamp="1604854663025" />
     <state x="244" y="248" width="1237" height="816" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1605562589614" />
-    <state x="722" y="113" width="672" height="543" key="search.everywhere.popup" timestamp="1605627293703">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="-1018" y="141" width="672" height="678" key="search.everywhere.popup" timestamp="1605931791775">
+      <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1018" y="141" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605474592176" />
+    <state x="-1018" y="141" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1605931791775" />
     <state x="722" y="113" width="672" height="543" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1605627293703" />
   </component>
 </project>

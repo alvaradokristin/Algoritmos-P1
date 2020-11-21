@@ -359,7 +359,7 @@ void List::printList() {
             cout << "#==============================#" << endl;
             cout << endl;
 
-            if (auxPointer -> adjVector != NULL) { //-> size() > 0
+            /*if (auxPointer -> adjVector != NULL) { //-> size() > 0
                 cout << "List of adjacents:" << endl;
 
                 for(auto elements : *auxPointer -> adjVector) {
@@ -376,7 +376,7 @@ void List::printList() {
 
                 cout << "The adjacents ends here!" << endl;
                 cout << endl;
-            }
+            }*/
             auxPointer = auxPointer -> nextCntry;
         }
     }

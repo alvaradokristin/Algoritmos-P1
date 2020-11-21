@@ -15,17 +15,19 @@ namespace headers {
     public:
         DivideConquer(int pNumberColors);
         //void Create(int num);
-        void divideList(List pDivList);
-        void conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder, List pList);
-        pointerCntry sortSubG(pointerCntry pPivot, pointerCntry pBorder, List pList);
+        void divideList();
+        void conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder);
+        pointerCntry sortSubG(pointerCntry pPivot, pointerCntry pBorder);
         void paintGroup(pointerCntry pInit, pointerCntry pPivot);
-        void doubleCheck(List pList);
+        void doubleCheck();
 
-    private:
+    //private:
         vector<string> vectorDC;
         int countriesToColor;
         int whiteCountries;
         int colorsToUse;
+        List listDC;
+        //pointerCntry border;
     };
 }
 
