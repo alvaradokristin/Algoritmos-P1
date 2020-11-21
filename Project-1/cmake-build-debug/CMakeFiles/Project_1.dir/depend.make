@@ -6,6 +6,7 @@ CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/DivideConquer.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/List.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/Painter.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/Read_XML.h
+CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/Timer.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/XML_Painter.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Project_1.dir/main.cpp.obj: ../sources/DivideConquer.cpp

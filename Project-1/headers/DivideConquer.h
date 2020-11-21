@@ -8,18 +8,20 @@
 //#include "../sources/Painter.cpp" // multiple definition of `XMLPainter::XMLPainter()'
 #include "List.h"
 #include "Painter.h"
+#include "Timer.h"
 
 namespace headers {
     class DivideConquer : public Painter {
 
     public:
-        DivideConquer(int pNumberColors);
+        DivideConquer(int pNumberColors, string pFileName, string pHeader);
         //void Create(int num);
         void divideList();
         void conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder);
         pointerCntry sortSubG(pointerCntry pPivot, pointerCntry pBorder);
         void paintGroup(pointerCntry pInit, pointerCntry pPivot);
         void doubleCheck();
+        void printSubG(pointerCntry pInit, pointerCntry pBorder);
 
     //private:
         vector<string> vectorDC;
@@ -28,6 +30,9 @@ namespace headers {
         int colorsToUse;
         List listDC;
         pointerCntry savePointr;
+        string findingFileName;
+        string fileHeader;
+        Timer timerDC;
     };
 }
 
