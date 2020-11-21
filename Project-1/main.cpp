@@ -3,7 +3,9 @@
 //#include <chrono>
 
 //#include "headers/Timer.h"
-#include "headers/List.h"
+//#include "headers/List.h"
+#include "headers/DivideConquer.h"
+//#include "sources/DivideConquer.cpp"
 #include "sources/Read_XML.cpp"
 #include "sources/Painter.cpp"
 
