@@ -106,9 +106,13 @@ float Country::setMax(string pData, int pOption){
         }
         else {
             if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
+                //cout << "coordenates: " << "{" << coordenates << "}" << endl;
                 value = separateByChar(',', coordenates, pOption);
                 newPoint = stof(value);
+                //cout << "newPoint Max: " << newPoint << endl;
                 prevNumber = prevNumber + newPoint;
+                //cout << "prevNumber Max: " << prevNumber << endl;
+                //cout << endl;
                 if (max <= prevNumber) {
                     max = prevNumber;
                 }
@@ -132,9 +136,13 @@ float Country::setMin(string pData, int pOption){
         }
         else {
             if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
+                //cout << "coordenates: " << "{" << coordenates << "}" << endl;
                 value = separateByChar(',', coordenates, pOption);
                 newPoint = stof(value);
+                //cout << "newPoint Min: " << newPoint << endl;
                 prevNumber = prevNumber + newPoint;
+                //cout << "prevNumber Min: " << prevNumber << endl;
+                //cout << endl;
                 if (min >= prevNumber) {
                     min = prevNumber;
                 }

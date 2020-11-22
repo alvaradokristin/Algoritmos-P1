@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <windows.h>
 
 //#include "../headers/Painter.h" // undefined reference to `headers::Painter::Painter(int)'
 #include "../sources/Painter.cpp"
@@ -12,10 +13,22 @@ using namespace headers;
 using namespace std;
 
 // This is the constructor
-DivideConquer::DivideConquer(int pNumberColors) : Painter(pNumberColors) {
+DivideConquer::DivideConquer(int pNumberColors, string pFileName, string pHeader) : Painter(pNumberColors) {
     colorsToUse = pNumberColors;
     countriesToColor = 211;
     whiteCountries = 0;
+    findingFileName = pFileName;
+    fileHeader = pHeader;
+}
+
+// This method will update the information on the map
+void DivideConquer::updateMap() {
+    Sleep(10000); // 10000
+    to_update(findingFileName,"Divide",vectorDC,fileHeader);
+
+    // This will update the timer and print it
+    timerDC.timeStamp();
+    timerDC.printTime();
 }
 
 // This will divide the list of countries in groups of 10
@@ -23,91 +36,97 @@ void DivideConquer::divideList() {
     pointerCntry init = listDC.first;
     pointerCntry pivot = listDC.first;
     pointerCntry border = listDC.first;
+    bool isDone = false;
 
-    cout << listDC.first->id << endl;
-    cout << "Init: " << init->id << "\nPivot: " << pivot->id << "\nBorder :" << border->id << endl;
+    timerDC.startTimer();
+
     int numCntrs = listDC.listLength();
 
-    cout << "numnCntrs: " << numCntrs << endl;
-
-    for (int elmts = 0; elmts < numCntrs; elmts++) {
-        if ((elmts % 10 != 0) || (numCntrs - elmts > 10) || (elmts == 0)) {
+    for (int elmts = 1; elmts <= numCntrs; elmts++) {
+        if (((elmts % 20 != 0) && (numCntrs - elmts > 20)) && (border -> nextCntry != nullptr)) { // 20
             border = border -> nextCntry;
         }
         else {
-            cout << "After the for:" << "\nInit: " << init->id << "\nPivot: " << pivot->id << "\nBorder: " << border->id << endl;
-            conquerSubG(init, pivot, border->prevCntry); // The error is here
+            if (border -> nextCntry != nullptr) {
+                border = border -> nextCntry;
+                isDone = conquerSubG(init, pivot, border->prevCntry); // border->prevCntry
+                updateMap();
+            }
+            else {
+                isDone = conquerSubG(init, pivot, border); // border->prevCntry
+            }
             init = border;
             pivot = border;
         }
     }
     if (init != nullptr) { // In case there are any subgrups left
-        conquerSubG(init, pivot, border);
+        isDone = conquerSubG(init, pivot, border);
     }
     doubleCheck();
+    updateMap();
 }
 
 // This will conquer every subgroup of 10 countries
-void DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) { // The error is here
-    cout << "\nInside conquerSubG1:\nInit: " << pInit->id << "\nPivot: " << pPivot->id << "\nBorder: " << pBorder->id << endl;
+bool DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) {
     if (pPivot != pBorder) {
-        cout << "=============================================" << endl;
-        cout << "Inside conquerSubG:\nPivot: " << pPivot->id << "\nBorder: " << pBorder->id << endl;
         pInit = sortSubG(pPivot, pBorder);
-        cout << "New Init: " << pInit->id << "\nList first: " << listDC.first->id << "\nPivot: " << pPivot->id << "\nBorder: " << pBorder->id << endl;
-        cout << "====================List====================" << endl;
-        listDC.printList();
-        cout << "############################################" << endl;
+
         if (pPivot != pBorder) {
-            cout << "Before the painting:\npInit: " << pInit->id << "\nPivot: " << pPivot->id << endl;
             paintGroup(pInit, pPivot);
             pPivot = pPivot -> nextCntry;
             pInit = pPivot;
+            conquerSubG(pInit, pPivot, pBorder);
         }
-        cout << "\nInside conquerSubG2:\nInit: " << pInit->id << "\nPivot: " << pPivot->id << "\nBorder: " << pBorder->id << endl;
-        conquerSubG(pInit, pPivot, pBorder);
+        else {
+            conquerSubG(pInit, pPivot, pBorder);
+        }
     }
     else {
-        cout << "\nInside conquerSubG3:\nInit: " << pInit->id << "\nPivot: " << pPivot->id << "\nBorder: " << pBorder->id << endl;
         paintGroup(pInit, pPivot);
+        return true;
     }
+    return true;
 }
 
 // This will sort a subgroup where the adj of the pivot will be moved before the pivot
 pointerCntry DivideConquer::sortSubG(pointerCntry pPivot, pointerCntry pBorder) {
     pointerCntry countries;
-    pointerCntry init;
+    pointerCntry init = pPivot;
     bool isFirst = true;
 
-    for(auto elements : *pPivot -> adjVector) {
-        countries = pPivot;
-        while (countries != pBorder -> nextCntry) {
-            if ((countries == elements) && (countries != pBorder)) {
-                countries = countries -> nextCntry;
-                cout << "Inside sortSubG:\nelements: " << elements->id << "\nPivot: " << pPivot->id << endl;
-                listDC.moveBefore(elements, pPivot);
-                cout << "Inside sortSubG:\nList first: " << listDC.first->id << endl;
-                if (isFirst) {
-                    isFirst = false;
-                    init = elements;
+    if (!pPivot -> isColored) {
+        if (pPivot->adjVector->size() > 0) {
+            for (auto elements : *pPivot->adjVector) {
+                countries = pPivot;
+                while (countries != pBorder) {
+                    if ((countries == elements) && (countries != pBorder)) {
+                        countries = countries->nextCntry;
+                        listDC.moveBefore(elements, pPivot);
+                        if (isFirst) {
+                            isFirst = false;
+                            init = elements;
+                        }
+                    } else if ((countries == elements) && (countries == pBorder)) {
+                        pBorder = pBorder->prevCntry;
+                        countries = countries->nextCntry;
+                        listDC.moveBefore(elements, pPivot);
+                        if (isFirst) {
+                            isFirst = false;
+                            init = elements;
+                        }
+                    }
+                    else {
+                        countries = countries->nextCntry;
+                    }
                 }
-            }
-            else if ((countries == elements) && (countries == pBorder)) {
-                pBorder = pBorder -> prevCntry;
-                cout << "New border: " << pBorder->id << endl;
-                countries = countries -> nextCntry;
-                listDC.moveBefore(elements, pPivot);
-                if (isFirst) {
-                    isFirst = false;
-                    init = elements;
+                if (countries == nullptr) {
                 }
-            }
-            else {
-                countries = countries -> nextCntry;
             }
         }
     }
-    cout << "sortSubG end:\nInit: " << init->id << "\nList First: " << listDC.first->id << endl;
+    else {
+        init = pPivot -> nextCntry;
+    }
     return init;
 }
 
@@ -115,39 +134,56 @@ pointerCntry DivideConquer::sortSubG(pointerCntry pPivot, pointerCntry pBorder) 
 void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
     pointerCntry cntry = pInit;
     int contriesClrd = 0; // Countries already colored and this will determine the color (priority), if is gratter than the amount of colors to use, then it will paint it White
-
-    if (cntry == pPivot) {
+    if (cntry != pPivot) {
         while (cntry != pPivot -> nextCntry) {
-            if (!cntry -> isColored) { // If the country is not colored
-                if (cntry != pInit) {
-                    if (contriesClrd < colorsToUse) {
-                        vectorDC = paint_contries(vectorDC, cntry->id, contriesClrd);
-                        cntry->updateColor(colors->at(contriesClrd));
+            if (!cntry->isColored) {
+                bool newToPaint = false;
+                if (!cntry->isColored) { // If the country is not colored
+                    if (cntry != pInit) {
+                        if (contriesClrd < colorsToUse) {
+                            if (!cntry->isColored) {
+                                newToPaint = true;
+                            }
+                            vectorDC = paint_contries(vectorDC, cntry->id, contriesClrd);
+                            cntry->updateColor(colors->at(contriesClrd));
+                            contriesClrd++;
+                            if (newToPaint) {
+                                countriesToColor -= 1;
+                            }
+                        } else { // This will paint the country white
+                            if (!cntry->isColored) {
+                                newToPaint = true;
+                            }
+                            vectorDC = paint_contries(vectorDC, cntry->id, 12); // 12
+                            cntry->updateColor("FFFFFF");
+                            contriesClrd++;
+                            whiteCountries++;
+                            if (newToPaint) {
+                                countriesToColor -= 1;
+                            }
+                        }
+                    } else {
+                        if (!cntry->isColored) {
+                            newToPaint = true;
+                        }
+                        vectorDC = paint_contries(vectorDC, cntry->id, 0);
+                        cntry->updateColor(colors->at(0));
                         contriesClrd++;
-                        countriesToColor--;
-                    }
-                    else {
-                        vectorDC = paint_contries(vectorDC, cntry->id, 12);
-                        cntry->updateColor("ffffff");
-                        contriesClrd++;
-                        whiteCountries++;
-                        countriesToColor--;
+                        if (newToPaint) {
+                            countriesToColor -= 1;
+                        }
                     }
                 }
-                else {
-                    vectorDC = paint_contries(vectorDC, cntry->id, 0);
-                    cntry->updateColor(colors->at(0));
-                    contriesClrd++;
-                    countriesToColor--;
-                }
+                cntry = cntry->nextCntry;
             }
-            cntry = cntry -> nextCntry;
         }
     }
     else {
-        vectorDC = paint_contries(vectorDC, cntry->id, 0);
-        cntry->updateColor(colors->at(0));
-        countriesToColor--;
+        if (!cntry->isColored) {
+            vectorDC = paint_contries(vectorDC, cntry->id, 0);
+            cntry->updateColor(colors->at(0));
+            countriesToColor -= 1;
+        }
     }
 }
 
@@ -158,7 +194,7 @@ void DivideConquer::doubleCheck() {
 
     for (int elmts = 0; elmts < numCntrs; elmts++) {
         vector<string> colorsUsed; // This is a ventor of all the colors used on the adjacents
-        bool isUsed = false; // If the color of this country os already used on the adjacents, isUsed will be true
+        bool isUsed = false; // If the color of this country is already used on the adjacents, isUsed will be true
         for(auto adjs : *countries -> adjVector) {
             if (countries -> color == adjs -> color) {
                 isUsed = true;
@@ -170,7 +206,7 @@ void DivideConquer::doubleCheck() {
             bool isReColored = false;
             for(string colrs : *colors) {
                 bool isFound = true;
-                for(string colrsUsed : *colors) {
+                for(string colrsUsed : colorsUsed) {
                     if (colrs == colrsUsed) {
                         isFound = false;
                         break;
@@ -185,11 +221,49 @@ void DivideConquer::doubleCheck() {
                 cont++;
             }
             if (!isReColored) { // This will paint the country: White since all the color available are used
-                vectorDC = paint_contries(vectorDC, countries->id, 12);
-                countries->updateColor("ffffff");
+                vectorDC = paint_contries(vectorDC, countries->id, 12); // 12
+                countries->updateColor("FFFFFF");
                 whiteCountries++;
             }
         }
         countries = countries -> nextCntry;
     }
+}
+
+void DivideConquer::printSubG(pointerCntry pInit, pointerCntry pBorder) {
+    pointerCntry auxPointer = pInit;
+
+    while (auxPointer != pBorder -> nextCntry) {
+        cout << "ID: " << auxPointer -> id << endl;
+        cout << "Name: " << auxPointer -> name << endl;
+        cout << "Max X: " << auxPointer -> maxX << endl;
+        cout << "Max Y: " << auxPointer -> maxY << endl;
+        cout << "Min X: " << auxPointer -> minX << endl;
+        cout << "Min X: " << auxPointer -> minY << endl;
+        cout << "Color: " << auxPointer -> color << endl;
+        cout << "Num Adj: " << auxPointer->adjVector->size() << endl;
+        cout << "#==============================#" << endl;
+        cout << endl;
+
+        /*if (auxPointer -> adjVector != NULL) { //-> size() > 0
+                cout << "====================================List of adjacents:====================================" << endl;
+
+                for(auto elements : *auxPointer -> adjVector) {
+                    cout << "ID: " << elements -> id << endl;
+                    cout << "Name: " << elements -> name << endl;
+                    cout << "Max X: " << elements -> maxX << endl;
+                    cout << "Max Y: " << elements -> maxY << endl;
+                    cout << "Min X: " << elements -> minX << endl;
+                    cout << "Min Y: " << elements -> minY << endl;
+                    cout << "Color: " << elements -> color << endl;
+                    cout << "#==============================#" << endl;
+                    cout << endl;
+                }
+
+                cout << "====================================The adjacents ends here!====================================" << endl;
+                cout << endl;
+            }*/
+        auxPointer = auxPointer -> nextCntry;
+    }
+    cout << "!!!!!!!!!!END!!!!!!!!!!" << endl;
 }

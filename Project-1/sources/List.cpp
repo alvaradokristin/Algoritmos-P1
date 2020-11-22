@@ -334,6 +334,7 @@ void List::moveBefore(Country *pCurrentCntry, Country *pBeforeThis) {
 // This method will review all countries to find the adjacents, create a list of them and link them to the current country
 void List::searchAdjacents() {
     pointerCntry cntry = first;
+    bool isFound = false;
 
     for (int elementsLts = 0; elementsLts < listLength(); elementsLts++) {
 
@@ -344,7 +345,15 @@ void List::searchAdjacents() {
 
                 if ((((cntryList -> maxY <= cntry -> maxY) && (cntryList -> maxY >= cntry -> minY)) || ((cntryList -> minY <= cntry -> maxY) && (cntryList -> minY >= cntry -> minY))) &&
                         (((cntryList -> maxX <= cntry -> maxX) && (cntryList -> maxX >= cntry -> minX)) || ((cntryList -> minX <= cntry -> maxX) && (cntryList -> minX >= cntry -> minX)))) {
-                    cntry -> adjVector -> push_back(cntryList);
+
+                    isFound = validateRep(cntry, cntryList);
+                    if (!isFound) {
+                        cntry -> adjVector -> push_back(cntryList);
+                    }
+                    isFound = validateRep(cntryList, cntry);
+                    if (!isFound) {
+                        cntryList -> adjVector -> push_back(cntry);
+                    }
                 }
             }
 
@@ -353,6 +362,24 @@ void List::searchAdjacents() {
 
         cntry = cntry->nextCntry;
     }
+}
+
+// This funtion will validate that we are not adding duplicates to the adjacents vectors
+bool List::validateRep(pointerCntry pCntry, pointerCntry pNewCntry) {
+    bool isFound = false;
+
+    if (pCntry -> adjVector->size() > 0) {
+        for (auto adjCntry : *pCntry -> adjVector) {
+            if (adjCntry == pNewCntry) {
+                isFound = true;
+                break;
+            }
+        }
+    }
+    else {
+        return false;
+    }
+    return isFound;
 }
 
 // This method will print the list
@@ -367,13 +394,14 @@ void List::printList() {
             cout << "Max X: " << auxPointer -> maxX << endl;
             cout << "Max Y: " << auxPointer -> maxY << endl;
             cout << "Min X: " << auxPointer -> minX << endl;
-            cout << "Min X: " << auxPointer -> minY << endl;
+            cout << "Min Y: " << auxPointer -> minY << endl;
             cout << "Color: " << auxPointer -> color << endl;
+            cout << "Num Adj: " << auxPointer->adjVector->size() << endl;
             cout << "#==============================#" << endl;
             cout << endl;
 
-            /*if (auxPointer -> adjVector != NULL) { //-> size() > 0
-                cout << "List of adjacents:" << endl;
+            /*if (auxPointer->adjVector-> size() > 0) { //-> size() > 0
+                cout << "====================================List of adjacents:====================================" << endl;
 
                 for(auto elements : *auxPointer -> adjVector) {
                     cout << "ID: " << elements -> id << endl;
@@ -381,13 +409,13 @@ void List::printList() {
                     cout << "Max X: " << elements -> maxX << endl;
                     cout << "Max Y: " << elements -> maxY << endl;
                     cout << "Min X: " << elements -> minX << endl;
-                    cout << "Min X: " << elements -> minY << endl;
+                    cout << "Min Y: " << elements -> minY << endl;
                     cout << "Color: " << elements -> color << endl;
                     cout << "#==============================#" << endl;
                     cout << endl;
                 }
 
-                cout << "The adjacents ends here!" << endl;
+                cout << "====================================The adjacents ends here!====================================" << endl;
                 cout << endl;
             }*/
             auxPointer = auxPointer -> nextCntry;
