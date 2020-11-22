@@ -27,7 +27,7 @@ int main() {
 
     newListDC.searchAdjacents();
 
-    DivideConquer DC(10, filename, read->encabezado);
+    DivideConquer DC(3, filename, read->encabezado);
     DC.vectorDC = all;
     DC.listDC.first = newListDC.first;
     DC.divideList();

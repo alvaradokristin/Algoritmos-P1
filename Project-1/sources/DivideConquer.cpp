@@ -23,7 +23,7 @@ DivideConquer::DivideConquer(int pNumberColors, string pFileName, string pHeader
 
 // This method will update the information on the map
 void DivideConquer::updateMap() {
-    Sleep(10000);
+    Sleep(10000); // 10000
     to_update(findingFileName,"Divide",vectorDC,fileHeader);
 
     // This will update the timer and print it
@@ -43,7 +43,7 @@ void DivideConquer::divideList() {
     int numCntrs = listDC.listLength();
 
     for (int elmts = 1; elmts <= numCntrs; elmts++) {
-        if (((elmts % 80 != 0) && (numCntrs - elmts > 10)) && (border -> nextCntry != nullptr)) { // 20
+        if (((elmts % 20 != 0) && (numCntrs - elmts > 20)) && (border -> nextCntry != nullptr)) { // 20
             border = border -> nextCntry;
         }
         else {
@@ -60,7 +60,7 @@ void DivideConquer::divideList() {
         }
     }
     if (init != nullptr) { // In case there are any subgrups left
-        conquerSubG(init, pivot, border);
+        isDone = conquerSubG(init, pivot, border);
     }
     doubleCheck();
     updateMap();
