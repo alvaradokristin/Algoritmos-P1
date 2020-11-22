@@ -17,7 +17,7 @@ namespace headers {
         DivideConquer(int pNumberColors, string pFileName, string pHeader);
         //void Create(int num);
         void divideList();
-        void conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder);
+        bool conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder);
         pointerCntry sortSubG(pointerCntry pPivot, pointerCntry pBorder);
         void paintGroup(pointerCntry pInit, pointerCntry pPivot);
         void doubleCheck();
