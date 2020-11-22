@@ -22,6 +22,7 @@ namespace headers {
         void paintGroup(pointerCntry pInit, pointerCntry pPivot);
         void doubleCheck();
         void printSubG(pointerCntry pInit, pointerCntry pBorder);
+        void updateMap();
 
     //private:
         vector<string> vectorDC;

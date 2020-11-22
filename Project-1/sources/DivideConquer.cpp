@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <windows.h>
 
 //#include "../headers/Painter.h" // undefined reference to `headers::Painter::Painter(int)'
 #include "../sources/Painter.cpp"
@@ -20,6 +21,16 @@ DivideConquer::DivideConquer(int pNumberColors, string pFileName, string pHeader
     fileHeader = pHeader;
 }
 
+// This method will update the information on the map
+void DivideConquer::updateMap() {
+    Sleep(10000);
+    to_update(findingFileName,"Divide",vectorDC,fileHeader);
+
+    // This will update the timer and print it
+    timerDC.timeStamp();
+    timerDC.printTime();
+}
+
 // This will divide the list of countries in groups of 10
 void DivideConquer::divideList() {
     pointerCntry init = listDC.first;
@@ -32,14 +43,14 @@ void DivideConquer::divideList() {
     int numCntrs = listDC.listLength();
 
     for (int elmts = 1; elmts <= numCntrs; elmts++) {
-        if (((elmts % 20 != 0) && (numCntrs - elmts > 10)) && (border -> nextCntry != nullptr)) { // 20
+        if (((elmts % 80 != 0) && (numCntrs - elmts > 10)) && (border -> nextCntry != nullptr)) { // 20
             border = border -> nextCntry;
         }
         else {
             if (border -> nextCntry != nullptr) {
-                //printSubG(init, border);
                 border = border -> nextCntry;
                 isDone = conquerSubG(init, pivot, border->prevCntry); // border->prevCntry
+                updateMap();
             }
             else {
                 isDone = conquerSubG(init, pivot, border); // border->prevCntry
@@ -47,17 +58,12 @@ void DivideConquer::divideList() {
             init = border;
             pivot = border;
         }
-        if ((countriesToColor % 20 == 0) && (elmts % 20 == 0)) { // 20
-            to_update(findingFileName,"Divide",vectorDC,fileHeader);
-            timerDC.timeStamp();
-            timerDC.printTime();
-        }
     }
     if (init != nullptr) { // In case there are any subgrups left
         conquerSubG(init, pivot, border);
     }
     doubleCheck();
-    to_update(findingFileName,"Divide",vectorDC,fileHeader);
+    updateMap();
 }
 
 // This will conquer every subgroup of 10 countries
@@ -102,7 +108,6 @@ pointerCntry DivideConquer::sortSubG(pointerCntry pPivot, pointerCntry pBorder) 
                         }
                     } else if ((countries == elements) && (countries == pBorder)) {
                         pBorder = pBorder->prevCntry;
-                        //savePointr = pBorder;
                         countries = countries->nextCntry;
                         listDC.moveBefore(elements, pPivot);
                         if (isFirst) {
@@ -112,7 +117,6 @@ pointerCntry DivideConquer::sortSubG(pointerCntry pPivot, pointerCntry pBorder) 
                     }
                     else {
                         countries = countries->nextCntry;
-                        //savePointr = pBorder;
                     }
                 }
                 if (countries == nullptr) {
@@ -123,8 +127,6 @@ pointerCntry DivideConquer::sortSubG(pointerCntry pPivot, pointerCntry pBorder) 
     else {
         init = pPivot -> nextCntry;
     }
-    //cout << "This is the end of sortSubG!" << endl;
-    //cout << "New Init: " << init->id << endl; //  " New border: " << savePointr->id <<
     return init;
 }
 

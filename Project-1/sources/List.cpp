@@ -321,6 +321,7 @@ void List::moveBefore(Country *pCurrentCntry, Country *pBeforeThis) {
 // This method will review all countries to find the adjacents, create a list of them and link them to the current country
 void List::searchAdjacents() {
     pointerCntry cntry = first;
+    bool isFound = false;
 
     for (int elementsLts = 0; elementsLts < listLength(); elementsLts++) {
 
@@ -331,7 +332,15 @@ void List::searchAdjacents() {
 
                 if ((((cntryList -> maxY <= cntry -> maxY) && (cntryList -> maxY >= cntry -> minY)) || ((cntryList -> minY <= cntry -> maxY) && (cntryList -> minY >= cntry -> minY))) &&
                         (((cntryList -> maxX <= cntry -> maxX) && (cntryList -> maxX >= cntry -> minX)) || ((cntryList -> minX <= cntry -> maxX) && (cntryList -> minX >= cntry -> minX)))) {
-                    cntry -> adjVector -> push_back(cntryList);
+
+                    isFound = validateRep(cntry, cntryList);
+                    if (!isFound) {
+                        cntry -> adjVector -> push_back(cntryList);
+                    }
+                    isFound = validateRep(cntryList, cntry);
+                    if (!isFound) {
+                        cntryList -> adjVector -> push_back(cntry);
+                    }
                 }
             }
 
@@ -340,6 +349,24 @@ void List::searchAdjacents() {
 
         cntry = cntry->nextCntry;
     }
+}
+
+// This funtion will validate that we are not adding duplicates to the adjacents vectors
+bool List::validateRep(pointerCntry pCntry, pointerCntry pNewCntry) {
+    bool isFound = false;
+
+    if (pCntry -> adjVector->size() > 0) {
+        for (auto adjCntry : *pCntry -> adjVector) {
+            if (adjCntry == pNewCntry) {
+                isFound = true;
+                break;
+            }
+        }
+    }
+    else {
+        return false;
+    }
+    return isFound;
 }
 
 // This method will print the list
@@ -360,7 +387,7 @@ void List::printList() {
             cout << "#==============================#" << endl;
             cout << endl;
 
-            if ((auxPointer->id == "DE") || (auxPointer->id == "PL")) { //-> size() > 0
+            /*if (auxPointer->adjVector-> size() > 0) { //-> size() > 0
                 cout << "====================================List of adjacents:====================================" << endl;
 
                 for(auto elements : *auxPointer -> adjVector) {
@@ -377,7 +404,7 @@ void List::printList() {
 
                 cout << "====================================The adjacents ends here!====================================" << endl;
                 cout << endl;
-            }
+            }*/
             auxPointer = auxPointer -> nextCntry;
         }
     }

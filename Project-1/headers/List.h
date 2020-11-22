@@ -41,6 +41,7 @@ namespace headers {
         //void moveToEnd(Country *pCurrentCntry);
         int listLength();
         void searchAdjacents();
+        bool validateRep(pointerCntry pCntry, pointerCntry pNewCntry);
 
     //private:
         pointerCntry first;
