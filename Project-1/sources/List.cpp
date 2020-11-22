@@ -354,14 +354,14 @@ void List::printList() {
             cout << "Max X: " << auxPointer -> maxX << endl;
             cout << "Max Y: " << auxPointer -> maxY << endl;
             cout << "Min X: " << auxPointer -> minX << endl;
-            cout << "Min X: " << auxPointer -> minY << endl;
+            cout << "Min Y: " << auxPointer -> minY << endl;
             cout << "Color: " << auxPointer -> color << endl;
             cout << "Num Adj: " << auxPointer->adjVector->size() << endl;
             cout << "#==============================#" << endl;
             cout << endl;
 
-            /*if (auxPointer -> adjVector != NULL) { //-> size() > 0
-                cout << "◤====================================List of adjacents:====================================◥" << endl;
+            if ((auxPointer->id == "DE") || (auxPointer->id == "PL")) { //-> size() > 0
+                cout << "====================================List of adjacents:====================================" << endl;
 
                 for(auto elements : *auxPointer -> adjVector) {
                     cout << "ID: " << elements -> id << endl;
@@ -375,9 +375,9 @@ void List::printList() {
                     cout << endl;
                 }
 
-                cout << "◣====================================The adjacents ends here!====================================◢" << endl;
+                cout << "====================================The adjacents ends here!====================================" << endl;
                 cout << endl;
-            }*/
+            }
             auxPointer = auxPointer -> nextCntry;
         }
     }

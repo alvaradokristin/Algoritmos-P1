@@ -47,7 +47,6 @@ int main() {
 
     myList.create(all);
 
-    cout << "First color: " << myList.first->color << endl;
     //myList.printList();
     //cout << "Number of countries: " << myList.listLength() << endl;
 
@@ -57,7 +56,7 @@ int main() {
 
     //myList.printList();
 
-    DivideConquer DC(7, filename, read->encabezado);
+    DivideConquer DC(5, filename, read->encabezado);
     DC.vectorDC = all;
     DC.listDC.first = myList.first;
     DC.divideList();

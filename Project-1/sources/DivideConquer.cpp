@@ -25,27 +25,29 @@ void DivideConquer::divideList() {
     pointerCntry init = listDC.first;
     pointerCntry pivot = listDC.first;
     pointerCntry border = listDC.first;
+    bool isDone = false;
 
     timerDC.startTimer();
 
     int numCntrs = listDC.listLength();
 
     for (int elmts = 1; elmts <= numCntrs; elmts++) {
-        if (((elmts % 10 != 0) && (numCntrs - elmts > 10)) && (border -> nextCntry != nullptr)) {
+        if (((elmts % 20 != 0) && (numCntrs - elmts > 10)) && (border -> nextCntry != nullptr)) { // 20
             border = border -> nextCntry;
         }
         else {
             if (border -> nextCntry != nullptr) {
+                //printSubG(init, border);
                 border = border -> nextCntry;
-                conquerSubG(init, pivot, border->prevCntry); // border->prevCntry
+                isDone = conquerSubG(init, pivot, border->prevCntry); // border->prevCntry
             }
             else {
-                conquerSubG(init, pivot, border); // border->prevCntry
+                isDone = conquerSubG(init, pivot, border); // border->prevCntry
             }
             init = border;
             pivot = border;
         }
-        if ((countriesToColor % 20 == 1) && (elmts % 10 == 0)) {
+        if ((countriesToColor % 20 == 0) && (elmts % 20 == 0)) { // 20
             to_update(findingFileName,"Divide",vectorDC,fileHeader);
             timerDC.timeStamp();
             timerDC.printTime();
@@ -59,25 +61,25 @@ void DivideConquer::divideList() {
 }
 
 // This will conquer every subgroup of 10 countries
-void DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) {
-    //printSubG(pInit, pBorder);
+bool DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) {
     if (pPivot != pBorder) {
         pInit = sortSubG(pPivot, pBorder);
-        pBorder = savePointr;
+
         if (pPivot != pBorder) {
             paintGroup(pInit, pPivot);
             pPivot = pPivot -> nextCntry;
             pInit = pPivot;
-        }
-        if (pInit != nullptr) {
             conquerSubG(pInit, pPivot, pBorder);
         }
-        conquerSubG(pInit, pPivot, pBorder);
+        else {
+            conquerSubG(pInit, pPivot, pBorder);
+        }
     }
     else {
-        if (!pInit->isColored)
-            paintGroup(pInit, pPivot);
+        paintGroup(pInit, pPivot);
+        return true;
     }
+    return true;
 }
 
 // This will sort a subgroup where the adj of the pivot will be moved before the pivot
@@ -86,38 +88,43 @@ pointerCntry DivideConquer::sortSubG(pointerCntry pPivot, pointerCntry pBorder) 
     pointerCntry init = pPivot;
     bool isFirst = true;
 
-    if (pPivot -> adjVector->size() > 0) {
-        for(auto elements : *pPivot -> adjVector) {
-            countries = pPivot;
-            while (countries != pBorder -> nextCntry) {
-                if ((countries == elements) && (countries != pBorder)) {
-                    countries = countries -> nextCntry;
-                    listDC.moveBefore(elements, pPivot);
-                    if (isFirst) {
-                        isFirst = false;
-                        init = elements;
+    if (!pPivot -> isColored) {
+        if (pPivot->adjVector->size() > 0) {
+            for (auto elements : *pPivot->adjVector) {
+                countries = pPivot;
+                while (countries != pBorder) {
+                    if ((countries == elements) && (countries != pBorder)) {
+                        countries = countries->nextCntry;
+                        listDC.moveBefore(elements, pPivot);
+                        if (isFirst) {
+                            isFirst = false;
+                            init = elements;
+                        }
+                    } else if ((countries == elements) && (countries == pBorder)) {
+                        pBorder = pBorder->prevCntry;
+                        //savePointr = pBorder;
+                        countries = countries->nextCntry;
+                        listDC.moveBefore(elements, pPivot);
+                        if (isFirst) {
+                            isFirst = false;
+                            init = elements;
+                        }
+                    }
+                    else {
+                        countries = countries->nextCntry;
+                        //savePointr = pBorder;
                     }
                 }
-                else if ((countries == elements) && (countries == pBorder)) {
-                    pBorder = pBorder -> prevCntry;
-                    savePointr = pBorder;
-                    countries = countries -> nextCntry;
-                    listDC.moveBefore(elements, pPivot);
-                    if (isFirst) {
-                        isFirst = false;
-                        init = elements;
-                    }
-                }
-                else {
-                    countries = countries -> nextCntry;
-                    savePointr = pBorder;
+                if (countries == nullptr) {
                 }
             }
         }
     }
     else {
-        savePointr = pBorder;
+        init = pPivot -> nextCntry;
     }
+    //cout << "This is the end of sortSubG!" << endl;
+    //cout << "New Init: " << init->id << endl; //  " New border: " << savePointr->id <<
     return init;
 }
 
@@ -127,56 +134,52 @@ void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
     int contriesClrd = 0; // Countries already colored and this will determine the color (priority), if is gratter than the amount of colors to use, then it will paint it White
     if (cntry != pPivot) {
         while (cntry != pPivot -> nextCntry) {
-            bool newToPaint = false;
-            if (!cntry -> isColored) { // If the country is not colored
-                if (cntry != pInit) {
-                    if (contriesClrd < colorsToUse) {
+            if (!cntry->isColored) {
+                bool newToPaint = false;
+                if (!cntry->isColored) { // If the country is not colored
+                    if (cntry != pInit) {
+                        if (contriesClrd < colorsToUse) {
+                            if (!cntry->isColored) {
+                                newToPaint = true;
+                            }
+                            vectorDC = paint_contries(vectorDC, cntry->id, contriesClrd);
+                            cntry->updateColor(colors->at(contriesClrd));
+                            contriesClrd++;
+                            if (newToPaint) {
+                                countriesToColor -= 1;
+                            }
+                        } else { // This will paint the country white
+                            if (!cntry->isColored) {
+                                newToPaint = true;
+                            }
+                            vectorDC = paint_contries(vectorDC, cntry->id, 12); // 12
+                            cntry->updateColor("FFFFFF");
+                            contriesClrd++;
+                            whiteCountries++;
+                            if (newToPaint) {
+                                countriesToColor -= 1;
+                            }
+                        }
+                    } else {
                         if (!cntry->isColored) {
                             newToPaint = true;
                         }
-                        vectorDC = paint_contries(vectorDC, cntry->id, contriesClrd);
-                        cntry->updateColor(colors->at(contriesClrd));
+                        vectorDC = paint_contries(vectorDC, cntry->id, 0);
+                        cntry->updateColor(colors->at(0));
                         contriesClrd++;
                         if (newToPaint) {
                             countriesToColor -= 1;
                         }
                     }
-                    else { // This will paint the country white
-                        if (!cntry->isColored) {
-                            newToPaint = true;
-                        }
-                        vectorDC = paint_contries(vectorDC, cntry->id, 12); // 12
-                        cntry->updateColor("FFFFFF");
-                        contriesClrd++;
-                        whiteCountries++;
-                        if (newToPaint) {
-                            countriesToColor -= 1;
-                        }
-                    }
                 }
-                else {
-                    if (!cntry->isColored) {
-                        newToPaint = true;
-                    }
-                    vectorDC = paint_contries(vectorDC, cntry->id, 0);
-                    cntry->updateColor(colors->at(0));
-                    contriesClrd++;
-                    if (newToPaint) {
-                        countriesToColor -= 1;
-                    }
-                }
+                cntry = cntry->nextCntry;
             }
-            cntry = cntry -> nextCntry;
         }
     }
     else {
-        bool newToPaint = false;
         if (!cntry->isColored) {
-            newToPaint = true;
-        }
-        vectorDC = paint_contries(vectorDC, cntry->id, 0);
-        cntry->updateColor(colors->at(0));
-        if (newToPaint) {
+            vectorDC = paint_contries(vectorDC, cntry->id, 0);
+            cntry->updateColor(colors->at(0));
             countriesToColor -= 1;
         }
     }
@@ -239,6 +242,25 @@ void DivideConquer::printSubG(pointerCntry pInit, pointerCntry pBorder) {
         cout << "Num Adj: " << auxPointer->adjVector->size() << endl;
         cout << "#==============================#" << endl;
         cout << endl;
+
+        /*if (auxPointer -> adjVector != NULL) { //-> size() > 0
+                cout << "====================================List of adjacents:====================================" << endl;
+
+                for(auto elements : *auxPointer -> adjVector) {
+                    cout << "ID: " << elements -> id << endl;
+                    cout << "Name: " << elements -> name << endl;
+                    cout << "Max X: " << elements -> maxX << endl;
+                    cout << "Max Y: " << elements -> maxY << endl;
+                    cout << "Min X: " << elements -> minX << endl;
+                    cout << "Min Y: " << elements -> minY << endl;
+                    cout << "Color: " << elements -> color << endl;
+                    cout << "#==============================#" << endl;
+                    cout << endl;
+                }
+
+                cout << "====================================The adjacents ends here!====================================" << endl;
+                cout << endl;
+            }*/
         auxPointer = auxPointer -> nextCntry;
     }
     cout << "!!!!!!!!!!END!!!!!!!!!!" << endl;
