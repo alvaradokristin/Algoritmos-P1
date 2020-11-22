@@ -23,8 +23,12 @@ Timer.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 headers/DivideConquer.h
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/headers/DivideConquer.h
+sources/DivideConquer.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/sources/DivideConquer.cpp
 sources/Read_XML.cpp
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/sources/Read_XML.cpp
+headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/headers/Painter.h
 
 D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
