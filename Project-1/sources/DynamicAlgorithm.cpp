@@ -1,5 +1,6 @@
 #include "../sources/Painter.cpp"
 #include "../headers/DynamicAlgorithm.h"
+#include <windows.h>
 
 using namespace headers;
 using namespace std;
@@ -46,60 +47,50 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
         counterforcountries.push_back(index);
     }
     int poscolortous=0;
+    for (int index =0;index < priorities.size();index++){
+        cout<<priorities.at(index);
+    }
     for (int pass = pCounter; pass < pCounter+limit;pass++){
         int position = pListCountries.getposition(pass)->adjVector->size();
         int available= colors_numbers;
-        poscolortous = GetMinColor();
+        poscolortous = 0;
         bool pas = false;
         while (!pas){
+            pas = true;
             for (int index =0;index < position;index++){
-                if (pListCountries.getposition(pass)->adjVector->at(index)->isColored) {
-                    cout<<colors->at(poscolortous);
-                    if (pListCountries.getposition(pass)->adjVector->at(index)->color == "#"+colors->at(poscolortous)) {
-                        poscolortous = GetPosLaterColor(poscolortous);
+                if (pListCountries.getposition(pass)->adjVector->at(index)->isColored == true) {
+                    if (pListCountries.getposition(pass)->adjVector->at(index)->color == colors->at(poscolortous)) {
                         available--;
+                        poscolortous ++;
+                        if (available == 0){
+                            pas = true;
+                            break;
+                        }else{
+                            pas = false;
+                        }
                     }
                 }
-            } if (available == 0){
-                CountriesBlanc++;
-                pListCountries.getposition(pass)->isColored = true;
-                DynamicCountries = paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,0);
-                pas = true;
-            }else{
-                counterforcountries.at(poscolortous)++;
-                pListCountries.getposition(pass)->isColored = true;
-                DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
-                pas = true;
             }
         }
-        //Sleep(5000);
-        to_update(Filename,"Dynamic",DynamicCountries,HeaderFile);
-    }if (limit != 11){
+            if (available == 0){
+                cout<<pListCountries.getposition(pass)->id;
+                CountriesBlanc++;
+                pListCountries.getposition(pass)->isColored = true;
+                pListCountries.getposition(pass)->color="ffffff";
+                DynamicCountries = paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,12);
+            }else{
+                cout<<pListCountries.getposition(pass)->id;
+                counterforcountries.at(poscolortous)++;
+                pListCountries.getposition(pass)->isColored = true;
+                pListCountries.getposition(pass)->color=colors->at(poscolortous);
+                DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
+            }
+        }
+        Sleep(5000);
+        timerDC.timeStamp();
+        to_update(Filename,"Dynamic",DynamicCountries,HeaderFile,CountriesBlanc,((timerDC.elapsed.count() / 1000)));
+    if (limit != 11){
         AlterPriority(counterforcountries);
-         DynamicAlgoritm (pListCountries,pCounter+limit);
+        DynamicAlgoritm (pListCountries,pCounter+limit);
     }
-}
-int Dynamic::GetMinColor (){
-
-    int postoreturn=0;
-
-    for (int index = 0; index < priorities.size();index++){
-        if(priorities.at(index) <priorities.at(postoreturn)){
-            postoreturn = index;
-        }
-    }
-    return postoreturn;
-
-}
-int Dynamic::GetPosLaterColor (int pPosColor){
-
-    int postoreturn=0;
-
-    for (int index = 0; index < priorities.size();index++){
-        if(priorities.at(index) <priorities.at(postoreturn) and priorities.at(index) >=priorities.at(pPosColor)){
-            postoreturn = index;
-        }
-    }
-    return postoreturn;
-
 }

@@ -11,8 +11,6 @@ namespace headers{
     public:
         Dynamic(int pNumberColors,vector<string> pDynamicCountries,string pFilename, string pHeaderFile);
         void AlterPriority (vector<int> pPriorities);
-        int GetPosLaterColor(int pAvailable);
-        int GetMinColor();
         void DynamicAlgoritm (List pListCountries,int PCounter);
     private:
         vector<string> DynamicCountries;
@@ -22,6 +20,7 @@ namespace headers{
         vector<int> priorities;
         int colors_numbers;
         int CountriesBlanc;
+        Timer timerDC;
     };
 
 }

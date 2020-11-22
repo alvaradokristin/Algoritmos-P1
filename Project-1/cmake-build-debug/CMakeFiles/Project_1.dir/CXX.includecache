@@ -14,6 +14,22 @@ bits/stdc++.h
 vector
 -
 
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+List.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+Painter.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+Timer.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+headers/DivideConquer.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/headers/DivideConquer.h
+sources/DivideConquer.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/sources/DivideConquer.cpp
+sources/Read_XML.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/sources/Read_XML.cpp
+headers/Painter.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/headers/Painter.h
+
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
 vector
 -
@@ -54,6 +70,12 @@ vector
 cstdlib
 -
 
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+iostream
+-
+chrono
+-
+
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
 iostream
 -
@@ -69,24 +91,24 @@ cstdlib
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/main.cpp
 iostream
 -
-stdio.h
--
-stdlib.h
--
-windows.h
--
 vector
 -
-sources/Read_XML.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+headers/DivideConquer.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+headers/DynamicAlgorithm.h
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
 sources/DynamicAlgorithm.cpp
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/DynamicAlgorithm.cpp
+sources/Read_XML.cpp
+C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
 
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/DynamicAlgorithm.cpp
 ../sources/Painter.cpp
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 ../headers/DynamicAlgorithm.h
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
+windows.h
+-
 
 C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 ../headers/Painter.h

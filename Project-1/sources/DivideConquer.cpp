@@ -23,7 +23,7 @@ DivideConquer::DivideConquer(int pNumberColors, string pFileName, string pHeader
 
 // This method will update the information on the map
 void DivideConquer::updateMap() {
-    Sleep(10000); // 10000
+    //Sleep(10000); // 10000
     to_update(findingFileName,"Divide",vectorDC,fileHeader);
 
     // This will update the timer and print it
