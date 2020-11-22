@@ -2,7 +2,7 @@
 
 XMLPainter::XMLPainter() {
     numberofcolors = 0;
-    totalcolors={"009688","000000","76448A","B7950B","229954","BA4A00","979A9A","283747","FF00FF","00FFFF","00FF00","FFFF00","808000"};
+    totalcolors={"009688","808000","76448A","B7950B","229954","BA4A00","979A9A","283747","FF00FF","00FFFF","00FF00","FFFF00","000000"};
 }
 void XMLPainter::SingColors (){
     for (int colors = 0; colors < numberofcolors;colors++){
@@ -15,10 +15,10 @@ string XMLPainter::paint_contry(string pCountry, int pcolor) {
     bool pass = false;
     int counter = 0;
     string color;
-    if (pcolor == 12){
-        color = "ffffff";
+    if (pcolor != 12){
+        color = color_to_use[pcolor];
     }else{
-         color = color_to_use[pcolor];
+         color = "ffffff";
     }
     for (int index = 0; index < pCountry.length(); index++)
     {
@@ -28,7 +28,6 @@ string XMLPainter::paint_contry(string pCountry, int pcolor) {
             pass = false;
         }
         if (pass == true){
-            if (pcolor == 12)
             pCountry[index] = color[counter++];
         }
     }

@@ -13,7 +13,6 @@ void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdated
     std::ofstream newFile("C:\\Users\\famil\\Downloads\\world"+pAlgorim+".svg", std::ios::trunc);
     newFile<<pData;
             for (int index=0; index < pUpdatedData.size();index++){
-                cout<<pUpdatedData[index]<<endl;
                 newFile<<pUpdatedData[index]<<endl;
             }
             newFile<<"</svg>";

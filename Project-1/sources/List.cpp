@@ -53,9 +53,9 @@ string List::get_color(string pCountry) {
     bool pass = false;
     int counter = 0;
     for (int index = 0; index < pCountry.length(); index++) {
-        if (pCountry[index - 3] == 'l' and pCountry[index - 2] == ':' and pCountry[index - 1] == '#') {
+        if (pCountry[index] == 'f' and pCountry[index + 1] == 'i' and pCountry[index+2] == 'l' and pCountry[index+3] == 'l') {
             pass = true;
-        } else if (pass == true and pCountry[index] == ';') {
+        } else if (pass == true and pCountry[index] == '"') {
             pass = false;
         }
         if (pass == true) {

@@ -6,9 +6,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-#include <iostream>
 #include <stdlib.h>
-#include <fstream>
 //#include "../headers/XML_Painter.h"
 #include "../sources/XML_Painter.cpp"
 

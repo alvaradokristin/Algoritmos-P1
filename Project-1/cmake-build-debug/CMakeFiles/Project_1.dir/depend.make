@@ -9,7 +9,6 @@ CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/Read_XML.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../headers/XML_Painter.h
 CMakeFiles/Project_1.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Project_1.dir/main.cpp.obj: ../sources/DynamicAlgorithm.cpp
-CMakeFiles/Project_1.dir/main.cpp.obj: ../sources/List.cpp
 CMakeFiles/Project_1.dir/main.cpp.obj: ../sources/Painter.cpp
 CMakeFiles/Project_1.dir/main.cpp.obj: ../sources/Read_XML.cpp
 CMakeFiles/Project_1.dir/main.cpp.obj: ../sources/XML_Painter.cpp
