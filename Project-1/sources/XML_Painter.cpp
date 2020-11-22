@@ -1,8 +1,8 @@
 #include "../headers/XML_Painter.h"
 
 XMLPainter::XMLPainter() {
-    numberofcolors = 0;
-    totalcolors={"009688","000000","76448A","B7950B","229954","BA4A00","979A9A","283747","FF00FF","00FFFF","00FF00","FFFFFF","808000"}; // 12: "FFFF00"
+    numberofcolors = 0; // 77004D
+    totalcolors={"0682CE","7AC943","FF931E","E20011","B310FF","00FFFF","77004D","FCEE21","3BFFA6","1B1464","FF1FC5","948FFF","FF7BAC"}; // 12: "FFFF00"
 }
 void XMLPainter::SingColors (){
     for (int colors = 0; colors < numberofcolors;colors++){

@@ -25,5 +25,5 @@ void Timer::timeStamp() {
 }
 
 void Timer::printTime() {
-    cout << "Execution time with " << ": " << elapsed.count() << " msseconds" << endl;
+    cout << "Execution time: " << (elapsed.count() / 1000) << " seconds" << endl;
 }
