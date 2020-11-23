@@ -44,7 +44,7 @@ void DivideConquer::divideList() {
     int numCntrs = listDC.listLength();
 
     for (int elmts = 1; elmts <= numCntrs; elmts++) {
-        if (((elmts % 20 != 0) && (numCntrs - elmts > 20)) && (border -> nextCntry != nullptr)) { // 30
+        if ((elmts % 20 != 0) && (border -> nextCntry != nullptr)) { // 20 //  && (numCntrs - elmts > 20)
             border = border -> nextCntry;
         }
         else {
@@ -69,7 +69,6 @@ void DivideConquer::divideList() {
 
 // This will conquer every subgroup of 10 countries
 bool DivideConquer::conquerSubG(pointerCntry pInit, pointerCntry pPivot, pointerCntry pBorder) {
-    //cout << "Conquer" << endl;
     if ((pPivot != pBorder) && (pPivot != nullptr)) {
         pInit = sortSubG(pPivot, pBorder);
 
@@ -142,8 +141,9 @@ void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
             isItPainted = true;
         vectorDC = paint_contries(vectorDC, countries->id, prioritiesUsed);
         countries -> updateColor(colors->at(prioritiesUsed));
-        if (!isItPainted)
+        if (!isItPainted) {
             countriesToColor -= 1;
+        }
         prioritiesUsed++;
     }
     else { // This will paint the country white // if (!countries -> isColored)
@@ -157,7 +157,6 @@ void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
     }
 }
 
-// Once all the list is painted, this will double check that there are no adj with the same color, if there are, it will update the color
 /*void DivideConquer::doubleCheck() {
     whiteCountries = 0;
     pointerCntry countries = listDC.first;
@@ -201,6 +200,7 @@ void DivideConquer::paintGroup(pointerCntry pInit, pointerCntry pPivot) {
     }
 }*/
 
+// Once all the list is painted, this will double check that there are no adj with the same color, if there are, it will update the color
 void DivideConquer::doubleCheck() {
     whiteCountries = 0;
     int pos;
@@ -233,14 +233,6 @@ void DivideConquer::doubleCheck() {
     }
 }
 
-void DivideConquer::printVec(vector<string> pVec) {
-    cout << "-----------Vec-------------" << endl;
-    for(auto adjs : pVec) {
-        cout << adjs << endl;
-    }
-    cout << "#-----------Vec-------------#" << endl;
-}
-
 // This function will retunr the position of the color inside the vector
 int DivideConquer::getPosVec(vector<string> pColToUSe, string pColor) {
     int pos = -1;
@@ -254,7 +246,15 @@ int DivideConquer::getPosVec(vector<string> pColToUSe, string pColor) {
     return -1;
 }
 
-void DivideConquer::printSubG(pointerCntry pInit, pointerCntry pBorder) {
+/*void DivideConquer::printVec(vector<string> pVec) {
+    cout << "-----------Vec-------------" << endl;
+    for(auto adjs : pVec) {
+        cout << adjs << endl;
+    }
+    cout << "#-----------Vec-------------#" << endl;
+}*/
+
+/*void DivideConquer::printSubG(pointerCntry pInit, pointerCntry pBorder) {
     pointerCntry auxPointer = pInit;
 
     cout << "!!!!!!!!!!BEGINNING!!!!!!!!!!/n" << endl;
@@ -291,4 +291,4 @@ void DivideConquer::printSubG(pointerCntry pInit, pointerCntry pBorder) {
         auxPointer = auxPointer -> nextCntry;
     }
     cout << "!!!!!!!!!!END!!!!!!!!!!\n" << endl;
-}
+}*/

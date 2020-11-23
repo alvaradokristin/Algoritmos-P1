@@ -27,13 +27,13 @@ int main() {
 
     newListDC.searchAdjacents();
 
-    DivideConquer DC(3, filename, read->encabezado);
+    DivideConquer DC(7, filename, read->encabezado);
     DC.vectorDC = all;
     DC.listDC.first = newListDC.first;
     DC.divideList();
 
-    cout << "======================================================================\nFinal list: " << endl;
-    DC.listDC.printList();
+    /*cout << "======================================================================\nFinal list: " << endl;
+    DC.listDC.printList();*/
 
     cout << "Number of countries: " << DC.listDC.listLength() << endl;
     cout << "Number of countries that were not painted: " << DC.countriesToColor << endl;

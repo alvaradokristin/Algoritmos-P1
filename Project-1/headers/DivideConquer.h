@@ -21,10 +21,10 @@ namespace headers {
         pointerCntry sortSubG(pointerCntry pPivot, pointerCntry pBorder);
         void paintGroup(pointerCntry pInit, pointerCntry pPivot);
         void doubleCheck();
-        void printSubG(pointerCntry pInit, pointerCntry pBorder);
         void updateMap();
         int getPosVec(vector<string> pColToUSe, string pColor);
-        void printVec(vector<string> pVec);
+        //void printSubG(pointerCntry pInit, pointerCntry pBorder);
+        //void printVec(vector<string> pVec);
 
     //private:
         vector<string> vectorDC;
@@ -32,7 +32,6 @@ namespace headers {
         int whiteCountries;
         int colorsToUse;
         List listDC;
-        pointerCntry savePointr;
         string findingFileName;
         string fileHeader;
         Timer timerDC;
