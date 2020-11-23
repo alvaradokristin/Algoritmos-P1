@@ -93,7 +93,8 @@ string Country::separateByChar(char pChar, string pText, short pPosition) {
         return yCoor;
 }
 
-float Country::setMax(string pData, int pOption){
+// ------------------------------------ V1 ------------------------------------ //
+/*float Country::setMax(string pData, int pOption){
     string coordenates = "";
     float prevNumber = 0;
     float newPoint = 0;
@@ -106,13 +107,9 @@ float Country::setMax(string pData, int pOption){
         }
         else {
             if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
-                //cout << "coordenates: " << "{" << coordenates << "}" << endl;
                 value = separateByChar(',', coordenates, pOption);
                 newPoint = stof(value);
-                //cout << "newPoint Max: " << newPoint << endl;
                 prevNumber = prevNumber + newPoint;
-                //cout << "prevNumber Max: " << prevNumber << endl;
-                //cout << endl;
                 if (max <= prevNumber) {
                     max = prevNumber;
                 }
@@ -136,16 +133,103 @@ float Country::setMin(string pData, int pOption){
         }
         else {
             if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
-                //cout << "coordenates: " << "{" << coordenates << "}" << endl;
                 value = separateByChar(',', coordenates, pOption);
                 newPoint = stof(value);
-                //cout << "newPoint Min: " << newPoint << endl;
                 prevNumber = prevNumber + newPoint;
-                //cout << "prevNumber Min: " << prevNumber << endl;
-                //cout << endl;
                 if (min >= prevNumber) {
                     min = prevNumber;
                 }
+            }
+            coordenates = "";
+        }
+    }
+    return min;
+}*/
+
+// ------------------------------------ V2 ------------------------------------ //
+float Country::setMax(string pData, int pOption){
+    string coordenates = "";
+    float prevNumber = 0;
+    float newPoint = 0;
+    float max = -1;
+    string value;
+    bool isFirst = true;
+    bool isM = false;
+
+    for (auto txtChar : pData) {
+        if (txtChar != ' ') {
+            coordenates = coordenates + txtChar;
+        }
+        else {
+            if (!isFirst) {
+                if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
+                    value = separateByChar(',', coordenates, pOption);
+                    newPoint = stof(value);
+                    if (!isM) {
+                        prevNumber = prevNumber + newPoint;
+                        if (max <= prevNumber) {
+                            max = prevNumber;
+                        }
+                    }
+                    else {
+                        prevNumber = newPoint;
+                        if (max <= prevNumber) {
+                            max = prevNumber;
+                        }
+                        isM = false;
+                    }
+                }
+                else if (coordenates == "M") {
+                    isM = true;
+                }
+            }
+            else {
+                isFirst = false;
+            }
+            coordenates = "";
+        }
+    }
+    return max;
+}
+
+float Country::setMin(string pData, int pOption){
+    string coordenates = "";
+    float prevNumber = 0;
+    float newPoint = 0;
+    float min = 3.402823466e+38F;
+    string value;
+    bool isFirst = true;
+    bool isM = false;
+
+    for (auto txtChar : pData) {
+        if (txtChar != ' ') {
+            coordenates = coordenates + txtChar;
+        }
+        else {
+            if (!isFirst) {
+                if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
+                    value = separateByChar(',', coordenates, pOption);
+                    newPoint = stof(value);
+                    if (!isM) {
+                        prevNumber = prevNumber + newPoint;
+                        if (min >= prevNumber) {
+                            min = prevNumber;
+                        }
+                    }
+                    else {
+                        prevNumber = newPoint;
+                        if (min >= prevNumber) {
+                            min = prevNumber;
+                        }
+                        isM = false;
+                    }
+                }
+                else if (coordenates == "M") {
+                    isM = true;
+                }
+            }
+            else {
+                isFirst = false;
             }
             coordenates = "";
         }
