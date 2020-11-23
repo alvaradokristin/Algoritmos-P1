@@ -1,30 +1,26 @@
 #ifndef PROJECT_1_DYNAMICALGORITHM_H
 #define PROJECT_1_DYNAMICALGORITHM_H
 #include <vector>
-//#include "../headers/Country.h"
-
+#include "Painter.h"
+#include "List.h"
 
 using namespace std;
 
-namespace headers {
-
-    class Dynamic {
-
-        friend class List;
-
+namespace headers{
+    class Dynamic : public Painter{
     public:
-
-        Dynamic();
-
-        vector<int>CreatePriority (Country *pContriesEvalue);
-        void DynamicAlgoritm (Country *pListCountries);
-
+        Dynamic(int pNumberColors,vector<string> pDynamicCountries,string pFilename, string pHeaderFile);
+        void AlterPriority (vector<int> pPriorities);
+        void DynamicAlgoritm (List pListCountries,int PCounter);
     private:
-
+        vector<string> DynamicCountries;
+        string Filename;
+        string HeaderFile;
+        int countriesBlanc;
         vector<int> priorities;
         int colors_numbers;
-
-
+        int CountriesBlanc;
+        Timer timerDC;
     };
 
 }

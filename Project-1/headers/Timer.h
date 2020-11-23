@@ -21,11 +21,12 @@ namespace headers {
         void startTimer();
         void timeStamp();
         void printTime();
+        duration<double, milli> elapsed;
 
     private:
         high_resolution_clock::time_point start;
         high_resolution_clock::time_point  point;
-        duration<double, milli> elapsed;
+
     };
 }
 

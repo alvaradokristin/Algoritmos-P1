@@ -53,9 +53,9 @@ string List::get_color(string pCountry) {
     bool pass = false;
     int counter = 0;
     for (int index = 0; index < pCountry.length(); index++) {
-        if (pCountry[index - 3] == 'l' and pCountry[index - 2] == ':' and pCountry[index - 1] == '#') {
+        if (pCountry[index] == 'f' and pCountry[index + 1] == 'i' and pCountry[index+2] == 'l' and pCountry[index+3] == 'l') {
             pass = true;
-        } else if (pass == true and pCountry[index] == ';') {
+        } else if (pass == true and pCountry[index] == '"') {
             pass = false;
         }
         if (pass == true) {
@@ -115,6 +115,19 @@ string List::get_dimentions(string pCountry){
         }
     }
     return buffer;
+}
+
+Country *List::getposition(int pPos){
+    Country *temp = first;
+    int counter = 0;
+    while (temp != NULL){
+        if (counter == pPos){
+            return temp;
+        }
+        temp = temp->nextCntry;
+        counter++;
+    }
+    return NULL;
 }
 
 // This method will add a new Country at the beginning of the list

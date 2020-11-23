@@ -6,9 +6,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-#include <iostream>
 #include <stdlib.h>
-#include <fstream>
 //#include "../headers/XML_Painter.h"
 #include "../sources/XML_Painter.cpp"
 
@@ -23,7 +21,7 @@ public:
     vector<string> *colors;
     XMLPainter *write;
 
-    void to_update(string,string,vector<string>,string, int pColorBlank);
+    void to_update(string,string,vector<string>,string,int pColorBlank,double pTime);
     vector<string> paint_contries(vector<string> countries,string country,int color);
 
 };
