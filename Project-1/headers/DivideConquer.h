@@ -23,6 +23,8 @@ namespace headers {
         void doubleCheck();
         void printSubG(pointerCntry pInit, pointerCntry pBorder);
         void updateMap();
+        int getPosVec(vector<string> pColToUSe, string pColor);
+        void printVec(vector<string> pVec);
 
     //private:
         vector<string> vectorDC;

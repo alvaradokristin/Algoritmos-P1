@@ -23,7 +23,7 @@ public:
     vector<string> *colors;
     XMLPainter *write;
 
-    void to_update(string,string,vector<string>,string);
+    void to_update(string,string,vector<string>,string, int pColorBlank);
     vector<string> paint_contries(vector<string> countries,string country,int color);
 
 };

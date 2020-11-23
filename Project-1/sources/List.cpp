@@ -372,39 +372,44 @@ bool List::validateRep(pointerCntry pCntry, pointerCntry pNewCntry) {
 // This method will print the list
 void List::printList() {
     pointerCntry auxPointer = first;
+    bool all = true;
 
-    if (!isListEmpty())
-    {
+    if (!isListEmpty()) {
         while (auxPointer) {
-            cout << "ID: " << auxPointer -> id << endl;
-            cout << "Name: " << auxPointer -> name << endl;
-            cout << "Max X: " << auxPointer -> maxX << endl;
-            cout << "Max Y: " << auxPointer -> maxY << endl;
-            cout << "Min X: " << auxPointer -> minX << endl;
-            cout << "Min Y: " << auxPointer -> minY << endl;
-            cout << "Color: " << auxPointer -> color << endl;
-            cout << "Num Adj: " << auxPointer->adjVector->size() << endl;
-            cout << "#==============================#" << endl;
-            cout << endl;
-
-            /*if (auxPointer->adjVector-> size() > 0) { //-> size() > 0
-                cout << "====================================List of adjacents:====================================" << endl;
-
-                for(auto elements : *auxPointer -> adjVector) {
-                    cout << "ID: " << elements -> id << endl;
-                    cout << "Name: " << elements -> name << endl;
-                    cout << "Max X: " << elements -> maxX << endl;
-                    cout << "Max Y: " << elements -> maxY << endl;
-                    cout << "Min X: " << elements -> minX << endl;
-                    cout << "Min Y: " << elements -> minY << endl;
-                    cout << "Color: " << elements -> color << endl;
-                    cout << "#==============================#" << endl;
-                    cout << endl;
-                }
-
-                cout << "====================================The adjacents ends here!====================================" << endl;
+            if (all) { // auxPointer->id == "CF"
+                cout << "ID: " << auxPointer->id << endl;
+                cout << "Name: " << auxPointer->name << endl;
+                cout << "Max X: " << auxPointer->maxX << endl;
+                cout << "Min X: " << auxPointer->minX << endl;
+                cout << "Max Y: " << auxPointer->maxY << endl;
+                cout << "Min Y: " << auxPointer->minY << endl;
+                cout << "Color: " << auxPointer->color << endl;
+                cout << "Num Adj: " << auxPointer->adjVector->size() << endl;
+                cout << "#==============================#" << endl;
                 cout << endl;
-            }*/
+
+                /*if (auxPointer->adjVector->size() > 0) { //-> size() > 0
+                    cout << "====================================List of adjacents:===================================="
+                         << endl;
+
+                    for (auto elements : *auxPointer->adjVector) {
+                        cout << "ID: " << elements->id << endl;
+                        cout << "Name: " << elements->name << endl;
+                        cout << "Max X: " << elements->maxX << endl;
+                        cout << "Min X: " << elements->minX << endl;
+                        cout << "Max Y: " << elements->maxY << endl;
+                        cout << "Min Y: " << elements->minY << endl;
+                        cout << "Color: " << elements->color << endl;
+                        cout << "#==============================#" << endl;
+                        cout << endl;
+                    }
+
+                    cout
+                            << "====================================The adjacents ends here!===================================="
+                            << endl;
+                    cout << endl;
+                }*/
+            }
             auxPointer = auxPointer -> nextCntry;
         }
     }

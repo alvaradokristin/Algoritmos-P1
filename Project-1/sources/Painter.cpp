@@ -8,14 +8,16 @@ Painter::Painter(int pNumber_Colors){
 
 }
 
-void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdatedData,string pData){
+void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdatedData,string pData, int pColorBlank){
 
     std::ofstream newFile("D:\\OneDrive\\Escritorio\\world"+pAlgorim+".svg", std::ios::trunc);
     newFile<<pData;
+    //newFile<< "<text x='1300' y= '100' font-size='2em' fill='red'>"+std::to_string(pColorBlank)+"</text>";
             for (int index=0; index < pUpdatedData.size();index++){
                 //cout<<pUpdatedData[index]<<endl;
                 newFile<<pUpdatedData[index]<<endl;
             }
+            newFile<< "<text x='1200' y= '830' font-size='2em' fill='black'> Countries in white: " + std::to_string(pColorBlank)+"</text>";
             newFile<<"</svg>";
 }
 
