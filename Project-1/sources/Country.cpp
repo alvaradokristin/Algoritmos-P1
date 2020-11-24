@@ -16,7 +16,6 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     id = pId;
     name = pName;
     dimensions = pDimensions;
-    //createCoordenates(pDimensions); // This will populate the vectors
     style = pStyle;
     isColored = false;
     maxX = setMax(pDimensions, 1);
@@ -24,8 +23,8 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     minX = setMin(pDimensions, 1);
     minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
-    nextCntry = NULL;
-    prevCntry = NULL;
+    nextCntry = nullptr;
+    prevCntry = nullptr;
     adjVector = new vector<Country*>();
 }
 
@@ -43,7 +42,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
-    prevCntry = NULL;
+    prevCntry = nullptr;
     adjVector = new vector<Country*>();
 }
 
@@ -65,12 +64,14 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     adjVector = new vector<Country*>();
 }
 
+// This method will update the color on a country
 void Country::updateColor(string pNewColor) { // Country *pCurrentCntry,
     color = pNewColor;
     style = "fill:" + pNewColor + ";fill-rule:evenodd";
     isColored = true;
 }
 
+// This function will separate a string by the character that you need
 string Country::separateByChar(char pChar, string pText, short pPosition) {
     string xCoor = "";
     string yCoor = "";

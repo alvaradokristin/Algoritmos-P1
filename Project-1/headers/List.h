@@ -19,6 +19,7 @@ namespace headers {
 
         friend class Country;
         friend class Dynamic;
+        friend class Program;
 
     public:
         List();
@@ -29,17 +30,11 @@ namespace headers {
         string get_dimentions(string pCountry);
         void addBeginning(string pId, string pName, string pDimensions, string pStyle);
         void addEnd(string pId, string pName, string pDimensions, string pStyle);
-        //void addAdjacent(Country *pCurrentCntry, Country *pAdjList);
         Country *getposition(int pPos);
-        void removeFirst();
-        void removeLast();
-        void removePos(int pPosition);
         bool isListEmpty();
         void printList();
-        //void moveToNext();
         void moveToBeginning(Country *pCurrentCntry);
         void moveBefore(Country *pCurrentCntry, Country *pBeforeThis);
-        //void moveToEnd(Country *pCurrentCntry);
         int listLength();
         void searchAdjacents();
         bool validateRep(pointerCntry pCntry, pointerCntry pNewCntry);
