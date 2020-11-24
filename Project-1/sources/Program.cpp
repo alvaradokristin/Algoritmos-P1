@@ -2,6 +2,7 @@
 // Created by Kris on 11/23/2020.
 //
 
+#include <windows.h>
 #include "../headers/Program.h"
 #include "../headers/DynamicAlgorithm.h"
 #include "DynamicAlgorithm.cpp"
@@ -17,7 +18,8 @@ void Program::start() {
     int numOfColors;
     bool isValid = false;
 
-    cout << "\n#============= Hello! =============#" << "\n\nPlease provide the number of colors that you want to use to paint the map:";
+    cout << "\n#================== Hello! ==================#\n\n";
+    cout << "Please provide the number of colors that you want to use to paint the map:";
     cin >> numOfColors;
 
     if ((numOfColors < 3) || (numOfColors > 11)) {
@@ -57,15 +59,24 @@ void Program::start() {
     newListDC.searchAdjacents();
     newListDynamic.searchAdjacents();
 
-    // This will create the algorithms objects
-    Dynamic dp(numOfColors,vectorDPAll,filename,readDP->encabezado); // dp -> Dynamic Programming
-    dp.DynamicAlgoritm(newListDynamic,0);
-
-    DivideConquer dc(numOfColors, filename, readDC->encabezado, vectorDCAll); // dc -> Divide and Conquer
-    dc.start(newListDC.first);
-
     cout << "\n----------- Painting the maps with " << numOfColors << " colors -----------\n" << endl;
 
+    // This will create the algorithms objects and start the algorithms
+    cout << "Dynamic Programming started..." << endl;
+    Dynamic dp(numOfColors,vectorDPAll,filename,readDP->encabezado); // dp -> Dynamic Programming
+    dp.DynamicAlgoritm(newListDynamic,0);
+    cout << "...Dynamic Programming finished\n" << endl;
+
+    Sleep(2000);
+
+    cout << "Divide and Conquer started..." << endl;
+    DivideConquer dc(numOfColors, filename, readDC->encabezado, vectorDCAll); // dc -> Divide and Conquer
+    dc.start(newListDC.first);
+    cout << "...Divide and Conquer finished\n" << endl;
+
+    Sleep(2000);
+
+    // This will print the information based on the algorithms
     cout << "Dynamic Programming - Final Data:" << endl;
     cout << "Number of countries painted in white: " << dp.CountriesBlanc << endl;
     dp.timerDC.printTime();
