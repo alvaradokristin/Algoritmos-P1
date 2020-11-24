@@ -30,7 +30,7 @@ void DivideConquer::start(pointerCntry pFirst) {
 
 // This method will update the information on the map
 void DivideConquer::updateMap() {
-    //Sleep(3000); // 10000
+    Sleep(3000); // 10000
 
     // This will update the timer and print it
     timerDC.timeStamp();

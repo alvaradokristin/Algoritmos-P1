@@ -2,15 +2,15 @@
 
 Painter::Painter(int pNumber_Colors){
     write = new XMLPainter();
-    write->numberofcolors = pNumber_Colors;
-    write ->SingColors();
+    write -> numberofcolors = pNumber_Colors;
+    write -> SingColors();
     colors = &write->color_to_use;
 
 }
-//update the svg document in the assigned address and with the algorithm name
+// Update the svg document in the assigned address and with the algorithm name
 void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdatedData,string pData,int pColorBlank,double pTime){
 
-    std::ofstream newFile("C:\\Users\\famil\\OneDrive\\Escritorio\\world "+pAlgorim+" algorithm.svg", std::ios::trunc);
+    std::ofstream newFile("D:\\OneDrive\\Escritorio\\world " + pAlgorim + " algorithm.svg", std::ios::trunc);
     newFile<<pData;
             for (int index=0; index < pUpdatedData.size();index++){
                 newFile<<pUpdatedData[index]<<endl;
@@ -22,7 +22,7 @@ void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdated
             newFile<<"</svg>";
 }
 
-//paint a specific country based on the position of the color in the color list
+// Paint a specific country based on the position of the color in the color list
 vector<string> Painter::paint_contries(vector<string> pCountries,string pCountry,int pColor) {
     string buffer;
     bool pass = false;

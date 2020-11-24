@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 string
 -
 bits/stdc++.h
@@ -14,29 +14,29 @@ bits/stdc++.h
 vector
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
 List.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 Painter.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 Timer.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
 vector
 -
 Painter.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 List.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 Timer.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/List.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/List.h
 ../headers/Country.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Country.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Country.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 iostream
 -
 fstream
@@ -50,11 +50,11 @@ cstdlib
 stdlib.h
 -
 ../sources/XML_Painter.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Program.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Program.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
 iostream
 -
 fstream
@@ -66,13 +66,13 @@ vector
 cstdlib
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Timer.h
 iostream
 -
 chrono
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
 iostream
 -
 fstream
@@ -84,7 +84,7 @@ vector
 cstdlib
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
 iostream
 -
 windows.h
@@ -92,37 +92,37 @@ windows.h
 algorithm
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/DynamicAlgorithm.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DynamicAlgorithm.cpp
 ../sources/Painter.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 windows.h
 -
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Painter.cpp
 ../headers/Painter.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Painter.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Program.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Program.cpp
 windows.h
 -
 ../headers/Program.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Program.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Program.h
 ../headers/DynamicAlgorithm.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DynamicAlgorithm.h
 DynamicAlgorithm.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/DynamicAlgorithm.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DynamicAlgorithm.cpp
 ../headers/DivideConquer.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/DivideConquer.h
 DivideConquer.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/DivideConquer.cpp
 Read_XML.cpp
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/Read_XML.cpp
 ../headers/Read_XML.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/Read_XML.h
 
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/sources/XML_Painter.cpp
 ../headers/XML_Painter.h
-C:/Users/famil/OneDrive/Documents/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
+D:/KAG/kag/GitHub/Algoritmos-P1/Project-1/headers/XML_Painter.h
 
