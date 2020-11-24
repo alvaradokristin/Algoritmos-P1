@@ -7,19 +7,22 @@ Painter::Painter(int pNumber_Colors){
     colors = &write->color_to_use;
 
 }
-
+//update the svg document in the assigned address and with the algorithm name
 void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdatedData,string pData,int pColorBlank,double pTime){
 
-    std::ofstream newFile("D:\\OneDrive\\Escritorio\\world"+pAlgorim+".svg", std::ios::trunc);
+    std::ofstream newFile("C:\\Users\\famil\\OneDrive\\Escritorio\\world "+pAlgorim+" algorithm.svg", std::ios::trunc);
     newFile<<pData;
             for (int index=0; index < pUpdatedData.size();index++){
                 newFile<<pUpdatedData[index]<<endl;
             }
+            //keep the number of countries blank
             newFile<< "<text x='1200' y= '830' font-size='2em' fill='black'>Countries in white: "+std::to_string(pColorBlank)+"</text>";
+            //save the save round time
             newFile<< "<text x='1200' y= '860' font-size='2em' fill='black'>Time: "+std::to_string(pTime)+"</text>";
             newFile<<"</svg>";
 }
 
+//paint a specific country based on the position of the color in the color list
 vector<string> Painter::paint_contries(vector<string> pCountries,string pCountry,int pColor) {
     string buffer;
     bool pass = false;

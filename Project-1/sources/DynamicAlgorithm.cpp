@@ -10,16 +10,20 @@ Dynamic::Dynamic(int pNumberColors,vector<string> pDynamicCountries,string pFile
     Filename =pFilename;
     HeaderFile = pHeaderFile;
     CountriesBlanc =0;
+    //Create first priority queue
     for (int index  =0;index < pNumberColors;index++){
         priorities.push_back(index);
     }
-
+    //Start timer
+    timerDC.startTimer();
 }
 
+//Alters the priority queue by learning from a queue of a pseudo-color nucleus
 void Dynamic::AlterPriority (vector<int> pPrioritiesValue){
-    int maxindex = 0;
-    int priority = pPrioritiesValue.size()-1;
+
+    int priority = (pPrioritiesValue.size()-1);
     for (int indexround = 0; indexround < pPrioritiesValue.size(); indexround++){
+        int maxindex = 0;
         for (int index = 0;index < pPrioritiesValue.size();index++){
             if (pPrioritiesValue[index] > pPrioritiesValue[maxindex]){
                 maxindex = index;
@@ -27,10 +31,10 @@ void Dynamic::AlterPriority (vector<int> pPrioritiesValue){
         }
         priorities.at(maxindex) = priority--;
         pPrioritiesValue.at(maxindex) = 0;
-        maxindex=0;
     }
 }
 
+//Create a dynamic algorithm, which takes 10 elements and examines the data with a priority queue
 void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
 
     int limit;
@@ -39,27 +43,25 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
     }else{
         limit = 11;
     }
-    vector<Country*> ListToPaint;
-    vector<int> counterforcountries;
+    //evaluate if it is your last iteration
+    vector<int> counterforcountries; //create a color counter
     for (int index =0;index < colors_numbers;index++){
         counterforcountries.push_back(index);
     }
-    int poscolortous=0;
-    for (int index =0;index < priorities.size();index++){
-    }
+    int poscolortous;
     for (int pass = pCounter; pass < pCounter+limit;pass++){
         int position = pListCountries.getposition(pass)->adjVector->size();
         int available= colors_numbers;
         poscolortous = 0;
         bool pas = false;
-        while (!pas){
+        while (!pas){ //look for the adjacent ones
             pas = true;
-            for (int index =0;index < position;index++){
-                if (pListCountries.getposition(pass)->adjVector->at(index)->isColored == true) {
+            for (int index =0;index < position;index++){ //evaluates if the adjacent is painted
+                if (pListCountries.getposition(pass)->adjVector->at(index)->isColored == true) { //evaluates if according to the priority queue it can paint
                     if (pListCountries.getposition(pass)->adjVector->at(index)->color == colors->at(poscolortous)) {
                         available--;
                         poscolortous ++;
-                        if (available == 0){
+                        if (available == 0){ //evaluate if there are still colors to paint
                             pas = true;
                             break;
                         }else{
@@ -69,21 +71,24 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
                 }
             }
         }
-            if (available == 0){
-                CountriesBlanc++;
-                pListCountries.getposition(pass)->isColored = true;
-                pListCountries.getposition(pass)->color="ffffff";
-                DynamicCountries = paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,12);
-            }else{
-                counterforcountries.at(poscolortous)++;
-                pListCountries.getposition(pass)->isColored = true;
-                pListCountries.getposition(pass)->color=colors->at(poscolortous);
-                DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
-            }
+        if (available == 0){ //if not there are colors available, paint it white
+            CountriesBlanc++;
+            pListCountries.getposition(pass)->isColored = true;
+            pListCountries.getposition(pass)->color="ffffff";
+            DynamicCountries = paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,12);
+        }else{ //pint of necessary color
+            counterforcountries.at(poscolortous)++;
+            pListCountries.getposition(pass)->isColored = true;
+            pListCountries.getposition(pass)->color=colors->at(poscolortous);
+            DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
         }
-        Sleep(3000); // 10000
-        timerDC.timeStamp();
-        to_update(Filename,"Dynamic",DynamicCountries,HeaderFile,CountriesBlanc,((timerDC.elapsed.count() / 1000)));
+    }
+    Sleep(3000);
+    // This will update the timer and print it
+    timerDC.timeStamp();
+    //update document svg
+    to_update(Filename,"Dynamic",DynamicCountries,HeaderFile,CountriesBlanc,((timerDC.elapsed.count() / 1000)));
+    //Code output parameter
     if (limit != 11){
         AlterPriority(counterforcountries);
         DynamicAlgoritm (pListCountries,pCounter+limit);

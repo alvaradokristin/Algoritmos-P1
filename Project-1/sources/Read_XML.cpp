@@ -4,7 +4,8 @@
 Readfile::Readfile (string pFilename) {
     filename = pFilename;
 }
-//======================================================================
+//=======================================================
+//fetches the data from the file and saves it in a string
 string Readfile::getFile()
 {
     string buffer;
@@ -16,7 +17,8 @@ string Readfile::getFile()
 
     return buffer;
 }
-//======================================================================
+//===========================================================================
+//read the file and separate it into a country specific string, save a header
 vector<string> Readfile::getData(string pText )
 {
     vector<string> collection;

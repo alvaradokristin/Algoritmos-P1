@@ -13,12 +13,11 @@
 using namespace std;
 
 class Painter{
-public:
 
+public:
     Painter(int pNumber_Colors);
     vector<string> *colors;
     XMLPainter *write;
-
     void to_update(string,string,vector<string>,string,int pColorBlank,double pTime);
     vector<string> paint_contries(vector<string> countries,string country,int color);
 
