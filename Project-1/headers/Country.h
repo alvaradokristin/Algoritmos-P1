@@ -17,6 +17,8 @@ namespace headers {
     class Country {
 
         friend class List;
+        friend class DivideConquer;
+        friend class Dynamic;
 
     public:
         Country(string pId, string pName, string pDimensions, string pStyle);
@@ -27,7 +29,7 @@ namespace headers {
         float setMax(string pData, int pOption);
         float setMin(string pData, int pOption);
 
-    //private:
+    private:
         Country *nextCntry;
         Country *prevCntry;
         vector<Country*> *adjVector;
