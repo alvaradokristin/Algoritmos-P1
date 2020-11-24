@@ -16,7 +16,6 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     id = pId;
     name = pName;
     dimensions = pDimensions;
-    //createCoordenates(pDimensions); // This will populate the vectors
     style = pStyle;
     isColored = false;
     maxX = setMax(pDimensions, 1);
@@ -24,8 +23,8 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle) {
     minX = setMin(pDimensions, 1);
     minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
-    nextCntry = NULL;
-    prevCntry = NULL;
+    nextCntry = nullptr;
+    prevCntry = nullptr;
     adjVector = new vector<Country*>();
 }
 
@@ -43,7 +42,7 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     minY = setMin(pDimensions, 2);
     color = separateByChar(':', text, 2);
     nextCntry = pNextCountry;
-    prevCntry = NULL;
+    prevCntry = nullptr;
     adjVector = new vector<Country*>();
 }
 
@@ -65,12 +64,14 @@ Country::Country(string pId, string pName, string pDimensions, string pStyle, Co
     adjVector = new vector<Country*>();
 }
 
+// This method will update the color on a country
 void Country::updateColor(string pNewColor) { // Country *pCurrentCntry,
     color = pNewColor;
     style = "fill:" + pNewColor + ";fill-rule:evenodd";
     isColored = true;
 }
 
+// This function will separate a string by the character that you need
 string Country::separateByChar(char pChar, string pText, short pPosition) {
     string xCoor = "";
     string yCoor = "";
@@ -93,7 +94,8 @@ string Country::separateByChar(char pChar, string pText, short pPosition) {
         return yCoor;
 }
 
-float Country::setMax(string pData, int pOption){
+// ------------------------------------ V1 ------------------------------------ //
+/*float Country::setMax(string pData, int pOption){
     string coordenates = "";
     float prevNumber = 0;
     float newPoint = 0;
@@ -106,13 +108,9 @@ float Country::setMax(string pData, int pOption){
         }
         else {
             if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
-                //cout << "coordenates: " << "{" << coordenates << "}" << endl;
                 value = separateByChar(',', coordenates, pOption);
                 newPoint = stof(value);
-                //cout << "newPoint Max: " << newPoint << endl;
                 prevNumber = prevNumber + newPoint;
-                //cout << "prevNumber Max: " << prevNumber << endl;
-                //cout << endl;
                 if (max <= prevNumber) {
                     max = prevNumber;
                 }
@@ -136,16 +134,103 @@ float Country::setMin(string pData, int pOption){
         }
         else {
             if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
-                //cout << "coordenates: " << "{" << coordenates << "}" << endl;
                 value = separateByChar(',', coordenates, pOption);
                 newPoint = stof(value);
-                //cout << "newPoint Min: " << newPoint << endl;
                 prevNumber = prevNumber + newPoint;
-                //cout << "prevNumber Min: " << prevNumber << endl;
-                //cout << endl;
                 if (min >= prevNumber) {
                     min = prevNumber;
                 }
+            }
+            coordenates = "";
+        }
+    }
+    return min;
+}*/
+
+// ------------------------------------ V2 ------------------------------------ //
+float Country::setMax(string pData, int pOption){
+    string coordenates = "";
+    float prevNumber = 0;
+    float newPoint = 0;
+    float max = -1;
+    string value;
+    bool isFirst = true;
+    bool isM = false;
+
+    for (auto txtChar : pData) {
+        if (txtChar != ' ') {
+            coordenates = coordenates + txtChar;
+        }
+        else {
+            if (!isFirst) {
+                if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
+                    value = separateByChar(',', coordenates, pOption);
+                    newPoint = stof(value);
+                    if (!isM) {
+                        prevNumber = prevNumber + newPoint;
+                        if (max <= prevNumber) {
+                            max = prevNumber;
+                        }
+                    }
+                    else {
+                        prevNumber = newPoint;
+                        if (max <= prevNumber) {
+                            max = prevNumber;
+                        }
+                        isM = false;
+                    }
+                }
+                else if (coordenates == "M") {
+                    isM = true;
+                }
+            }
+            else {
+                isFirst = false;
+            }
+            coordenates = "";
+        }
+    }
+    return max;
+}
+
+float Country::setMin(string pData, int pOption){
+    string coordenates = "";
+    float prevNumber = 0;
+    float newPoint = 0;
+    float min = 3.402823466e+38F;
+    string value;
+    bool isFirst = true;
+    bool isM = false;
+
+    for (auto txtChar : pData) {
+        if (txtChar != ' ') {
+            coordenates = coordenates + txtChar;
+        }
+        else {
+            if (!isFirst) {
+                if (coordenates != "m" && coordenates != "z" && coordenates != "M" && coordenates != "Z" && coordenates != "l") {
+                    value = separateByChar(',', coordenates, pOption);
+                    newPoint = stof(value);
+                    if (!isM) {
+                        prevNumber = prevNumber + newPoint;
+                        if (min >= prevNumber) {
+                            min = prevNumber;
+                        }
+                    }
+                    else {
+                        prevNumber = newPoint;
+                        if (min >= prevNumber) {
+                            min = prevNumber;
+                        }
+                        isM = false;
+                    }
+                }
+                else if (coordenates == "M") {
+                    isM = true;
+                }
+            }
+            else {
+                isFirst = false;
             }
             coordenates = "";
         }

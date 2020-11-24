@@ -10,10 +10,9 @@ Painter::Painter(int pNumber_Colors){
 
 void Painter::to_update(string pFilename,string pAlgorim,vector<string> pUpdatedData,string pData,int pColorBlank,double pTime){
 
-    std::ofstream newFile("C:\\Users\\famil\\Downloads\\world"+pAlgorim+".svg", std::ios::trunc);
+    std::ofstream newFile("D:\\OneDrive\\Escritorio\\world"+pAlgorim+".svg", std::ios::trunc);
     newFile<<pData;
             for (int index=0; index < pUpdatedData.size();index++){
-                //cout<<pUpdatedData[index]<<endl;
                 newFile<<pUpdatedData[index]<<endl;
             }
             newFile<< "<text x='1200' y= '830' font-size='2em' fill='black'>Countries in white: "+std::to_string(pColorBlank)+"</text>";

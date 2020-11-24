@@ -1,12 +1,10 @@
 #include "../sources/Painter.cpp"
-#include "../headers/DynamicAlgorithm.h"
 #include <windows.h>
 
 using namespace headers;
 using namespace std;
 
-Dynamic::Dynamic(int pNumberColors,vector<string> pDynamicCountries,string pFilename, string pHeaderFile) : Painter(pNumberColors){
-
+Dynamic::Dynamic(int pNumberColors,vector<string> pDynamicCountries,string pFilename, string pHeaderFile) : Painter(pNumberColors) {
     colors_numbers = pNumberColors;
     DynamicCountries = pDynamicCountries;
     Filename =pFilename;
@@ -48,7 +46,6 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
     }
     int poscolortous=0;
     for (int index =0;index < priorities.size();index++){
-        cout<<priorities.at(index);
     }
     for (int pass = pCounter; pass < pCounter+limit;pass++){
         int position = pListCountries.getposition(pass)->adjVector->size();
@@ -73,20 +70,18 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
             }
         }
             if (available == 0){
-                cout<<pListCountries.getposition(pass)->id;
                 CountriesBlanc++;
                 pListCountries.getposition(pass)->isColored = true;
                 pListCountries.getposition(pass)->color="ffffff";
                 DynamicCountries = paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,12);
             }else{
-                cout<<pListCountries.getposition(pass)->id;
                 counterforcountries.at(poscolortous)++;
                 pListCountries.getposition(pass)->isColored = true;
                 pListCountries.getposition(pass)->color=colors->at(poscolortous);
                 DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
             }
         }
-        //Sleep(5000);
+        Sleep(3000); // 10000
         timerDC.timeStamp();
         to_update(Filename,"Dynamic",DynamicCountries,HeaderFile,CountriesBlanc,((timerDC.elapsed.count() / 1000)));
     if (limit != 11){

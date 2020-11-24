@@ -58,19 +58,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1
+CMAKE_SOURCE_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
+CMAKE_BINARY_DIR = D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Projec
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\Archivos de programa\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\famil\OneDrive\Documents\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\KAG\kag\GitHub\Algoritmos-P1\Project-1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -223,6 +223,33 @@ sources/List.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/List.cpp.s
 .PHONY : sources/List.cpp.s
 
+sources/Program.obj: sources/Program.cpp.obj
+
+.PHONY : sources/Program.obj
+
+# target to build an object file
+sources/Program.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/Program.cpp.obj
+.PHONY : sources/Program.cpp.obj
+
+sources/Program.i: sources/Program.cpp.i
+
+.PHONY : sources/Program.i
+
+# target to preprocess a source file
+sources/Program.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/Program.cpp.i
+.PHONY : sources/Program.cpp.i
+
+sources/Program.s: sources/Program.cpp.s
+
+.PHONY : sources/Program.s
+
+# target to generate assembly for a file
+sources/Program.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project_1.dir\build.make CMakeFiles/Project_1.dir/sources/Program.cpp.s
+.PHONY : sources/Program.cpp.s
+
 sources/Timer.obj: sources/Timer.cpp.obj
 
 .PHONY : sources/Timer.obj
@@ -268,6 +295,9 @@ help:
 	@echo ... sources/List.obj
 	@echo ... sources/List.i
 	@echo ... sources/List.s
+	@echo ... sources/Program.obj
+	@echo ... sources/Program.i
+	@echo ... sources/Program.s
 	@echo ... sources/Timer.obj
 	@echo ... sources/Timer.i
 	@echo ... sources/Timer.s
