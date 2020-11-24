@@ -33,7 +33,7 @@ void Program::start() {
         }
     }
 
-    string filename = "C:\\Users\\famil\\OneDrive\\Escritorio\\world.svg";
+    string filename = "D:\\OneDrive\\Escritorio\\world.svg";
 
     // This will read the SVG file on the previous path
     Readfile *readDP = new Readfile(filename);
