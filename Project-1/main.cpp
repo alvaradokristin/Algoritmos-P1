@@ -40,9 +40,9 @@ int main() {
     cout << "Number of countries: " << DC.listDC.listLength() << endl;
     cout << "Number of countries that were not painted: " << DC.countriesToColor << endl;
     cout << "Number of countries painted in white: " << DC.whiteCountries << endl;
-    DC.updateMap();*/
-
-    Dynamic dy(3,all,filename,read->encabezado);
+    DC.updateMap();
+*/
+    Dynamic dy(7,all,filename,read->encabezado);
     dy.DynamicAlgoritm(newListDC,0);
 
     return 0;

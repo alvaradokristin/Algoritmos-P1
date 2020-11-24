@@ -8,6 +8,7 @@
 //#include "../headers/Painter.h" // undefined reference to `headers::Painter::Painter(int)'
 #include "../sources/Painter.cpp"
 #include "../headers/DivideConquer.h"
+#include ""
 
 using namespace headers;
 using namespace std;
@@ -24,7 +25,7 @@ DivideConquer::DivideConquer(int pNumberColors, string pFileName, string pHeader
 // This method will update the information on the map
 void DivideConquer::updateMap() {
     //Sleep(10000); // 10000
-    to_update(findingFileName,"Divide",vectorDC,fileHeader);
+    to_update(findingFileName,"Divide",vectorDC,fileHeader,);
 
     // This will update the timer and print it
     timerDC.timeStamp();

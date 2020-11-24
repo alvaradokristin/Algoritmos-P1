@@ -86,7 +86,7 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
                 DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
             }
         }
-        Sleep(5000);
+        //Sleep(5000);
         timerDC.timeStamp();
         to_update(Filename,"Dynamic",DynamicCountries,HeaderFile,CountriesBlanc,((timerDC.elapsed.count() / 1000)));
     if (limit != 11){
