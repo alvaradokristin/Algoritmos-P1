@@ -20,10 +20,10 @@ Dynamic::Dynamic(int pNumberColors,vector<string> pDynamicCountries,string pFile
 
 //Alters the priority queue by learning from a queue of a pseudo-color nucleus
 void Dynamic::AlterPriority (vector<int> pPrioritiesValue){
-
-    int priority = (pPrioritiesValue.size()-1);
+    int maxindex = 0;
+    int priority = pPrioritiesValue.size()-1;
     for (int indexround = 0; indexround < pPrioritiesValue.size(); indexround++){
-        int maxindex = 0;
+       maxindex = 0;
         for (int index = 0;index < pPrioritiesValue.size();index++){
             if (pPrioritiesValue[index] > pPrioritiesValue[maxindex]){
                 maxindex = index;
@@ -48,7 +48,7 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
     for (int index =0;index < colors_numbers;index++){
         counterforcountries.push_back(index);
     }
-    int poscolortous;
+    int poscolortous=0;
     for (int pass = pCounter; pass < pCounter+limit;pass++){
         int position = pListCountries.getposition(pass)->adjVector->size();
         int available= colors_numbers;
@@ -83,7 +83,7 @@ void Dynamic::DynamicAlgoritm (List pListCountries,int pCounter){
             DynamicCountries =paint_contries(DynamicCountries,pListCountries.getposition(pass)->id,poscolortous);
         }
     }
-    Sleep(3000);
+    //Sleep(3000);
     // This will update the timer and print it
     timerDC.timeStamp();
     //update document svg
